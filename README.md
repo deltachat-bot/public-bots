@@ -7,6 +7,7 @@ To see supported commands send `/help` to the bots.
 | cartelera@hispanilandia.net | 🇪🇸 Spanish: Permite consultar la cartelera de la TV cubana | [simplebot_cartv] | 24h | [adbenitez] |
 | chess@hispanilandia.net | Play chess with your friends! | [simplebot_chess] | 24h | [adbenitez] |
 | lyrics@hispanilandia.net | Search for song lyrics | [simplebot_lyrics] | 24h | [adbenitez] |
+| memes@hispanilandia.net | Get funny memes | [simplebot_memes_en], [simplebot_memes_es] | 24h | [adbenitez] |
 | polls@hispanilandia.net | Polls bot, allows to create and participate in polls | [simplebot_polls] | 24h | [adbenitez] |
 | simplebot@testrun.org | Mastodon/DeltaChat bridge | [simplebot_mastodon] | 24h | [adbenitez] |
 | translator@hispanilandia.net | Translate text to any language | [simplebot_translator] | 24h | [adbenitez] |
@@ -18,8 +19,10 @@ To see supported commands send `/help` to the bots.
 [simplebot_cartv]: https://github.com/adbenitez/simplebot_cartv
 [simplebot_chess]: https://github.com/simplebot-org/simplebot_chess
 [simplebot_polls]: https://github.com/simplebot-org/simplebot_polls
-[simplebot_translator]: https://github.com/simplebot-org/simplebot_translator
+[simplebot_translator]: https://github.com/adbenitez/simplebot_translator
 [simplebot_writefeely]: https://github.com/simplebot-org/simplebot_writefeely
 [simplebot_xkcd]: https://github.com/simplebot-org/simplebot_xkcd
 [simplebot_mastodon]: https://github.com/simplebot-org/simplebot_plugins/tree/master/plugins/simplebot_mastodon
-[simplebot_lyrics]: https://github.com/simplebot-org/simplebot_lyrics
+[simplebot_lyrics]: https://github.com/adbenitez/simplebot_lyrics
+[simplebot_memes_en]: https://github.com/adbenitez/simplebot_memes_en
+[simplebot_memes_es]: https://github.com/adbenitez/simplebot_memes_es
