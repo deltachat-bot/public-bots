@@ -2,19 +2,19 @@
 
 To see supported commands send `/help` to the bots.
 
-| Address | Description | Plugins | Availability | Administrator |
-| ------- | ----------- | ------- | :----------: | ------------- |
-| cartelera@hispanilandia.net | 🇪🇸 Spanish: Permite consultar la cartelera de la TV cubana | [simplebot_cartv] | 24h | [adbenitez] |
-| chess@hispanilandia.net | Play chess with your friends! | [simplebot_chess] | 24h | [adbenitez] |
-| howdoi@hispanilandia.net | Get instant coding answers from Stack Overflow | [simplebot_howdoi] | 24h | [adbenitez] |
-| interactive-fiction@hispanilandia.net | Allows to play interactive fiction games like Zork! | [simplebot_frotz] | 24h | [adbenitez] |
-| lyrics@hispanilandia.net | Search for song lyrics | [simplebot_lyrics] | 24h | [adbenitez] |
-| memes@hispanilandia.net | Get funny memes | [simplebot_memes_en], [simplebot_memes_es] | 24h | [adbenitez] |
-| polls@hispanilandia.net | Polls bot, allows to create and participate in polls | [simplebot_polls] | 24h | [adbenitez] |
-| simplebot@testrun.org | Mastodon/DeltaChat bridge | [simplebot_mastodon] | 24h | [adbenitez] |
-| translator@hispanilandia.net | Translate text to any language | [simplebot_translator] | 24h | [adbenitez] |
-| writefreely@hispanilandia.net | WriteFreely/DeltaChat bridge | [simplebot_writefeely] | 24h | [adbenitez] |
-| xkcd@hispanilandia.net | A bot to fetch comics from xkcd.com | [simplebot_xkcd] | 24h | [adbenitez] |
+| Address                     | Description                                            | Language | Availability | Plugins | Administrator |
+| --------------------------- | ------------------------------------------------------ | :------: | :----------: | ------- | ------------- |
+| cartelera@hispanilandia.net | Permite consultar la cartelera de la TV cubana         | 🇪🇸 | 24h | [simplebot_cartv] | [adbenitez] |
+| chess@hispanilandia.net     | Play chess with your friends!                          | 🇺🇸 | 24h | [simplebot_chess] | [adbenitez] |
+| howdoi@hispanilandia.net    | Get instant coding answers from Stack Overflow         | 🇺🇸 | 24h | [simplebot_howdoi]| [adbenitez] |
+| interactive-fiction@hispanilandia.net | Allows to play interactive fiction games     | 🇺🇸 | 24h | [simplebot_frotz] | [adbenitez] |
+| lyrics@hispanilandia.net    | Search for song lyrics                                 | 🇺🇸 | 24h | [simplebot_lyrics]| [adbenitez] |
+| memes@hispanilandia.net     | Get funny memes                                        | 🇺🇸 | 24h | [simplebot_memes_en], [simplebot_memes_es] | [adbenitez] |
+| polls@hispanilandia.net     | Polls bot, allows to create and participate in polls   | 🇺🇸 | 24h | [simplebot_polls] | [adbenitez] |
+| simplebot@testrun.org       | Mastodon/DeltaChat bridge                              | 🇺🇸 | 24h | [simplebot_mastodon] | [adbenitez] |
+| translator@hispanilandia.net | Translate text to any language                        | 🇺🇸 | 24h | [simplebot_translator] | [adbenitez] |
+| writefreely@hispanilandia.net | WriteFreely/DeltaChat bridge                         | 🇺🇸 | 24h | [simplebot_writefeely] | [adbenitez] |
+| xkcd@hispanilandia.net      | A bot to fetch comics from xkcd.com                    | 🇺🇸 | 24h | [simplebot_xkcd] | [adbenitez] |
 
 
 [adbenitez]: mailto:adbenitez@nauta.cu
@@ -24,7 +24,7 @@ To see supported commands send `/help` to the bots.
 [simplebot_translator]: https://github.com/adbenitez/simplebot_translator
 [simplebot_writefeely]: https://github.com/simplebot-org/simplebot_writefeely
 [simplebot_xkcd]: https://github.com/simplebot-org/simplebot_xkcd
-[simplebot_mastodon]: https://github.com/simplebot-org/simplebot_plugins/tree/master/plugins/simplebot_mastodon
+[simplebot_mastodon]: https://github.com/simplebot-org/simplebot_mastodon
 [simplebot_lyrics]: https://github.com/adbenitez/simplebot_lyrics
 [simplebot_memes_en]: https://github.com/adbenitez/simplebot_memes_en
 [simplebot_memes_es]: https://github.com/adbenitez/simplebot_memes_es
