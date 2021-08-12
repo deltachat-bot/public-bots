@@ -11,6 +11,7 @@ To see supported commands send `/help` to the bots.
 | lyrics@hispanilandia.net    | Search for song lyrics                                 | 🇺🇸 | 24h | [simplebot_lyrics]| [adbenitez] |
 | memes@hispanilandia.net     | Get funny memes                                        | 🇺🇸 | 24h | [simplebot_memes_en], [simplebot_memes_es] | [adbenitez] |
 | polls@hispanilandia.net     | Polls bot, allows to create and participate in polls   | 🇺🇸 | 24h | [simplebot_polls] | [adbenitez] |
+| simplebot@echedeylr.tk      | Upload files and get the download links                | 🇺🇸 | 24h | [simplebot_file2link] | [adbenitez] |
 | simplebot@testrun.org       | Mastodon/DeltaChat bridge                              | 🇺🇸 | 24h | [simplebot_mastodon] | [adbenitez] |
 | translator@hispanilandia.net | Translate text to any language                        | 🇺🇸 | 24h | [simplebot_translator] | [adbenitez] |
 | writefreely@hispanilandia.net | WriteFreely/DeltaChat bridge                         | 🇺🇸 | 24h | [simplebot_writefeely] | [adbenitez] |
@@ -30,3 +31,4 @@ To see supported commands send `/help` to the bots.
 [simplebot_memes_es]: https://github.com/adbenitez/simplebot_memes_es
 [simplebot_howdoi]: https://github.com/adbenitez/simplebot_howdoi
 [simplebot_frotz]: https://github.com/adbenitez/simplebot_frotz
+[simplebot_file2link]: https://github.com/adbenitez/simplebot_file2link
