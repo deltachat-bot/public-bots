@@ -18,6 +18,13 @@ To see supported commands send `/help` to the bots.
 | writefreely@hispanilandia.net | WriteFreely/DeltaChat bridge                         | 🇺🇸 | 24h | [simplebot_writefeely] | [adbenitez] |
 | xkcd@hispanilandia.net      | A bot to fetch comics from xkcd.com                    | 🇺🇸 | 24h | [simplebot_xkcd] | [adbenitez] |
 
+## Yggmail
+
+Bots using [yggmail](https://github.com/neilalexander/yggmail) accounts are only reachable from other yggmail accounts.
+
+| Address                     | Description                                            | Language | Availability | Plugins | Administrator |
+| --------------------------- | ------------------------------------------------------ | :------: | :----------: | ------- | ------------- |
+| 439a18f3692be6cc3bdf724994d6027a1dc457ef8adf33d68564205c03b3ad46@yggmail | Echo bot, echoes back any text sent in private | 🇺🇸 | 24h | [simplebot_echo] | [adbenitez] |
 
 [adbenitez]: mailto:adbenitez@nauta.cu
 [simplebot_cartv]: https://github.com/adbenitez/simplebot_cartv
@@ -34,3 +41,4 @@ To see supported commands send `/help` to the bots.
 [simplebot_frotz]: https://github.com/adbenitez/simplebot_frotz
 [simplebot_file2link]: https://github.com/adbenitez/simplebot_file2link
 [simplebot_irc]: https://github.com/simplebot-org/simplebot_irc
+[simplebot_echo]: https://github.com/simplebot-org/simplebot_echo
