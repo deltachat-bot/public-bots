@@ -6,6 +6,7 @@ To see supported commands send `/help` to the bots.
 | --------------------------- | ------------------------------------------------------ | :------: | :----------: | ------- | ------------- |
 | cartelera@hispanilandia.net | Permite consultar la cartelera de la TV cubana         | 🇪🇸 | 24h | [simplebot_cartv] | [adbenitez] |
 | chess@hispanilandia.net     | Play chess with your friends!                          | 🇺🇸 | 24h | [simplebot_chess] | [adbenitez] |
+| deltabot@echedeylr.tk       | Allows to subscribe to RSS/Atom feeds                  | 🇺🇸 | 24h | [simplebot_feeds] | [adbenitez] |
 | howdoi@hispanilandia.net    | Get instant coding answers from Stack Overflow         | 🇺🇸 | 24h | [simplebot_howdoi]| [adbenitez] |
 | interactive-fiction@hispanilandia.net | Allows to play interactive fiction games     | 🇺🇸 | 24h | [simplebot_frotz] | [adbenitez] |
 | lyrics@hispanilandia.net    | Search for song lyrics                                 | 🇺🇸 | 24h | [simplebot_lyrics]| [adbenitez] |
@@ -42,3 +43,4 @@ Bots using [yggmail](https://github.com/neilalexander/yggmail) accounts are only
 [simplebot_file2link]: https://github.com/adbenitez/simplebot_file2link
 [simplebot_irc]: https://github.com/simplebot-org/simplebot_irc
 [simplebot_echo]: https://github.com/simplebot-org/simplebot_echo
+[simplebot_feeds]: https://github.com/simplebot-org/simplebot_feeds
