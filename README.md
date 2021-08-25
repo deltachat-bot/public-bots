@@ -13,6 +13,7 @@ To see supported commands send `/help` to the bots.
 | games@echedeylr.tk             | Bot that allows to play several games                       | 🇺🇸 | 24h | [adbenitez] |
 | howdoi@hispanilandia.net       | Get instant coding answers from Stack Overflow              | 🇺🇸 | 24h | [adbenitez] |
 | interactive-fiction@hispanilandia.net | Allows to play interactive fiction games             | 🇺🇸 | 24h | [adbenitez] |
+| juegos@buzon.uy                | Permite suscribirse a canales de descargas gratis s3/ToDus  | 🇪🇸 | 24h | [adbenitez] |
 | lyrics@hispanilandia.net       | Search for song lyrics                                      | 🇺🇸 | 24h | [adbenitez] |
 | memes@hispanilandia.net        | Get funny memes                                             | 🇺🇸 | 24h | [adbenitez] |
 | polls@hispanilandia.net        | Polls bot, allows to create and participate in polls        | 🇺🇸 | 24h | [adbenitez] |
