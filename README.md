@@ -32,6 +32,6 @@ Bots using [yggmail](https://github.com/neilalexander/yggmail) accounts are only
 
 | Address                                                     | Description                                | Language | Availability | Administrator |
 | ----------------------------------------------------------- | ------------------------------------------ | :------: | :----------: | ------------- |
-| 439a18f3692be6cc3bdf724994d6027a1dc457ef8adf33d68564205c03b3ad46@yggmail | Echo bot, echoes back any text sent in private | 🇺🇸 | 24h | [adbenitez] |
+| [439a18f3692be6cc3bdf...](mailto:439a18f3692be6cc3bdf724994d6027a1dc457ef8adf33d68564205c03b3ad46@yggmail) | Public groups bot, a bot that allows to publish your groups and to join public groups | 🇺🇸 | 24h | [adbenitez] |
 
 [adbenitez]: mailto:adbenitez@nauta.cu
