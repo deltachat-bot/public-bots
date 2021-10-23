@@ -8,6 +8,7 @@ To see supported commands send `/help` to the bots.
 | cartelera@hispanilandia.net    | Permite consultar la cartelera de la TV cubana              | 🇪🇸 | 24h | [adbenitez] |
 | chess@hispanilandia.net        | Play chess with your friends!                               | 🇺🇸 | 24h | [adbenitez] |
 | dcbot@echedeylr.tk             | Allows to get link/URL previews                             | 🇺🇸 | 24h | [adbenitez] |
+| dc.telebridge@gmail.com        | Telegram/DeltaChat bridge                                   | 🇺🇸 | 24h | [Nenirey] |
 | deltabot@buzon.uy              | Miscellaneous bot                                           | 🇺🇸 | 24h | [adbenitez] |
 | deltabot@echedeylr.tk          | Allows to subscribe to RSS/Atom feeds                       | 🇺🇸 | 24h | [adbenitez] |
 | games@echedeylr.tk             | Bot that allows to play several games                       | 🇺🇸 | 24h | [adbenitez] |
@@ -35,3 +36,4 @@ Bots using [yggmail](https://github.com/neilalexander/yggmail) accounts are only
 | [439a18f3692be6cc3bdf...](mailto:439a18f3692be6cc3bdf724994d6027a1dc457ef8adf33d68564205c03b3ad46@yggmail) | Public groups bot, a bot that allows to publish your groups and to join public groups | 🇺🇸 | 24h | [adbenitez] |
 
 [adbenitez]: mailto:adbenitez@nauta.cu
+[Nenirey]: mailto:nenirey@gmail.com
