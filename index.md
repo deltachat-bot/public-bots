@@ -24,6 +24,7 @@ To see supported commands send `/help` to the bots.
 | [simplebot@echedeylr.tk]       | Upload files and get the download links                     | 🇺🇸 | 24h | [adbenitez] |
 | [simplebot@systemli.org]       | Allows to get link/URL previews                             | 🇺🇸 | 24h | [adbenitez] |
 | [simplebot@testrun.org]        | Mastodon/DeltaChat bridge                                   | 🇺🇸 | 24h | [adbenitez] |
+| [stickerbot@hispanilandia.net] | Allows to download sticker packs                            | 🇺🇸 | 24h | [adbenitez] |
 | [translator@hispanilandia.net] | Translate text to any language                              | 🇺🇸 | 24h | [adbenitez] |
 | [writefreely@hispanilandia.net]| WriteFreely/DeltaChat bridge                                | 🇺🇸 | 24h | [adbenitez] |
 | [xkcd@hispanilandia.net]       | A bot to fetch comics from xkcd.com                         | 🇺🇸 | 24h | [adbenitez] |
@@ -62,3 +63,4 @@ Click the bot address to start a chat.
 [translator@hispanilandia.net]: OPENPGP4FPR:F6948DDA3046531A190F26FBCBD3E8DC2F7924CB#a=translator%40hispanilandia.net&n=Translator%20Bot&i=wMuG5nircgB&s=Q4r26QE7prU
 [writefreely@hispanilandia.net]: OPENPGP4FPR:B6F03DA7D8DF8EB6EE7E0D030A8E0B513E40D443#a=writefreely%40hispanilandia.net&n=WriteFreelyBot&i=r45fDGvqhcK&s=ZpEkv_FWyRl
 [xkcd@hispanilandia.net]: OPENPGP4FPR:8CFCEA1E7CB8E914457D98E47AAD060AD1EBF992#a=xkcd%40hispanilandia.net&n=xkcd%20bot&i=pYj-Ex5wh-m&s=ktkqonTzmkK
+[stickerbot@hispanilandia.net]: OPENPGP4FPR:505ABCB5FE466D5A74A0FD1A33B81CFE12CD0A8D#a=stickerbot%40hispanilandia.net&n=StickerBot&i=wM2bpwc2EzK&s=5YAwTNLcJhp
