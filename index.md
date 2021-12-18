@@ -10,7 +10,7 @@ To see supported commands send `/help` to the bots.
 | [cartelera@hispanilandia.net]  | Permite consultar la cartelera de la TV cubana              | 🇪🇸 | 24h | [adbenitez] |
 | [chess@hispanilandia.net]      | Play chess with your friends!                               | 🇺🇸 | 24h | [adbenitez] |
 | [dcbot@echedeylr.tk]           | Allows to get link/URL previews                             | 🇺🇸 | 24h | [adbenitez] |
-| `dc.telebridge@gmail.com`      | Telegram/DeltaChat bridge                                   | 🇺🇸 | 24h | [Nenirey] |
+| `dc.telebridge@gmail.com`      | Telegram/DeltaChat bridge                                   | 🇺🇸 | **limited** (Gmail allows only 500 emails per day) | [Nenirey] |
 | [deltabot@buzon.uy]            | Miscellaneous bot                                           | 🇺🇸 | 24h | [adbenitez] |
 | [deltabot@echedeylr.tk]        | Allows to subscribe to RSS/Atom feeds                       | 🇺🇸 | 24h | [adbenitez] |
 | [games@echedeylr.tk]           | Bot that allows to play several games                       | 🇺🇸 | 24h | [adbenitez] |
@@ -19,7 +19,7 @@ To see supported commands send `/help` to the bots.
 | [lyrics@hispanilandia.net]     | Search for song lyrics                                      | 🇺🇸 | 24h | [adbenitez] |
 | [memes@hispanilandia.net]      | Get funny memes                                             | 🇺🇸 | 24h | [adbenitez] |
 | [polls@hispanilandia.net]      | Polls bot, allows to create and participate in polls        | 🇺🇸 | 24h | [adbenitez] |
-| [puente@buzon.uy]              | IRC ↔️ DeltaChat bridge                                     | 🇺🇸 | 24h | [adbenitez] |
+| [puente@buzon.uy]              | IRC ↔️ DeltaChat bridge                                     | 🇺🇸 | **OFFLINE** (IP banned by libera.chat) | [adbenitez] |
 | [puente@echedeylr.tk]          | File downloader bot, get files from the web to your inbox   | 🇺🇸 | 24h | [adbenitez] |
 | [simplebot@echedeylr.tk]       | Upload files and get the download links                     | 🇺🇸 | 24h | [adbenitez] |
 | [simplebot@systemli.org]       | Allows to get link/URL previews                             | 🇺🇸 | 24h | [adbenitez] |
