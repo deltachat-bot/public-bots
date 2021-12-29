@@ -10,7 +10,6 @@ To see supported commands send `/help` to the bots.
 | [cartelera@hispanilandia.net]  | Permite consultar la cartelera de la TV cubana              | 🇪🇸 | 24h | [adbenitez] |
 | [chess@hispanilandia.net]      | Play chess with your friends!                               | 🇺🇸 | 24h | [adbenitez] |
 | [dcbot@echedeylr.tk]           | Allows to get link/URL previews                             | 🇺🇸 | 24h | [adbenitez] |
-| `dc.telebridge@gmail.com`      | Telegram/DeltaChat bridge                                   | 🇺🇸 | **limited** (Gmail allows only 500 emails per day) | [Nenirey] |
 | [deltabot@buzon.uy]            | Miscellaneous bot                                           | 🇺🇸 | 24h | [adbenitez] |
 | [deltabot@echedeylr.tk]        | Allows to subscribe to RSS/Atom feeds                       | 🇺🇸 | 24h | [adbenitez] |
 | [games@echedeylr.tk]           | Bot that allows to play several games                       | 🇺🇸 | 24h | [adbenitez] |
@@ -41,7 +40,6 @@ Click the bot address to start a chat.
 
 
 [adbenitez]: mailto:adbenitez@nauta.cu
-[Nenirey]: mailto:nenirey@gmail.com
 
 [adb_bot1@testrun.org]: OPENPGP4FPR:8D0025A5DDA22D50EB38A731DC8D7EB24BECDFEB#a=adb%5Fbot1%40testrun.org&n=GroupsBot&i=N2ZpQ9wDKLq&s=lr1Z8T3TlOI
 [cartelera@hispanilandia.net]: OPENPGP4FPR:D0E1D04F7CB4DF675FF40C16B8757470D98E7742#a=cartelera%40hispanilandia.net&n=Cartelera%20TV&i=bE_sYQa0JZD&s=eyf5eQIShJT
