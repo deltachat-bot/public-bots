@@ -8,7 +8,6 @@ To see supported commands send `/help` to the bots.
 | ------------------------------ | ----------------------------------------------------------- | :------: | :----------: | ------------- |
 | [adb_bot1@testrun.org]         | Public groups and channels                                  | 🇺🇸 | 24h | [adbenitez] |
 | [cartelera@hispanilandia.net]  | Permite consultar la cartelera de la TV cubana              | 🇪🇸 | 24h | [adbenitez] |
-| [chess@hispanilandia.net]      | Play chess with your friends!                               | 🇺🇸 | 24h | [adbenitez] |
 | [dcbot@echedeylr.tk]           | Allows to get link/URL previews                             | 🇺🇸 | 24h | [adbenitez] |
 | [deltabot@buzon.uy]            | Miscellaneous bot                                           | 🇺🇸 | 24h | [adbenitez] |
 | [deltabot@echedeylr.tk]        | Allows to subscribe to RSS/Atom feeds                       | 🇺🇸 | 24h | [adbenitez] |
@@ -43,7 +42,6 @@ Click the bot address to start a chat.
 
 [adb_bot1@testrun.org]: OPENPGP4FPR:8D0025A5DDA22D50EB38A731DC8D7EB24BECDFEB#a=adb%5Fbot1%40testrun.org&n=GroupsBot&i=N2ZpQ9wDKLq&s=lr1Z8T3TlOI
 [cartelera@hispanilandia.net]: OPENPGP4FPR:D0E1D04F7CB4DF675FF40C16B8757470D98E7742#a=cartelera%40hispanilandia.net&n=Cartelera%20TV&i=bE_sYQa0JZD&s=eyf5eQIShJT
-[chess@hispanilandia.net]: OPENPGP4FPR:7DEBB52E83B0FF9E7C1D50B46AD77280B1209476#a=chess%40hispanilandia.net&n=ChessBot&i=Bp7bsHfzYCy&s=gyUqmKWAuZ1
 [dcbot@echedeylr.tk]: OPENPGP4FPR:3E59118E49D5F9292574BCFC4FC7AC130A3CA0F6#a=dcbot%40echedeylr.tk&n=WWW&i=9_tYVrRiuwO&s=w4AiEcyYM8s
 [deltabot@buzon.uy]: OPENPGP4FPR:C823D993CF37BF5D8C834F8F08505516CF8AB8C8#a=deltabot%40buzon.uy&n=Misc.%20Bot&i=YMorOP_2ppb&s=LX4bGaOhVu-
 [deltabot@echedeylr.tk]: OPENPGP4FPR:2C11F0FC5E0386272301364EC7984C0AC415D278#a=deltabot%40echedeylr.tk&n=FeedsBot&i=4zzgoXG2n2W&s=n6WvVLVBUhI
