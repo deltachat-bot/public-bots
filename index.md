@@ -13,7 +13,6 @@ To see supported commands send `/help` to the bots.
 | [deltabot@echedeylr.tk]        | Allows to subscribe to RSS/Atom feeds                       | 🇺🇸 | 24h | [adbenitez] |
 | [games@echedeylr.tk]           | Bot that allows to play several games                       | 🇺🇸 | 24h | [adbenitez] |
 | [howdoi@hispanilandia.net]     | Get instant coding answers from Stack Overflow              | 🇺🇸 | 24h | [adbenitez] |
-| [interactive-fiction@hispanilandia.net] | Allows to play interactive fiction games           | 🇺🇸 | 24h | [adbenitez] |
 | [lyrics@hispanilandia.net]     | Search for song lyrics                                      | 🇺🇸 | 24h | [adbenitez] |
 | [memes@hispanilandia.net]      | Get funny memes                                             | 🇺🇸 | 24h | [adbenitez] |
 | [polls@hispanilandia.net]      | Polls bot, allows to create and participate in polls        | 🇺🇸 | 24h | [adbenitez] |
@@ -47,7 +46,6 @@ Click the bot address to start a chat.
 [deltabot@echedeylr.tk]: OPENPGP4FPR:2C11F0FC5E0386272301364EC7984C0AC415D278#a=deltabot%40echedeylr.tk&n=FeedsBot&i=4zzgoXG2n2W&s=n6WvVLVBUhI
 [games@echedeylr.tk]: OPENPGP4FPR:7859186C2CE8434EA10C00934F8D8A0D53B2340B#a=games%40echedeylr.tk&n=%F0%9F%91%BE%20GamesBot&i=vgGi1cMMrjY&s=kLkhZCadj5z
 [howdoi@hispanilandia.net]: OPENPGP4FPR:118B1592A24183E6D1922F7C8A775F662D0B8DC4#a=howdoi%40hispanilandia.net&n=How%20do%20I%3F&i=JgugrCgP01u&s=7k9-7Z62Um7
-[interactive-fiction@hispanilandia.net]: OPENPGP4FPR:6554D9353F62B439260256A02234E7A69BE3DFEA#a=interactive%2Dfiction%40hispanilandia.net&n=AdventuresBot&i=RyklrCLdyZ7&s=Qkq2iVpN6Uq
 [lyrics@hispanilandia.net]: OPENPGP4FPR:AAA362B3B891EDA4152DCF40D4A635364D5D9CA0#a=lyrics%40hispanilandia.net&n=LyricsBot&i=sM5oxC789zg&s=MyVVfdzw_cf
 [memes@hispanilandia.net]: OPENPGP4FPR:2099C7D3744F3B62E0C11EE4CFED5478A92DA043#a=memes%40hispanilandia.net&n=Memes%20Bot&i=egz8nDAMV6q&s=oydmbu8ZV6j
 [polls@hispanilandia.net]: OPENPGP4FPR:B47AB02369B0DC86C05E1F1825E7EB00BD917E8D#a=polls%40hispanilandia.net&n=PollsBot&i=4usXSVZ1y_q&s=s201RPZzEDW
