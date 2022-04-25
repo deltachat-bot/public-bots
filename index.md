@@ -8,21 +8,20 @@ To see supported commands send `/help` to the bots.
 | ------------------------------ | ----------------------------------------------------------- | :------: | :----------: | ------------- |
 | [adb_bot1@testrun.org]         | Public groups and channels                                  | 🇺🇸 | 24h | [adbenitez] |
 | [cartelera@hispanilandia.net]  | Permite consultar la cartelera de la TV cubana              | 🇪🇸 | 24h | [adbenitez] |
-| [dcbot@echedeylr.tk]           | Allows to get link/URL previews                             | 🇺🇸 | 24h | [adbenitez] |
 | [deltabot@buzon.uy]            | Miscellaneous bot                                           | 🇺🇸 | 24h | [adbenitez] |
-| [deltabot@echedeylr.tk]        | Allows to subscribe to RSS/Atom feeds                       | 🇺🇸 | 24h | [adbenitez] |
-| [games@echedeylr.tk]           | Bot that allows to play several games                       | 🇺🇸 | 24h | [adbenitez] |
+| [downloaderbot@hispanilandia.net] | File downloader bot, get files from the web to your inbox   | 🇺🇸 | 24h | [adbenitez] |
+| [feedsbot@hispanilandia.net]   | Allows to subscribe to RSS/Atom feeds                       | 🇺🇸 | 24h | [adbenitez] |
 | [howdoi@hispanilandia.net]     | Get instant coding answers from Stack Overflow              | 🇺🇸 | 24h | [adbenitez] |
+| [juegos@buzon.uy]              | Bot that allows to play several games                       | 🇺🇸 | 24h | [adbenitez] |
 | [lyrics@hispanilandia.net]     | Search for song lyrics                                      | 🇺🇸 | 24h | [adbenitez] |
 | [memes@hispanilandia.net]      | Get funny memes                                             | 🇺🇸 | 24h | [adbenitez] |
 | [polls@hispanilandia.net]      | Polls bot, allows to create and participate in polls        | 🇺🇸 | 24h | [adbenitez] |
 | [puente@buzon.uy]              | IRC ↔️ DeltaChat bridge                                     | 🇺🇸 | **OFFLINE** (IP banned by libera.chat) | [adbenitez] |
-| [puente@echedeylr.tk]          | File downloader bot, get files from the web to your inbox   | 🇺🇸 | 24h | [adbenitez] |
-| [simplebot@echedeylr.tk]       | Upload files and get the download links                     | 🇺🇸 | 24h | [adbenitez] |
 | [simplebot@systemli.org]       | Allows to get link/URL previews                             | 🇺🇸 | 24h | [adbenitez] |
 | [simplebot@testrun.org]        | Mastodon/DeltaChat bridge                                   | 🇺🇸 | 24h | [adbenitez] |
 | [stickerbot@hispanilandia.net] | Allows to download sticker packs                            | 🇺🇸 | 24h | [adbenitez] |
 | [translator@hispanilandia.net] | Translate text to any language                              | 🇺🇸 | 24h | [adbenitez] |
+| [uploaderbot@hispanilandia.net] | Upload files to a cloud and get the download link          | 🇺🇸 | 24h | [adbenitez] |
 | [writefreely@hispanilandia.net]| WriteFreely/DeltaChat bridge                                | 🇺🇸 | 24h | [adbenitez] |
 | [xkcd@hispanilandia.net]       | A bot to fetch comics from xkcd.com                         | 🇺🇸 | 24h | [adbenitez] |
 
@@ -41,17 +40,16 @@ Click the bot address to start a chat.
 
 [adb_bot1@testrun.org]: OPENPGP4FPR:8D0025A5DDA22D50EB38A731DC8D7EB24BECDFEB#a=adb%5Fbot1%40testrun.org&n=GroupsBot&i=N2ZpQ9wDKLq&s=lr1Z8T3TlOI
 [cartelera@hispanilandia.net]: OPENPGP4FPR:D0E1D04F7CB4DF675FF40C16B8757470D98E7742#a=cartelera%40hispanilandia.net&n=Cartelera%20TV&i=bE_sYQa0JZD&s=eyf5eQIShJT
-[dcbot@echedeylr.tk]: OPENPGP4FPR:3E59118E49D5F9292574BCFC4FC7AC130A3CA0F6#a=dcbot%40echedeylr.tk&n=WWW&i=9_tYVrRiuwO&s=w4AiEcyYM8s
 [deltabot@buzon.uy]: OPENPGP4FPR:C823D993CF37BF5D8C834F8F08505516CF8AB8C8#a=deltabot%40buzon.uy&n=Misc.%20Bot&i=YMorOP_2ppb&s=LX4bGaOhVu-
-[deltabot@echedeylr.tk]: OPENPGP4FPR:2C11F0FC5E0386272301364EC7984C0AC415D278#a=deltabot%40echedeylr.tk&n=FeedsBot&i=4zzgoXG2n2W&s=n6WvVLVBUhI
-[games@echedeylr.tk]: OPENPGP4FPR:7859186C2CE8434EA10C00934F8D8A0D53B2340B#a=games%40echedeylr.tk&n=%F0%9F%91%BE%20GamesBot&i=vgGi1cMMrjY&s=kLkhZCadj5z
+[feedsbot@hispanilandia.net]: OPENPGP4FPR:EDBCBD0131B2216D60F76FF46834D1E33169F00E#a=feedsbot%40hispanilandia.net&n=FeedsBot&i=7AYtkEyVmW8&s=1HWCvzIMM9M
+[juegos@buzon.uy]: OPENPGP4FPR:85CDAF53B94CE36DBBE89ECEEDA17F967CD16E6F#a=juegos%40buzon.uy&n=GamesBot&i=TCR6GjYRBv1&s=-en0FSwYpxr
 [howdoi@hispanilandia.net]: OPENPGP4FPR:118B1592A24183E6D1922F7C8A775F662D0B8DC4#a=howdoi%40hispanilandia.net&n=How%20do%20I%3F&i=JgugrCgP01u&s=7k9-7Z62Um7
 [lyrics@hispanilandia.net]: OPENPGP4FPR:AAA362B3B891EDA4152DCF40D4A635364D5D9CA0#a=lyrics%40hispanilandia.net&n=LyricsBot&i=sM5oxC789zg&s=MyVVfdzw_cf
 [memes@hispanilandia.net]: OPENPGP4FPR:2099C7D3744F3B62E0C11EE4CFED5478A92DA043#a=memes%40hispanilandia.net&n=Memes%20Bot&i=egz8nDAMV6q&s=oydmbu8ZV6j
 [polls@hispanilandia.net]: OPENPGP4FPR:B47AB02369B0DC86C05E1F1825E7EB00BD917E8D#a=polls%40hispanilandia.net&n=PollsBot&i=4usXSVZ1y_q&s=s201RPZzEDW
 [puente@buzon.uy]: OPENPGP4FPR:C329CB7A874F447E68D848E3EFBD8F4900871D0B#a=puente%40buzon.uy&n=IRC%20BRIDGE&i=VfVFWoRQnt-&s=oZ-qodJo7WG
-[puente@echedeylr.tk]: OPENPGP4FPR:F6407EE408904B3753ACC8CA7DD00B53ECCC7B69#a=puente%40echedeylr.tk&n=File%20Downloader&i=Wk_pOwSOT20&s=1CJy_TfdpkI
-[simplebot@echedeylr.tk]: OPENPGP4FPR:1722C2C75A962C066BE6DBDAF2A13660BE0DD7E9#a=simplebot%40echedeylr.tk&n=File%20to%20Link&i=mHoCLMNAfC9&s=NiiRqIOLew-
+[downloaderbot@hispanilandia.net]: OPENPGP4FPR:691D0D6C54B3EB3C7269DE06AFF7E6E40CA29CC6#a=downloaderbot%40hispanilandia.net&n=File%20Downloader&i=bKrjebiKATZ&s=rAhmRQERBa0
+[uploaderbot@hispanilandia.net]: OPENPGP4FPR:9C9DA1499EDD478A80994B58C65D6348DFA09264#a=uploaderbot%40hispanilandia.net&n=File%20to%20Link&i=nB8AjS72u07&s=2WWEkH8MfBc
 [simplebot@systemli.org]: OPENPGP4FPR:C279D87A58562AE0BF85A35049E574DFB70EE9B5#a=simplebot%40systemli.org&n=WWW&i=93IBFH5P-MA&s=-NmZ3RcnHVM
 [simplebot@testrun.org]: OPENPGP4FPR:3CD6F460C18365C226A3115E5D5DCC2B68286A7A#a=simplebot%40testrun.org&n=MASTODON%20BRIDGE&i=vliFxNkyG5I&s=CEHn5i91saa
 [translator@hispanilandia.net]: OPENPGP4FPR:F6948DDA3046531A190F26FBCBD3E8DC2F7924CB#a=translator%40hispanilandia.net&n=Translator%20Bot&i=wMuG5nircgB&s=Q4r26QE7prU
