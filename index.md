@@ -19,7 +19,9 @@ To see supported commands send `/help` to the bots.
 | [puente@buzon.uy]                 | IRC ↔️ DeltaChat bridge                                      | 🇺🇸       | **OFFLINE** (IP banned by libera.chat) | [adbenitez]   |
 | [simplebot@systemli.org]          | Allows to get link/URL previews                             | 🇺🇸       | 24h                                    | [adbenitez]   |
 | [simplebot@testrun.org]           | Mastodon/DeltaChat bridge                                   | 🇺🇸       | 24h                                    | [adbenitez]   |
+| [simplebot_tg@hispanilandia.net]  | Telegram ↔️ DeltaChat bridge                                 | 🇺🇸       | 24h                                    | [Yordante]    |
 | [stickerbot@hispanilandia.net]    | Allows to download sticker packs                            | 🇺🇸       | 24h                                    | [adbenitez]   |
+| [tgbridgebot@hispanilandia.net]   | Telegram ↔️ DeltaChat bridge                                 | 🇺🇸       | 24h                                    | [Nelson]      |
 | [translator@hispanilandia.net]    | Translate text to any language                              | 🇺🇸       | 24h                                    | [adbenitez]   |
 | [uploaderbot@hispanilandia.net]   | Upload files to a cloud and get the download link           | 🇺🇸       | 24h                                    | [adbenitez]   |
 | [writefreely@hispanilandia.net]   | WriteFreely/DeltaChat bridge                                | 🇺🇸       | 24h                                    | [adbenitez]   |
@@ -37,6 +39,8 @@ Click the bot address to start a chat.
 
 
 [adbenitez]: mailto:adbenitez@nauta.cu
+[Nelson]: mailto:nelsonr9608@nauta.cu
+[Yordante]: mailto:aliandiaz94@nauta.cu
 
 [439a18f3692be6cc3bdf...]: mailto:439a18f3692be6cc3bdf724994d6027a1dc457ef8adf33d68564205c03b3ad46@yggmail
 
