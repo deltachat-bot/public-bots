@@ -25,6 +25,7 @@ To see supported commands send `/help` to the bots.
 | [translator@hispanilandia.net]    | Translate text to any language                              | 🇺🇸       | 24h                                    | [adbenitez]   |
 | [uploaderbot@hispanilandia.net]   | Upload files to a cloud and get the download link           | 🇺🇸       | 24h                                    | [adbenitez]   |
 | [writefreely@hispanilandia.net]   | WriteFreely/DeltaChat bridge                                | 🇺🇸       | 24h                                    | [adbenitez]   |
+| [web2pdf@hispanilandia.net]       | Web to PDF converter                                        | 🇺🇸       | 24h                                    | [adbenitez]   |
 | [xkcd@hispanilandia.net]          | A bot to fetch comics from xkcd.com                         | 🇺🇸       | 24h                                    | [adbenitez]   |
 
 ## Yggmail
@@ -62,3 +63,4 @@ Click the bot address to start a chat.
 [writefreely@hispanilandia.net]: OPENPGP4FPR:B6F03DA7D8DF8EB6EE7E0D030A8E0B513E40D443#a=writefreely%40hispanilandia.net&n=WriteFreelyBot&i=r45fDGvqhcK&s=ZpEkv_FWyRl
 [xkcd@hispanilandia.net]: OPENPGP4FPR:8CFCEA1E7CB8E914457D98E47AAD060AD1EBF992#a=xkcd%40hispanilandia.net&n=xkcd%20bot&i=pYj-Ex5wh-m&s=ktkqonTzmkK
 [stickerbot@hispanilandia.net]: OPENPGP4FPR:505ABCB5FE466D5A74A0FD1A33B81CFE12CD0A8D#a=stickerbot%40hispanilandia.net&n=StickerBot&i=wM2bpwc2EzK&s=5YAwTNLcJhp
+[web2pdf@hispanilandia.net]: OPENPGP4FPR:90F3B4441063F3C770FCD8FEE218583044B7032D#a=web2pdf%40hispanilandia.net&n=web2pdf&i=iX-CDo5AitT&s=NorJEYpieER
