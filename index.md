@@ -7,6 +7,7 @@ To see supported commands send `/help` to the bots.
 | Address                           | Description                                                 | Language | Availability | Administrator |
 | ------------------------------    | ----------------------------------------------------------- | :------: | :----------: | ------------- |
 | [adb_bot1@testrun.org]            | Web gateway, get URL previews and download files            | 🇺🇸       | full time    | [adbenitez]   |
+| botmulti2@gmail.com               | Web gateway, download webpages, youtube videos and files    | 🇺🇸       | 20d/month    | [Jonathan]    |
 | [cartelera@hispanilandia.net]     | Permite consultar la cartelera de la TV cubana              | 🇪🇸       | full time    | [adbenitez]   |
 | [deltabot@buzon.uy]               | Miscellaneous bot                                           | 🇺🇸       | full time    | [adbenitez]   |
 | [downloaderbot@hispanilandia.net] | File downloader bot, get files from the web to your inbox   | 🇺🇸       | full time    | [adbenitez]   |
@@ -45,6 +46,7 @@ Click the bot address to start a chat.
 [adbenitez]: mailto:adbenitez@nauta.cu
 [Nelson]: mailto:nelsonr9608@nauta.cu
 [Yordante]: mailto:aliandiaz94@nauta.cu
+[Jonathan]: mailto:barbaro94@nauta.cu
 
 [439a18f3692be6cc3bdf...]: mailto:439a18f3692be6cc3bdf724994d6027a1dc457ef8adf33d68564205c03b3ad46@yggmail
 
