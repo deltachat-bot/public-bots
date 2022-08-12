@@ -15,7 +15,8 @@ To see supported commands send `/help` to the bots.
 | [groupsbot@hispanilandia.net]     | Public super groups and channels (anoymous mailing lists)   | 🇺🇸       | full time    | [adbenitez]   |
 | [groupsbot@testrun.org]           | Private groups bot                                          | 🇺🇸       | full time    | [adbenitez]   |
 | [howdoi@hispanilandia.net]        | Get instant coding answers from Stack Overflow              | 🇺🇸       | full time    | [adbenitez]   |
-| [juegos@buzon.uy]                 | Get several Delta Chat games                                | 🇺🇸       | full time    | [adbenitez]   |
+| joseph@nogafam.me                 | Descargas de Internet gratis para cubanos usando Moodle     | 🇪🇸       | full time    | [Yordante]    |
+| [juegos@buzon.uy]                 | Games store, allows to get Delta Chat games (Webxdc)        | 🇺🇸       | full time    | [adbenitez]   |
 | [lyrics@hispanilandia.net]        | Search for song lyrics                                      | 🇺🇸       | full time    | [adbenitez]   |
 | [memes@hispanilandia.net]         | Get funny memes                                             | 🇺🇸       | full time    | [adbenitez]   |
 | [polls@hispanilandia.net]         | Polls bot, allows to create and participate in polls        | 🇺🇸       | full time    | [adbenitez]   |
