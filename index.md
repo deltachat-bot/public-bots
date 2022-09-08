@@ -18,6 +18,7 @@ To see supported commands send `/help` to the bots.
 | joseph@nogafam.me                 | Descargas de Internet gratis para cubanos usando Moodle     | 🇪🇸       | full time    | [Yordante]    |
 | [juegos@buzon.uy]                 | Games store, allows to get Delta Chat games (Webxdc)        | 🇺🇸       | full time    | [adbenitez]   |
 | [lyrics@hispanilandia.net]        | Search for song lyrics                                      | 🇺🇸       | full time    | [adbenitez]   |
+| [mangadl@testrun.org]             | Manga downloader bot                                        | 🇺🇸       | full time    | [adbenitez]   |
 | [memes@hispanilandia.net]         | Get funny memes                                             | 🇺🇸       | full time    | [adbenitez]   |
 | [polls@hispanilandia.net]         | Polls bot, allows to create and participate in polls        | 🇺🇸       | full time    | [adbenitez]   |
 | [puente@buzon.uy]                 | IRC/DeltaChat bridge                                        | 🇺🇸       | invite-only  | [adbenitez]   |
@@ -74,3 +75,4 @@ Click the bot address to start a chat.
 [downloaderbot@hispanilandia.net]: OPENPGP4FPR:83D90328467A9216D3244B5AA23F544DFED077E9#a=downloaderbot%40hispanilandia.net&n=File%20Downloader&i=v-cJnR80WCy&s=q6LqhqGfLR6
 [groupsbot@hispanilandia.net]: OPENPGP4FPR:6185B0FC60681A7F06A31735070D21CEEB40B859#a=groupsbot%40hispanilandia.net&n=SuperGroupsBot&i=e_XiPctpNVS&s=1NRdaNor1Rc
 [groupsbot@testrun.org]: OPENPGP4FPR:6FE1642916908F1AC9CC7557CC99CF5DDB92043C#a=groupsbot%40testrun.org&n=GroupsBot&i=AptcQCUYP3X&s=j6C75z6IKU8
+[mangadl@testrun.org]: OPENPGP4FPR:8904D68A0B560EEEA20A06031BA3B5859361097B#a=mangadl%40testrun.org&n=MangaDownloader&i=fLXeIm7l2pP&s=Kpn1KG4fWiS
