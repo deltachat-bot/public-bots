@@ -7,7 +7,6 @@ To see supported commands send `/help` to the bots.
 | Address                           | Description                                                 | Language | Availability | Administrator |
 | ------------------------------    | ----------------------------------------------------------- | :------: | :----------: | ------------- |
 | [adb_bot1@testrun.org]            | Web gateway, get URL previews and download files            | 🇺🇸       | full time    | [adbenitez]   |
-| botmulti2@gmail.com               | Web gateway, download webpages, youtube videos and files    | 🇺🇸       | 20d/month    | [Jonathan]    |
 | [cartelera@hispanilandia.net]     | Permite consultar la cartelera de la TV cubana              | 🇪🇸       | full time    | [adbenitez]   |
 | [deltabot@buzon.uy]               | Miscellaneous bot                                           | 🇺🇸       | full time    | [adbenitez]   |
 | [downloaderbot@hispanilandia.net] | File downloader bot, get files from the web to your inbox   | 🇺🇸       | full time    | [adbenitez]   |
@@ -23,10 +22,7 @@ To see supported commands send `/help` to the bots.
 | [puente@buzon.uy]                 | IRC/DeltaChat bridge                                        | 🇺🇸       | invite-only  | [adbenitez]   |
 | [simplebot@systemli.org]          | Allows to get link/URL previews and search the web          | 🇺🇸       | full time    | [adbenitez]   |
 | [simplebot@testrun.org]           | Mastodon/DeltaChat bridge                                   | 🇺🇸       | full time    | [adbenitez]   |
-| [simplebot08@gmail.com]           | Web gateway, download webpages, youtube videos and files    | 🇺🇸       | 20d/month    | [adbenitez]   |
-| simplebot_tg@hispanilandia.net    | Telegram/DeltaChat puppeting bridge                         | 🇺🇸       | full time    | [Yordante]    |
 | [stickerbot@hispanilandia.net]    | Allows to download sticker packs                            | 🇺🇸       | full time    | [adbenitez]   |
-| tgbridgebot@hispanilandia.net     | Telegram/DeltaChat puppeting bridge                         | 🇺🇸       | full time    | [Nelson]      |
 | [tgbridge@testrun.org]            | Telegram/DeltaChat groups bridge (relay-bot)                | 🇺🇸       | full time    | [adbenitez]   |
 | [translator@hispanilandia.net]    | Translate text to any language                              | 🇺🇸       | full time    | [adbenitez]   |
 | [uploaderbot@hispanilandia.net]   | Upload files to a cloud and get the download link           | 🇺🇸       | full time    | [adbenitez]   |
@@ -46,9 +42,6 @@ Click the bot address to start a chat.
 
 
 [adbenitez]: mailto:adbenitez@nauta.cu
-[Nelson]: mailto:nelsonr9608@nauta.cu
-[Yordante]: mailto:aliandiaz94@nauta.cu
-[Jonathan]: mailto:barbaro94@nauta.cu
 
 [439a18f3692be6cc3bdf...]: mailto:439a18f3692be6cc3bdf724994d6027a1dc457ef8adf33d68564205c03b3ad46@yggmail
 
@@ -71,7 +64,6 @@ Click the bot address to start a chat.
 [xkcd@hispanilandia.net]: OPENPGP4FPR:8CFCEA1E7CB8E914457D98E47AAD060AD1EBF992#a=xkcd%40hispanilandia.net&n=xkcd%20bot&i=pYj-Ex5wh-m&s=ktkqonTzmkK
 [stickerbot@hispanilandia.net]: OPENPGP4FPR:505ABCB5FE466D5A74A0FD1A33B81CFE12CD0A8D#a=stickerbot%40hispanilandia.net&n=StickerBot&i=wM2bpwc2EzK&s=5YAwTNLcJhp
 [web2pdf@hispanilandia.net]: OPENPGP4FPR:90F3B4441063F3C770FCD8FEE218583044B7032D#a=web2pdf%40hispanilandia.net&n=web2pdf&i=iX-CDo5AitT&s=NorJEYpieER
-[simplebot08@gmail.com]: OPENPGP4FPR:D743E059A261B397BC55A4E7347793C64CBD3AEC#a=simplebot08%40gmail.com&n=www&i=bLfy8dtvC-6&s=FK5qeV71HpV
 [downloaderbot@hispanilandia.net]: OPENPGP4FPR:83D90328467A9216D3244B5AA23F544DFED077E9#a=downloaderbot%40hispanilandia.net&n=File%20Downloader&i=v-cJnR80WCy&s=q6LqhqGfLR6
 [groupsbot@hispanilandia.net]: OPENPGP4FPR:6185B0FC60681A7F06A31735070D21CEEB40B859#a=groupsbot%40hispanilandia.net&n=SuperGroupsBot&i=e_XiPctpNVS&s=1NRdaNor1Rc
 [groupsbot@testrun.org]: OPENPGP4FPR:6FE1642916908F1AC9CC7557CC99CF5DDB92043C#a=groupsbot%40testrun.org&n=GroupsBot&i=AptcQCUYP3X&s=j6C75z6IKU8
