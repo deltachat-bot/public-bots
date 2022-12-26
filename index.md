@@ -1,4 +1,4 @@
-## SimpleBot Instances
+## Public Delta Chat Bots
 
 To verify the bot click the bot address in the table below.
 
@@ -19,7 +19,6 @@ To see supported commands send `/help` to the bots.
 | [mangadl@testrun.org]             | Manga downloader bot                                        | 🇺🇸       | full time    | [adbenitez]   |
 | [memes@hispanilandia.net]         | Get funny memes                                             | 🇺🇸       | full time    | [adbenitez]   |
 | [polls@hispanilandia.net]         | Polls bot, allows to create and participate in polls        | 🇺🇸       | full time    | [adbenitez]   |
-| [puente@buzon.uy]                 | IRC/DeltaChat bridge                                        | 🇺🇸       | invite-only  | [adbenitez]   |
 | [simplebot@systemli.org]          | Allows to get link/URL previews and search the web          | 🇺🇸       | full time    | [adbenitez]   |
 | [simplebot@testrun.org]           | Mastodon/DeltaChat bridge                                   | 🇺🇸       | full time    | [adbenitez]   |
 | [stickerbot@hispanilandia.net]    | Allows to download sticker packs                            | 🇺🇸       | full time    | [adbenitez]   |
@@ -30,20 +29,8 @@ To see supported commands send `/help` to the bots.
 | [web2pdf@hispanilandia.net]       | Web to PDF converter                                        | 🇺🇸       | full time    | [adbenitez]   |
 | [xkcd@hispanilandia.net]          | A bot to fetch comics from xkcd.com                         | 🇺🇸       | full time    | [adbenitez]   |
 
-## Yggmail
-
-Bots using [yggmail](https://github.com/neilalexander/yggmail) accounts are only reachable from other yggmail accounts.
-
-Click the bot address to start a chat.
-
-| Address                   | Description                                | Language | Availability | Administrator |
-| ------------------------- | ------------------------------------------ | :------: | :----------: | ------------- |
-| [439a18f3692be6cc3bdf...] | Public groups bot                          | 🇺🇸       | full time    | [adbenitez]   |
-
 
 [adbenitez]: mailto:adbenitez@nauta.cu
-
-[439a18f3692be6cc3bdf...]: mailto:439a18f3692be6cc3bdf724994d6027a1dc457ef8adf33d68564205c03b3ad46@yggmail
 
 [adb_bot1@testrun.org]: OPENPGP4FPR:8D0025A5DDA22D50EB38A731DC8D7EB24BECDFEB#a=adb%5Fbot1%40testrun.org&n=www&i=N2ZpQ9wDKLq&s=lr1Z8T3TlOI
 [cartelera@hispanilandia.net]: OPENPGP4FPR:D0E1D04F7CB4DF675FF40C16B8757470D98E7742#a=cartelera%40hispanilandia.net&n=Cartelera%20TV&i=bE_sYQa0JZD&s=eyf5eQIShJT
@@ -54,7 +41,6 @@ Click the bot address to start a chat.
 [lyrics@hispanilandia.net]: OPENPGP4FPR:AAA362B3B891EDA4152DCF40D4A635364D5D9CA0#a=lyrics%40hispanilandia.net&n=LyricsBot&i=sM5oxC789zg&s=MyVVfdzw_cf
 [memes@hispanilandia.net]: OPENPGP4FPR:2099C7D3744F3B62E0C11EE4CFED5478A92DA043#a=memes%40hispanilandia.net&n=Memes%20Bot&i=egz8nDAMV6q&s=oydmbu8ZV6j
 [polls@hispanilandia.net]: OPENPGP4FPR:B47AB02369B0DC86C05E1F1825E7EB00BD917E8D#a=polls%40hispanilandia.net&n=PollsBot&i=4usXSVZ1y_q&s=s201RPZzEDW
-[puente@buzon.uy]: OPENPGP4FPR:C329CB7A874F447E68D848E3EFBD8F4900871D0B#a=puente%40buzon.uy&n=IRC%20BRIDGE&i=VfVFWoRQnt-&s=oZ-qodJo7WG
 [downloaderbot@hispanilandia.net]: OPENPGP4FPR:691D0D6C54B3EB3C7269DE06AFF7E6E40CA29CC6#a=downloaderbot%40hispanilandia.net&n=File%20Downloader&i=bKrjebiKATZ&s=rAhmRQERBa0
 [uploaderbot@hispanilandia.net]: OPENPGP4FPR:9C9DA1499EDD478A80994B58C65D6348DFA09264#a=uploaderbot%40hispanilandia.net&n=File%20to%20Link&i=nB8AjS72u07&s=2WWEkH8MfBc
 [simplebot@systemli.org]: OPENPGP4FPR:81B0247BFBB7E3BE20593EB0B0E0983481685179#a=simplebot%40systemli.org&n=www&i=d1JutH49hDH&s=F_Xd0SmbcXM
