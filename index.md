@@ -2,7 +2,7 @@
 
 To verify the bot click the bot address in the table below.
 
-To see supported commands send `/help` to the bots.
+To see the bot's help try sending `/help` to the bots.
 
 | Address                           | Description                                                 | Language | Availability | Administrator |
 | ------------------------------    | ----------------------------------------------------------- | :------: | :----------: | ------------- |
