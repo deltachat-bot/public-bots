@@ -30,7 +30,7 @@ To see the bot's help try sending `/help` to the bots.
 | [xkcd@hispanilandia.net]          | A bot to fetch comics from xkcd.com                         | 🇺🇸       | full time    | [adbenitez]   |
 
 
-[adbenitez]: mailto:adbenitez@nauta.cu
+[adbenitez]: mailto:adbenitez@hispanilandia.net
 
 [adb_bot1@testrun.org]: OPENPGP4FPR:8D0025A5DDA22D50EB38A731DC8D7EB24BECDFEB#a=adb%5Fbot1%40testrun.org&n=www&i=N2ZpQ9wDKLq&s=lr1Z8T3TlOI
 [cartelera@hispanilandia.net]: OPENPGP4FPR:D0E1D04F7CB4DF675FF40C16B8757470D98E7742#a=cartelera%40hispanilandia.net&n=Cartelera%20TV&i=bE_sYQa0JZD&s=eyf5eQIShJT
