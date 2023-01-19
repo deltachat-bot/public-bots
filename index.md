@@ -10,6 +10,7 @@ To see the bot's help try sending `/help` to the bots.
 | [cartelera@hispanilandia.net]     | Permite consultar la cartelera de la TV cubana              | 🇪🇸       | full time    | [adbenitez]   |
 | [deltabot@buzon.uy]               | Miscellaneous bot                                           | 🇺🇸       | full time    | [adbenitez]   |
 | [downloaderbot@hispanilandia.net] | File downloader bot, get files from the web to your inbox   | 🇺🇸       | full time    | [adbenitez]   |
+| [faqbot@testrun.org]              | FAQ bot, allows saving answer to common questions or #tags  | 🇺🇸       | full time    | [adbenitez]   |
 | [feedsbot@hispanilandia.net]      | Allows to subscribe to RSS/Atom feeds                       | 🇺🇸       | full time    | [adbenitez]   |
 | [groupsbot@hispanilandia.net]     | Public super groups and channels (anoymous mailing lists)   | 🇺🇸       | full time    | [adbenitez]   |
 | [groupsbot@testrun.org]           | Private groups bot                                          | 🇺🇸       | full time    | [adbenitez]   |
@@ -55,3 +56,4 @@ To see the bot's help try sending `/help` to the bots.
 [groupsbot@testrun.org]: OPENPGP4FPR:6FE1642916908F1AC9CC7557CC99CF5DDB92043C#a=groupsbot%40testrun.org&n=GroupsBot&i=AptcQCUYP3X&s=j6C75z6IKU8
 [mangadl@testrun.org]: OPENPGP4FPR:8904D68A0B560EEEA20A06031BA3B5859361097B#a=mangadl%40testrun.org&n=MangaDownloader&i=fLXeIm7l2pP&s=Kpn1KG4fWiS
 [tgbridge@testrun.org]: OPENPGP4FPR:05B5EF4667BF45AF8E437415DF14FC5F0C721EA8#a=tgbridge%40testrun.org&n=Telegram%20Bridge&i=68W2tEfJHrA&s=2wYVxvks-0M
+[faqbot@testrun.org]: OPENPGP4FPR:279714071CC59EB4A9943122A3B4FF4BB7264A0E#a=faqbot%40testrun.org&n=FAQ%20Bot&i=PhdQtXTJQkp&s=WAPGhvIBtEy
