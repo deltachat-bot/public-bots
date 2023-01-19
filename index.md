@@ -28,6 +28,7 @@ To see the bot's help try sending `/help` to the bots.
 | [translator@hispanilandia.net]    | Translate text to any language                              | 🇺🇸       | full time    | [adbenitez]   |
 | [uploaderbot@hispanilandia.net]   | Upload files to a cloud and get the download link           | 🇺🇸       | full time    | [adbenitez]   |
 | [writefreely@hispanilandia.net]   | WriteFreely/DeltaChat bridge                                | 🇺🇸       | full time    | [adbenitez]   |
+| [web2img@testrun.org]             | Web to Image converter, take screenshots of web sites       | 🇺🇸       | full time    | [adbenitez]   |
 | [web2pdf@hispanilandia.net]       | Web to PDF converter                                        | 🇺🇸       | full time    | [adbenitez]   |
 | [xkcd@hispanilandia.net]          | A bot to fetch comics from xkcd.com                         | 🇺🇸       | full time    | [adbenitez]   |
 
@@ -59,3 +60,4 @@ To see the bot's help try sending `/help` to the bots.
 [tgbridge@testrun.org]: OPENPGP4FPR:05B5EF4667BF45AF8E437415DF14FC5F0C721EA8#a=tgbridge%40testrun.org&n=Telegram%20Bridge&i=68W2tEfJHrA&s=2wYVxvks-0M
 [faqbot@testrun.org]: OPENPGP4FPR:279714071CC59EB4A9943122A3B4FF4BB7264A0E#a=faqbot%40testrun.org&n=FAQ%20Bot&i=PhdQtXTJQkp&s=WAPGhvIBtEy
 [deltalandbot@testrun.org]: OPENPGP4FPR:FD06CE9EA9562A51FA7FCA84B026574F9FB923A8#a=deltalandbot%40testrun.org&n=Deltaland%20Bot%20%5BBETA%5D&i=QdEBHZBR8yI&s=AuLHwV5BqVi
+[web2img@testrun.org]: OPENPGP4FPR:B854D991B27307F8393A934CEE9BFD63D19250D3#a=web2img%40testrun.org&n=Web%20to%20Image&i=le_x0ejIaW-&s=EESq-4vLPM3
