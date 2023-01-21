@@ -4,33 +4,34 @@ To verify the bot click the bot address in the table below.
 
 To see the bot's help try sending `/help` to the bots.
 
-| Address                           | Description                                                 | Language | Availability | Administrator |
-| ------------------------------    | ----------------------------------------------------------- | :------: | :----------: | ------------- |
-| [adb_bot1@testrun.org]            | Web gateway, get URL previews and download files            | 🇺🇸       | full time    | [adbenitez]   |
-| [cartelera@hispanilandia.net]     | Permite consultar la cartelera de la TV cubana              | 🇪🇸       | full time    | [adbenitez]   |
-| [deltabot@buzon.uy]               | Miscellaneous bot                                           | 🇺🇸       | full time    | [adbenitez]   |
-| [deltalandbot@testrun.org]        | Deltaland, fantasy world, chat adventure, MMO game          | 🇺🇸       | full time    | [adbenitez]   |
-| [downloaderbot@hispanilandia.net] | File downloader bot, get files from the web to your inbox   | 🇺🇸       | full time    | [adbenitez]   |
-| [faqbot@testrun.org]              | FAQ bot, allows saving answer to common questions or #tags  | 🇺🇸       | full time    | [adbenitez]   |
-| [feedsbot@hispanilandia.net]      | Allows to subscribe to RSS/Atom feeds                       | 🇺🇸       | full time    | [adbenitez]   |
-| [groupsbot@hispanilandia.net]     | Public super groups and channels (anoymous mailing lists)   | 🇺🇸       | full time    | [adbenitez]   |
-| [groupsbot@testrun.org]           | Private groups bot                                          | 🇺🇸       | full time    | [adbenitez]   |
-| [howdoi@hispanilandia.net]        | Get instant coding answers from Stack Overflow              | 🇺🇸       | full time    | [adbenitez]   |
-| [juegos@buzon.uy]                 | Games store, allows to get Delta Chat games (Webxdc)        | 🇺🇸       | full time    | [adbenitez]   |
-| [lyrics@hispanilandia.net]        | Search for song lyrics                                      | 🇺🇸       | full time    | [adbenitez]   |
-| [mangadl@testrun.org]             | Manga downloader bot                                        | 🇺🇸       | full time    | [adbenitez]   |
-| [memes@hispanilandia.net]         | Get funny memes                                             | 🇺🇸       | full time    | [adbenitez]   |
-| [polls@hispanilandia.net]         | Polls bot, allows to create and participate in polls        | 🇺🇸       | full time    | [adbenitez]   |
-| [simplebot@systemli.org]          | Allows to get link/URL previews and search the web          | 🇺🇸       | full time    | [adbenitez]   |
-| [simplebot@testrun.org]           | Mastodon/DeltaChat bridge                                   | 🇺🇸       | full time    | [adbenitez]   |
-| [stickerbot@hispanilandia.net]    | Allows to download sticker packs                            | 🇺🇸       | full time    | [adbenitez]   |
-| [tgbridge@testrun.org]            | Telegram/DeltaChat groups bridge (relay-bot)                | 🇺🇸       | full time    | [adbenitez]   |
-| [translator@hispanilandia.net]    | Translate text to any language                              | 🇺🇸       | full time    | [adbenitez]   |
-| [uploaderbot@hispanilandia.net]   | Upload files to a cloud and get the download link           | 🇺🇸       | full time    | [adbenitez]   |
-| [writefreely@hispanilandia.net]   | WriteFreely/DeltaChat bridge                                | 🇺🇸       | full time    | [adbenitez]   |
-| [web2img@testrun.org]             | Web to Image converter, take screenshots of web sites       | 🇺🇸       | full time    | [adbenitez]   |
-| [web2pdf@hispanilandia.net]       | Web to PDF converter                                        | 🇺🇸       | full time    | [adbenitez]   |
-| [xkcd@hispanilandia.net]          | A bot to fetch comics from xkcd.com                         | 🇺🇸       | full time    | [adbenitez]   |
+| Address                           | Description                                                 | Language | Administrator |
+| ------------------------------    | ----------------------------------------------------------- | :------: | ------------- |
+| [adb_bot1@testrun.org]            | Web gateway, get URL previews and download files            | 🇺🇸       | [adbenitez]   |
+| [cartelera@hispanilandia.net]     | Permite consultar la cartelera de la TV cubana              | 🇪🇸       | [adbenitez]   |
+| [deltabot@buzon.uy]               | Miscellaneous bot                                           | 🇺🇸       | [adbenitez]   |
+| [deltalandbot@testrun.org]        | Deltaland, fantasy world, chat adventure, MMO game          | 🇺🇸       | [adbenitez]   |
+| [downloaderbot@hispanilandia.net] | File downloader bot, get files from the web to your inbox   | 🇺🇸       | [adbenitez]   |
+| [faqbot@testrun.org]              | FAQ bot, allows saving answer to common questions or #tags  | 🇺🇸       | [adbenitez]   |
+| [feedsbot@hispanilandia.net]      | Allows to subscribe to RSS/Atom feeds                       | 🇺🇸       | [adbenitez]   |
+| [groupsbot@hispanilandia.net]     | Public super groups and channels (anoymous mailing lists)   | 🇺🇸       | [adbenitez]   |
+| [groupsbot@testrun.org]           | Private groups bot                                          | 🇺🇸       | [adbenitez]   |
+| [howdoi@hispanilandia.net]        | Get instant coding answers from Stack Overflow              | 🇺🇸       | [adbenitez]   |
+| [juegos@buzon.uy]                 | Games store, allows to get Delta Chat games (Webxdc)        | 🇺🇸       | [adbenitez]   |
+| [lyrics@hispanilandia.net]        | Search for song lyrics                                      | 🇺🇸       | [adbenitez]   |
+| [mangadl@testrun.org]             | Manga downloader bot                                        | 🇺🇸       | [adbenitez]   |
+| [memes@hispanilandia.net]         | Get funny memes                                             | 🇺🇸       | [adbenitez]   |
+| [polls@hispanilandia.net]         | Polls bot, allows to create and participate in polls        | 🇺🇸       | [adbenitez]   |
+| [simplebot@systemli.org]          | Allows to get link/URL previews and search the web          | 🇺🇸       | [adbenitez]   |
+| [simplebot@testrun.org]           | Mastodon/DeltaChat bridge                                   | 🇺🇸       | [adbenitez]   |
+| [stickerbot@hispanilandia.net]    | Allows to download sticker packs                            | 🇺🇸       | [adbenitez]   |
+| [tgbridge@testrun.org]            | Telegram/DeltaChat groups bridge (relay-bot)                | 🇺🇸       | [adbenitez]   |
+| [translator@hispanilandia.net]    | Translate text to any language                              | 🇺🇸       | [adbenitez]   |
+| [uploaderbot@hispanilandia.net]   | Upload files to a cloud and get the download link           | 🇺🇸       | [adbenitez]   |
+| [voice2text@hispanilandia.net]    | Convert voice messages to text                              | 🇺🇸       | [adbenitez]   |
+| [writefreely@hispanilandia.net]   | WriteFreely/DeltaChat bridge                                | 🇺🇸       | [adbenitez]   |
+| [web2img@testrun.org]             | Web to Image converter, take screenshots of web sites       | 🇺🇸       | [adbenitez]   |
+| [web2pdf@hispanilandia.net]       | Web to PDF converter                                        | 🇺🇸       | [adbenitez]   |
+| [xkcd@hispanilandia.net]          | A bot to fetch comics from xkcd.com                         | 🇺🇸       | [adbenitez]   |
 
 
 [adbenitez]: mailto:adbenitez@hispanilandia.net
@@ -61,3 +62,4 @@ To see the bot's help try sending `/help` to the bots.
 [faqbot@testrun.org]: OPENPGP4FPR:279714071CC59EB4A9943122A3B4FF4BB7264A0E#a=faqbot%40testrun.org&n=FAQ%20Bot&i=PhdQtXTJQkp&s=WAPGhvIBtEy
 [deltalandbot@testrun.org]: OPENPGP4FPR:FD06CE9EA9562A51FA7FCA84B026574F9FB923A8#a=deltalandbot%40testrun.org&n=Deltaland%20Bot%20%5BBETA%5D&i=QdEBHZBR8yI&s=AuLHwV5BqVi
 [web2img@testrun.org]: OPENPGP4FPR:B854D991B27307F8393A934CEE9BFD63D19250D3#a=web2img%40testrun.org&n=Web%20to%20Image&i=le_x0ejIaW-&s=EESq-4vLPM3
+[voice2text@hispanilandia.net]: OPENPGP4FPR:7191E7BF4FA2518F608B25678CFB565A6282034B#a=voice2text%40hispanilandia.net&n=Voice%20to%20Text&i=VeVJzQnn8oL&s=HFye19A4B3z
