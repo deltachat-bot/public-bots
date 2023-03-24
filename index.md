@@ -8,6 +8,7 @@ To see the bot's help try sending `/help` to the bots.
 | ------------------------------    | ----------------------------------------------------------- | :------: | ------------- |
 | [adb_bot1@testrun.org]            | Web gateway, get URL previews and download files            | 🇺🇸       | [adbenitez]   |
 | [cartelera@hispanilandia.net]     | Permite consultar la cartelera de la TV cubana              | 🇪🇸       | [adbenitez]   |
+| [chatbot@testrun.org]             | Conversational AI bot, talk to it in private                | 🇺🇸       | [adbenitez]   |
 | [deltabot@buzon.uy]               | Miscellaneous bot                                           | 🇺🇸       | [adbenitez]   |
 | [deltalandbot@testrun.org]        | Deltaland, fantasy world, chat adventure, MMO game          | 🇺🇸       | [adbenitez]   |
 | [downloaderbot@hispanilandia.net] | File downloader bot, get files from the web to your inbox   | 🇺🇸       | [adbenitez]   |
@@ -63,3 +64,4 @@ To see the bot's help try sending `/help` to the bots.
 [deltalandbot@testrun.org]: OPENPGP4FPR:FD06CE9EA9562A51FA7FCA84B026574F9FB923A8#a=deltalandbot%40testrun.org&n=Deltaland%20Bot%20%5BBETA%5D&i=QdEBHZBR8yI&s=AuLHwV5BqVi
 [web2img@testrun.org]: OPENPGP4FPR:B854D991B27307F8393A934CEE9BFD63D19250D3#a=web2img%40testrun.org&n=Web%20to%20Image&i=le_x0ejIaW-&s=EESq-4vLPM3
 [voice2text@hispanilandia.net]: OPENPGP4FPR:7191E7BF4FA2518F608B25678CFB565A6282034B#a=voice2text%40hispanilandia.net&n=Voice%20to%20Text&i=VeVJzQnn8oL&s=HFye19A4B3z
+[chatbot@testrun.org]: OPENPGP4FPR:ACB006F0EF18032E1992A64BF1BD44F8385AE3D4#a=chatbot%40testrun.org&n=ChatBot&i=mbY70x0thoC&s=kB_C5bW3jIr
