@@ -31,8 +31,8 @@ def main():
             bot.lang = lang2flag.get(bot.lang, bot.lang)
             if bot.admin in admins:
                 admin = Namespace(**admins[bot.admin])
-                if "email" in admin:
-                    bot.admin = f"[{bot.admin}](mailto:{admin.email})"
+                if "url" in admin:
+                    bot.admin = f"[{bot.admin}]({admin.url})"
             page.write(
                 f"| [{bot.addr}]({bot.qr}) | {bot.description} | {bot.lang} | {bot.admin} |\n"
             )

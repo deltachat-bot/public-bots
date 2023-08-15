@@ -29,6 +29,6 @@
     {"addr": "xkcd@hispanilandia.net", "description": "A bot to fetch comics from https://xkcd.com", "lang": "en", "admin": "adbenitez", "qr": "OPENPGP4FPR:8CFCEA1E7CB8E914457D98E47AAD060AD1EBF992#a=xkcd%40hispanilandia.net&n=xkcd%20bot&i=pYj-Ex5wh-m&s=ktkqonTzmkK"}
   ],
   "admins": {
-    "adbenitez": {"email": "adbenitez@hispanilandia.net"}
+    "adbenitez": {"url": "mailto:adbenitez@hispanilandia.net"}
   }
 }
