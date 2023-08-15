@@ -20,8 +20,8 @@ def main():
                 "## Public Delta Chat Bots\n\n",
                 "To verify the bot click the bot address in the table below.\n\n",
                 "To see the bot's help try sending `/help` to the bot.\n\n",
-                "| Address | Description | Language | Administrator |\n",
-                "| ------- | ----------- | :------: | ------------- |\n",
+                "| Address | Description | Language | Owner |\n",
+                "| ------- | ----------- | :------: | ----- |\n",
             ]
         )
         admins = data.get("admins", {})
