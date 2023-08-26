@@ -2,25 +2,25 @@ package main
 
 import (
 	"bytes"
+	"encoding/json"
 	"io"
 	"net/http"
-	"path/filepath"
 	"os"
+	"path/filepath"
 	"time"
-	"encoding/json"
 
 	"github.com/deltachat-bot/deltabot-cli-go/botcli"
 	"github.com/deltachat/deltachat-rpc-client-go/deltachat"
 	"github.com/spf13/cobra"
 )
 
-var cli = botcli.New("botfinder")
+var cli = botcli.New("public-bots")
 var cfg *Config
 
 type Config struct {
-	LastUpdate time.Time
-	Data       []byte
-	Path       string `json:"-"`
+	LastUpdated time.Time
+	Data        []byte
+	Path        string `json:"-"`
 }
 
 func newConfig(path string) (*Config, error) {
@@ -38,12 +38,12 @@ func newConfig(path string) (*Config, error) {
 }
 
 func (self *Config) GetMetadata() *Metadata {
-	return &Metadata{AppVersion: xdcVersion, LastUpdate: self.LastUpdate, Data: self.Data}
+	return &Metadata{AppVersion: xdcVersion, LastUpdated: self.LastUpdated, Data: self.Data}
 }
 
 func (self *Config) Save(data []byte) error {
 	self.Data = data
-	self.LastUpdate = time.Now()
+	self.LastUpdated = time.Now()
 	output, err := json.Marshal(self)
 	if err != nil {
 		return err

@@ -1,4 +1,4 @@
-module github.com/deltachat-bot/botfinder
+module github.com/deltachat-bot/public-bots
 
 go 1.21
 

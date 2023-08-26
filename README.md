@@ -1,9 +1,9 @@
 # Delta Chat Public Bots
 
-![Latest release](https://img.shields.io/github/v/tag/deltachat-bot/botfinder?label=release)
-[![CI](https://github.com/deltachat-bot/botfinder/actions/workflows/ci.yml/badge.svg)](https://github.com/deltachat-bot/botfinder/actions/workflows/ci.yml)
+![Latest release](https://img.shields.io/github/v/tag/deltachat-bot/public-bots?label=release)
+[![CI](https://github.com/deltachat-bot/public-bots/actions/workflows/ci.yml/badge.svg)](https://github.com/deltachat-bot/public-bots/actions/workflows/ci.yml)
 ![Coverage](https://img.shields.io/badge/Coverage-61.5%25-yellow)
-[![Go Report Card](https://goreportcard.com/badge/github.com/deltachat-bot/botfinder)](https://goreportcard.com/report/github.com/deltachat-bot/botfinder)
+[![Go Report Card](https://goreportcard.com/badge/github.com/deltachat-bot/public-bots)](https://goreportcard.com/report/github.com/deltachat-bot/public-bots)
 
 Public bots discovery for Delta Chat via bot + WebXDC app.
 
@@ -17,7 +17,7 @@ file adding your bot metadata.
 
 ## Install
 
-Binary releases can be found at: https://github.com/deltachat-bot/botfinder/releases
+Binary releases can be found at: https://github.com/deltachat-bot/public-bots/releases
 
 ### Installing deltachat-rpc-server
 
@@ -30,17 +30,17 @@ https://github.com/deltachat/deltachat-core-rust/tree/master/deltachat-rpc-serve
 Configure the bot:
 
 ```sh
-botfinder init bot@example.com PASSWORD
+public-bots init bot@example.com PASSWORD
 ```
 
 Start listening to incoming messages:
 
 ```sh
-botfinder serve
+public-bots serve
 ```
 
-Run `botfinder --help` to see all available options.
+Run `public-bots --help` to see all available options.
 
 ## Contributing
 
-Pull requests are welcome! check [CONTRIBUTING.md](https://github.com/deltachat-bot/botfinder/blob/master/CONTRIBUTING.md)
+Pull requests are welcome! check [CONTRIBUTING.md](https://github.com/deltachat-bot/public-bots/blob/master/CONTRIBUTING.md)
