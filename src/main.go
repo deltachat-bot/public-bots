@@ -19,6 +19,7 @@ var cli = botcli.New("public-bots")
 var cfg *Config
 
 type Config struct {
+	LastChecked time.Time
 	LastUpdated time.Time
 	Data        []byte
 	Path        string `json:"-"`
@@ -45,16 +46,20 @@ func (self *Config) GetMetadata() *Metadata {
 	return &Metadata{LastUpdated: self.LastUpdated, Data: self.Data}
 }
 
-func (self *Config) Save(data []byte) error {
+func (self *Config) Save(data []byte) (bool, error) {
 	self.mutex.Lock()
 	defer self.mutex.Unlock()
-	self.Data = data
-	self.LastUpdated = time.Now()
+	self.LastChecked = time.Now()
+	changed := !bytes.Equal(data, cfg.Data)
+	if changed {
+		self.Data = data
+		self.LastUpdated = self.LastChecked
+	}
 	output, err := json.Marshal(self)
 	if err != nil {
-		return err
+		return false, err
 	}
-	return os.WriteFile(self.Path, output, 0666)
+	return changed, os.WriteFile(self.Path, output, 0666)
 }
 
 func onBotInit(cli *botcli.BotCli, bot *deltachat.Bot, cmd *cobra.Command, args []string) {
@@ -75,6 +80,11 @@ func updateMetadataLoop() {
 	url := "https://github.com/deltachat-bot/public-bots/raw/main/data.json"
 	logger := cli.Logger.With("origin", "metadata-loop")
 	for {
+		toSleep := 3 * time.Hour - time.Since(cfg.LastChecked)
+		if toSleep>0 {
+			logger.Debugf("Sleeping for %v", toSleep)
+			time.Sleep(toSleep)
+		}
 		changed, err := getMetadata(url)
 		if err != nil {
 			logger.Error(err)
@@ -83,7 +93,6 @@ func updateMetadataLoop() {
 		} else {
 			logger.Debug("Metadata have not changed")
 		}
-		time.Sleep(3 * time.Hour)
 	}
 }
 
@@ -98,13 +107,7 @@ func getMetadata(url string) (bool, error) {
 	if err != nil {
 		return false, err
 	}
-	if bytes.Equal(body, cfg.GetMetadata().Data) {
-		return false, nil
-	}
-	if err := cfg.Save(body); err != nil {
-		return false, err
-	}
-	return true, nil
+	return cfg.Save(body)
 }
 
 func main() {

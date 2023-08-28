@@ -4,6 +4,7 @@ const api = (() => {
   return {
     sync: () => {
       localStorage.setItem(lastSyncReqKey, new Date().toString());
+      useStore.setState({ syncing: true });
       window.webxdc.sendUpdate(
         { payload: { id: "sync", method: "Sync", params: [null] } },
         "",
@@ -14,50 +15,66 @@ const api = (() => {
 const lastSyncKey = "LastSyncKey";
 const lastSyncReqKey = "LastSyncReqKey";
 const lastUpdatedKey = "LastUpdatedKey";
-const dataKey = "DataKey";
+const botsKey = "BotsKey";
 const maxSerialKey = "MaxSerialKey";
 
 type Response = {
   id: string;
   result?: any;
-  error?: { code: number; message: string; data: any };
+  error?: Error;
 };
-type Admin = { url: string };
-type Bot = {
+type Error = { code: number; message: string; data: any };
+type Admin = { name: string; url: string };
+type Lang = { label: string; code: string };
+export type Bot = {
   addr: string;
   url: string;
   description: string;
-  lang: string;
-  admin: string;
+  lang: Lang;
+  admin: Admin;
 };
 interface State {
   lastSync?: Date;
   lastUpdated?: string;
-  data?: {
-    bots: Bot[];
-    admins: { [key: string]: Admin };
-    langs: { [key: string]: string };
-  };
+  bots: Bot[];
+  error?: Error;
+  syncing: boolean;
   applyWebxdcUpdate: (update: Response) => void;
 }
 
 export const useStore = create<State>()((set) => ({
+  syncing: false,
+  bots: [],
   applyWebxdcUpdate: (update: Response) =>
     set((state) => {
+      state = { ...state, syncing: false };
       if (update.error) {
-        return; // TODO: display error?
+        return {
+          ...state,
+          error: update.error,
+        };
       }
       const result = update.result;
       if (result) {
         localStorage.setItem(lastSyncKey, new Date().toString());
         localStorage.setItem(lastUpdatedKey, result.lastUpdated);
-        localStorage.setItem(dataKey, JSON.stringify(result.data));
-        const newState = {
+        const data = result.data;
+        data.bots.map((bot: any) => {
+          bot.admin = { ...data.admins[bot.admin], name: bot.admin };
+          bot.lang = { code: bot.lang, label: data.langs[bot.lang] };
+        });
+        data.bots.sort((a: Bot, b: Bot) => {
+          if (a.addr < b.addr) {
+            return -1;
+          }
+          return 1;
+        });
+        localStorage.setItem(botsKey, JSON.stringify(data.bots));
+        return {
           ...state,
           lastUpdated: result.lastUpdated,
-          data: result.data,
+          bots: data.bots,
         };
-        return result;
       }
       return state;
     }),
@@ -80,20 +97,24 @@ export async function init() {
   const lastUpdated = localStorage.getItem(lastUpdatedKey);
   if (lastUpdated) {
     const lastSync = new Date(localStorage.getItem(lastSyncKey) || "");
-    const data = JSON.parse(localStorage.getItem(dataKey) || "");
+    const bots = JSON.parse(localStorage.getItem(botsKey) || "");
     useStore.setState({
       ...useStore.getState(),
       lastSync: lastSync,
       lastUpdated: lastUpdated,
-      data: data,
+      bots: bots,
     });
   }
 
-  const lastSyncReq = localStorage.getItem(lastSyncReqKey) || "";
-  if (
-    !lastSyncReq ||
-    new Date().getTime() - new Date(lastSyncReq).getTime() > 1000 * 60 * 10
-  ) {
-    api.sync();
-  }
+  setInterval(() => {
+    const lastSyncReq = localStorage.getItem(lastSyncReqKey) || "";
+    const lastUpdated = localStorage.getItem(lastUpdatedKey);
+    if (
+      !lastSyncReq ||
+      new Date().getTime() - new Date(lastSyncReq).getTime() >
+        1000 * 60 * (lastUpdated ? 10 : 1)
+    ) {
+      api.sync();
+    }
+  }, 5000);
 }

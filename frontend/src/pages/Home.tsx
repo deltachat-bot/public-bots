@@ -1,71 +1,97 @@
 import {
   IonContent,
   IonPage,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
   IonItem,
-  IonLabel,
   IonList,
-  IonChip,
-  IonBadge,
-  IonIcon,
   IonSpinner,
+  IonSearchbar,
+  IonToast,
+  IonProgressBar,
 } from "@ionic/react";
-import { languageOutline, openOutline } from "ionicons/icons";
-import { useStore } from "../store";
+import Fuse from "fuse.js";
+import { create } from "zustand";
+import { useState } from "react";
+import { warningOutline } from "ionicons/icons";
+
+import { useStore, Bot } from "../store";
+import BotItem from "../components/BotItem";
 import "./Home.css";
+
+const fuseOptions = {
+  keys: ["addr", "description", "admin.name", "lang.label"],
+  threshold: 0.4,
+};
+
+interface HomeState {
+  query: string;
+  results: Bot[];
+}
+
+const homeStore = create<HomeState>()((set) => ({
+  query: "",
+  results: [],
+}));
 
 const Home: React.FC = () => {
   const state = useStore();
-  const data = state.data || { bots: [], admins: {}, langs: {} };
+  const query = homeStore((state) => state.query);
+  let results = homeStore((state) => state.results);
+  if (!query) {
+    results = state.bots;
+  }
+  const fuse = new Fuse(state.bots, fuseOptions);
+  const handleInput = (ev: Event) => {
+    const target = ev.target as HTMLIonSearchbarElement;
+    const query = target ? target.value!.toLowerCase() : "";
+    if (query) {
+      homeStore.setState({
+        query: query,
+        results: fuse.search(query).map((result) => result.item),
+      });
+    } else {
+      homeStore.setState({ query: query });
+    }
+  };
+
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>
-            Public Bots
-            {state.lastSync && (
-              <IonChip>{state.lastSync.toLocaleString()}</IonChip>
-            )}
-          </IonTitle>
-        </IonToolbar>
-      </IonHeader>
       <IonContent fullscreen>
+        {state.syncing && state.lastUpdated && (
+          <IonProgressBar type="indeterminate"></IonProgressBar>
+        )}
+        {state.bots.length > 0 && (
+          <>
+            <br />
+            <IonSearchbar
+              debounce={200}
+              onIonInput={(ev) => handleInput(ev)}
+              placeholder={"Search among " + state.bots.length + " bots"}
+            ></IonSearchbar>
+          </>
+        )}
         {state.lastUpdated ? (
           <IonList>
-            {data.bots.map((bot) => (
-              <IonItem>
-                <IonLabel>
-                  <h2>
-                    <a target="_blank" rel="noopener noreferrer" href={bot.url}>
-                      {bot.addr}
-                      <IonIcon icon={openOutline} />
-                    </a>
-                  </h2>
-                  <IonBadge color="light">
-                    <IonIcon icon={languageOutline} /> {data.langs[bot.lang]}
-                  </IonBadge>
-                  <p className="ion-text-wrap">{bot.description}</p>
-                  <p>
-                    <strong>Admin: </strong>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={data.admins[bot.admin].url}
-                    >
-                      {bot.admin}
-                      <IonIcon icon={openOutline} />
-                    </a>
-                  </p>
-                </IonLabel>
-              </IonItem>
+            {results.map((bot) => (
+              <BotItem bot={bot} />
             ))}
           </IonList>
         ) : (
           <div id="loading">
             <IonSpinner name="dots"></IonSpinner>
           </div>
+        )}
+        {state.lastSync && (
+          <p id="footer">Last updated: {state.lastSync.toLocaleString()}</p>
+        )}
+        {state.error && (
+          <IonToast
+            isOpen={true}
+            message={"[" + state.error.code + "] " + state.error.message}
+            icon={warningOutline}
+            color="danger"
+            onDidDismiss={() => useStore.setState({ error: undefined })}
+            duration={5000}
+          ></IonToast>
         )}
       </IonContent>
     </IonPage>
