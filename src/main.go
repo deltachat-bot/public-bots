@@ -80,8 +80,8 @@ func updateMetadataLoop() {
 	url := "https://github.com/deltachat-bot/public-bots/raw/main/data.json"
 	logger := cli.Logger.With("origin", "metadata-loop")
 	for {
-		toSleep := 3 * time.Hour - time.Since(cfg.LastChecked)
-		if toSleep>0 {
+		toSleep := 3*time.Hour - time.Since(cfg.LastChecked)
+		if toSleep > 0 {
 			logger.Debugf("Sleeping for %v", toSleep)
 			time.Sleep(toSleep)
 		}
