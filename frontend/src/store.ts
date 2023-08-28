@@ -51,7 +51,7 @@ export const useStore = create<State>()((set) => ({
       if (result) {
         localStorage.setItem(lastSyncKey, new Date().toString());
         localStorage.setItem(lastUpdatedKey, result.lastUpdated);
-        localStorage.setItem(dataKey, result.data);
+        localStorage.setItem(dataKey, JSON.stringify(result.data));
         const newState = {
           ...state,
           lastUpdated: result.lastUpdated,
@@ -69,8 +69,8 @@ export async function init() {
       if (message.serial === message.max_serial) {
         localStorage.setItem(maxSerialKey, String(message.max_serial));
       }
+      // ignore self-updates
       if (!message.payload.method) {
-        // ignore self-updates
         useStore.getState().applyWebxdcUpdate(message.payload);
       }
     },

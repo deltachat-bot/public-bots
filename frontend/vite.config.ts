@@ -17,7 +17,7 @@ function embedVersion() {
       if (!existsSync(embedDir)) {
         mkdirSync(embedDir);
       }
-        copyFileSync("./public/version.txt", embedDir + "version.txt");
+      copyFileSync("./public/version.txt", embedDir + "version.txt");
     },
   };
 }
