@@ -21,7 +21,7 @@ def main():
         admins = data.get("admins", {})
         for bot in sorted(data["bots"], key=lambda bot: bot["addr"]):
             bot = Namespace(**bot)
-            bot.lang = data["flags"][bot.lang]
+            bot.lang = data["langs"][bot.lang]
             if bot.admin in admins:
                 admin = Namespace(**admins[bot.admin])
                 if "url" in admin:

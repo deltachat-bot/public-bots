@@ -92,7 +92,7 @@ export async function init() {
   const lastSyncReq = localStorage.getItem(lastSyncReqKey) || "";
   if (
     !lastSyncReq ||
-    new Date().getTime() - new Date(lastSyncReq).getTime() > 1000 * 60 * 60
+    new Date().getTime() - new Date(lastSyncReq).getTime() > 1000 * 60 * 10
   ) {
     api.sync();
   }
