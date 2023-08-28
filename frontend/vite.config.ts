@@ -2,8 +2,7 @@ import { defineConfig } from "vite";
 import zipPack from "vite-plugin-zip-pack";
 import preact from "@preact/preset-vite";
 
-import { readFileSync, mkdirSync, writeFileSync, existsSync } from "node:fs";
-import * as toml from "toml";
+import { readFileSync, mkdirSync, copyFileSync, existsSync } from "node:fs";
 
 const embedDir = "../src/embed/";
 
@@ -18,10 +17,7 @@ function embedVersion() {
       if (!existsSync(embedDir)) {
         mkdirSync(embedDir);
       }
-      const manifest = toml.parse(
-        readFileSync("./public/manifest.toml", "utf-8"),
-      );
-      writeFileSync(embedDir + "version", manifest.version);
+        copyFileSync("./public/version.txt", embedDir + "version.txt");
     },
   };
 }

@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"os"
+	"path/filepath"
 	"strings"
 	"testing"
 
@@ -26,7 +27,13 @@ func TestMain(m *testing.M) {
 func withBotAndUser(callback TestCallback) {
 	acfactory.WithOnlineBot(func(bot *deltachat.Bot, botAcc deltachat.AccountId) {
 		acfactory.WithOnlineAccount(func(userRpc *deltachat.Rpc, userAcc deltachat.AccountId) {
-			onBotInit(&botcli.BotCli{AppDir: acfactory.MkdirTemp()}, bot, nil, nil)
+			cli := &botcli.BotCli{AppDir: acfactory.MkdirTemp()}
+			onBotInit(cli, bot, nil, nil)
+			var err error
+			cfg, err = newConfig(filepath.Join(cli.AppDir, "metadata.json"))
+			if err != nil {
+				panic(err)
+			}
 			go bot.Run() //nolint:errcheck
 			callback(bot, botAcc, userRpc, userAcc)
 		})
@@ -35,24 +42,20 @@ func withBotAndUser(callback TestCallback) {
 
 // msg is the webxdc message received in the user side
 func withWebxdc(callback WebxdcCallback) {
-	acfactory.WithOnlineBot(func(bot *deltachat.Bot, botAcc deltachat.AccountId) {
-		acfactory.WithOnlineAccount(func(userRpc *deltachat.Rpc, userAcc deltachat.AccountId) {
-			onBotInit(&botcli.BotCli{AppDir: acfactory.MkdirTemp()}, bot, nil, nil)
-			go bot.Run() //nolint:errcheck
-			chatWithBot := acfactory.CreateChat(userRpc, userAcc, bot.Rpc, botAcc)
+	withBotAndUser(func(bot *deltachat.Bot, botAcc deltachat.AccountId, userRpc *deltachat.Rpc, userAcc deltachat.AccountId) {
+		chatWithBot := acfactory.CreateChat(userRpc, userAcc, bot.Rpc, botAcc)
 
-			_, err := userRpc.MiscSendTextMessage(userAcc, chatWithBot, "hi")
-			if err != nil {
-				panic(err)
-			}
+		_, err := userRpc.MiscSendTextMessage(userAcc, chatWithBot, "hi")
+		if err != nil {
+			panic(err)
+		}
 
-			msg := acfactory.NextMsg(userRpc, userAcc)
-			if !strings.HasSuffix(msg.File, ".xdc") {
-				panic("unexpected file name: " + msg.File)
-			}
+		msg := acfactory.NextMsg(userRpc, userAcc)
+		if !strings.HasSuffix(msg.File, ".xdc") {
+			panic("unexpected file name: " + msg.File)
+		}
 
-			callback(bot, botAcc, userRpc, userAcc, msg)
-		})
+		callback(bot, botAcc, userRpc, userAcc, msg)
 	})
 }
 

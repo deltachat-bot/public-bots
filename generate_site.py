@@ -2,12 +2,6 @@ import json
 from argparse import Namespace
 from pathlib import Path
 
-lang2flag = {
-    "en": "🇺🇸",
-    "es": "🇪🇸",
-    "all": "🌐",
-}
-
 
 def main():
     with Path("data.json").open() as data_file:
@@ -26,15 +20,14 @@ def main():
         )
         admins = data.get("admins", {})
         for bot in sorted(data["bots"], key=lambda bot: bot["addr"]):
-            bot.setdefault("qr", "mailto:" + bot["addr"])
             bot = Namespace(**bot)
-            bot.lang = lang2flag.get(bot.lang, bot.lang)
+            bot.lang = data["flags"][bot.lang]
             if bot.admin in admins:
                 admin = Namespace(**admins[bot.admin])
                 if "url" in admin:
                     bot.admin = f"[{bot.admin}]({admin.url})"
             page.write(
-                f"| [{bot.addr}]({bot.qr}) | {bot.description} | {bot.lang} | {bot.admin} |\n"
+                f"| [{bot.addr}]({bot.url}) | {bot.description} | {bot.lang} | {bot.admin} |\n"
             )
 
 

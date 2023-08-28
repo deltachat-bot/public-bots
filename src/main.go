@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"sync"
 	"time"
 
 	"github.com/deltachat-bot/deltabot-cli-go/botcli"
@@ -21,6 +22,7 @@ type Config struct {
 	LastUpdated time.Time
 	Data        []byte
 	Path        string `json:"-"`
+	mutex       sync.Mutex
 }
 
 func newConfig(path string) (*Config, error) {
@@ -38,10 +40,14 @@ func newConfig(path string) (*Config, error) {
 }
 
 func (self *Config) GetMetadata() *Metadata {
-	return &Metadata{AppVersion: xdcVersion, LastUpdated: self.LastUpdated, Data: self.Data}
+	self.mutex.Lock()
+	defer self.mutex.Unlock()
+	return &Metadata{LastUpdated: self.LastUpdated, Data: self.Data}
 }
 
 func (self *Config) Save(data []byte) error {
+	self.mutex.Lock()
+	defer self.mutex.Unlock()
 	self.Data = data
 	self.LastUpdated = time.Now()
 	output, err := json.Marshal(self)
@@ -92,7 +98,7 @@ func getMetadata(url string) (bool, error) {
 	if err != nil {
 		return false, err
 	}
-	if bytes.Equal(body, cfg.Data) {
+	if bytes.Equal(body, cfg.GetMetadata().Data) {
 		return false, nil
 	}
 	if err := cfg.Save(body); err != nil {

@@ -6,5 +6,5 @@ import _ "embed"
 //go:embed embed/app.xdc
 var xdcContent []byte
 
-//go:embed embed/version
+//go:embed embed/version.txt
 var xdcVersion string

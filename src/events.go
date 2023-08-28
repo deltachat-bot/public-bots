@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/base64"
 	"os"
 	"path/filepath"
 
@@ -15,129 +16,158 @@ func onEvent(bot *deltachat.Bot, accId deltachat.AccountId, event deltachat.Even
 		onStatusUpdate(bot.Rpc, accId, ev.MsgId, ev.StatusUpdateSerial)
 	case deltachat.EventSecurejoinInviterProgress:
 		if ev.Progress == 1000 {
-			cli.GetLogger(accId).Debugf("QR scanned by contact with id=%v", ev.ContactId)
+			logger := cli.GetLogger(accId)
+			logger.Debugf("QR scanned by contact with id=%v", ev.ContactId)
 			chatId, err := bot.Rpc.CreateChatByContactId(accId, ev.ContactId)
 			if err != nil {
-				cli.GetLogger(accId).Error(err)
+				logger.Error(err)
 				return
 			}
-			sendApp(bot, accId, chatId)
+			sendApp(bot.Rpc, accId, chatId)
 		}
 	}
 }
 
 // handle a webxdc status update
 func onStatusUpdate(rpc *deltachat.Rpc, accId deltachat.AccountId, msgId deltachat.MsgId, serial uint) {
+	logger := cli.GetLogger(accId)
 	rawUpdate, err := xdcrpc.GetUpdate(rpc, accId, msgId, serial)
 	if err != nil {
-		cli.GetLogger(accId).Error(err)
+		logger.Error(err)
 		return
 	}
 	msg, err := rpc.GetMessage(accId, msgId)
 	if err != nil {
-		cli.GetLogger(accId).Error(err)
+		logger.Error(err)
 		return
 	}
 	chat, err := rpc.GetBasicChatInfo(accId, msg.ChatId)
 	if err != nil {
-		cli.GetLogger(accId).Error(err)
+		logger.Error(err)
 		return
 	}
 	if chat.ChatType != deltachat.ChatSingle {
-		cli.GetLogger(accId).Debugf("[WebXDC] Ignoring request in multi-user chat #%v: %v", chat.Id, string(rawUpdate))
+		logger.Debugf("[WebXDC] Ignoring request in multi-user chat #%v: %v", chat.Id, string(rawUpdate))
 		return
 	}
 
 	if xdcrpc.IsFromSelf(rawUpdate) {
-		cli.GetLogger(accId).Debugf("[WebXDC] Response: %v", string(rawUpdate))
+		logger.Debugf("[WebXDC] Response: %v", string(rawUpdate))
 		return
 	}
 
-	cli.GetLogger(accId).Debugf("[WebXDC] Request: %v", string(rawUpdate))
-	api := &API{}
+	logger.Debugf("[WebXDC] Request: %v", string(rawUpdate))
+	api := &API{
+		rpc:    rpc,
+		accId:  accId,
+		msgId:  msgId,
+		chatId: msg.ChatId,
+	}
 	if response := xdcrpc.GetResponse(api, rawUpdate); response != nil {
 		err = xdcrpc.SendPayload(rpc, accId, msgId, response)
 		if err != nil {
-			cli.GetLogger(accId).Error(err)
+			logger.Error(err)
 		}
 	}
 }
 
 func onNewMsg(bot *deltachat.Bot, accId deltachat.AccountId, msgId deltachat.MsgId) {
+	logger := cli.GetLogger(accId)
 	msg, err := bot.Rpc.GetMessage(accId, msgId)
 	if err != nil {
-		cli.GetLogger(accId).Error(err)
+		logger.Error(err)
 		return
 	}
 
 	if !msg.IsBot && msg.FromId > deltachat.ContactLastSpecial && msg.Text != "" {
 		chat, err := bot.Rpc.GetBasicChatInfo(accId, msg.ChatId)
 		if err != nil {
-			cli.GetLogger(accId).Error(err)
+			logger.Error(err)
 			return
 		}
 		if chat.ChatType == deltachat.ChatSingle {
-			cli.GetLogger(accId).Debugf("Got new 1:1 message: %#v", msg)
-			sendApp(bot, accId, msg.ChatId)
+			logger.Debugf("Got new 1:1 message: %#v", msg)
+			sendApp(bot.Rpc, accId, msg.ChatId)
 		}
 	}
 
 	if msg.FromId > deltachat.ContactLastSpecial {
 		err = bot.Rpc.DeleteMessages(accId, []deltachat.MsgId{msg.Id})
 		if err != nil {
-			cli.GetLogger(accId).Error(err)
+			logger.Error(err)
 		}
 	}
 }
 
 // send the app / UI interace
-func sendApp(bot *deltachat.Bot, accId deltachat.AccountId, chatId deltachat.ChatId) {
+func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.ChatId) {
+	logger := cli.GetLogger(accId)
 	// try to resend existing instance
 	none := option.None[deltachat.MsgType]()
-	msgIds, err := bot.Rpc.GetChatMedia(accId, chatId, deltachat.MsgWebxdc, none, none)
+	msgIds, err := rpc.GetChatMedia(accId, chatId, deltachat.MsgWebxdc, none, none)
 	if err != nil {
-		cli.GetLogger(accId).Error(err)
+		logger.Error(err)
 		return
 	}
 	for i := len(msgIds) - 1; i >= 0; i-- {
 		msgId := msgIds[i]
-		msg, err := bot.Rpc.GetMessage(accId, msgId)
+		msg, err := rpc.GetMessage(accId, msgId)
 		if err != nil {
-			cli.GetLogger(accId).Error(err)
+			logger.Error(err)
 			continue
 		}
 		if msg.FromId == deltachat.ContactSelf {
-			err = bot.Rpc.ResendMessages(accId, []deltachat.MsgId{msgId})
+			version, err := rpc.GetWebxdcBlob(accId, msgId, "version.txt")
 			if err != nil {
-				cli.GetLogger(accId).Error(err)
-				break
+				logger.Error(err)
+			} else {
+				data, err := base64.StdEncoding.DecodeString(version)
+				if err != nil {
+					logger.Error(err)
+				}
+				version = string(data)
 			}
-			return
+			if version == xdcVersion {
+				err = rpc.ResendMessages(accId, []deltachat.MsgId{msgId})
+				if err != nil {
+					logger.Error(err)
+					break
+				}
+				return
+			}
+			break
 		} else {
-			err = bot.Rpc.DeleteMessages(accId, []deltachat.MsgId{msgId})
+			err = rpc.DeleteMessages(accId, []deltachat.MsgId{msgId})
 			if err != nil {
-				cli.GetLogger(accId).Error(err)
+				logger.Error(err)
 			}
 		}
 	}
 
-	// no previous instance exists, send app
+	// no previous instance to send, send new instance
 
 	dir, err := os.MkdirTemp("", "")
 	if err != nil {
-		cli.GetLogger(accId).Error(err)
+		logger.Error(err)
 		return
 	}
 	defer os.RemoveAll(dir)
 
 	xdcPath := filepath.Join(dir, "app.xdc")
 	if err = os.WriteFile(xdcPath, xdcContent, 0666); err != nil {
-		cli.GetLogger(accId).Error(err)
+		logger.Error(err)
 		return
 	}
 
-	_, err = bot.Rpc.SendMsg(accId, chatId, deltachat.MsgData{File: xdcPath})
+	msgId, err := rpc.SendMsg(accId, chatId, deltachat.MsgData{File: xdcPath})
 	if err != nil {
-		cli.GetLogger(accId).Error(err)
+		logger.Error(err)
+	}
+	metadata := cfg.GetMetadata()
+	if metadata.Data != nil {
+		err := xdcrpc.SendPayload(rpc, accId, msgId, &xdcrpc.Response{Result: metadata})
+		if err != nil {
+			logger.Error(err)
+		}
 	}
 }
