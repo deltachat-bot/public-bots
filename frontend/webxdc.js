@@ -35,7 +35,6 @@ window.webxdc = (() => {
         }
       });
       updateListener = cb;
-      sendData();
       return Promise.resolve();
     },
     getAllUpdates: () => {
@@ -58,6 +57,9 @@ window.webxdc = (() => {
         '[Webxdc] description="' + description + '", ' + JSON.stringify(_update)
       );
       updateListener(_update);
+      if (_update.payload.method === "Sync") {
+          sendData();
+      }
     },
     sendToChat: async (content) => {
       if (!content.file && !content.text) {
@@ -263,6 +265,7 @@ function sendData() {
                     error: null,
                     id: "sync",
                     result: {
+                        lastUpdated: new Date().toString(),
                         data: json
                     }
                 }
