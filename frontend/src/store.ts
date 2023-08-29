@@ -122,6 +122,10 @@ export async function init() {
     });
   }
 
+  // The first time the bot sends the state so no need to request
+  if (!localStorage.getItem(lastSyncReqKey)) {
+    localStorage.setItem(lastSyncReqKey, new Date().toString());
+  }
   api.sync();
   setInterval(() => {
     api.sync();
