@@ -5,6 +5,7 @@ import preact from "@preact/preset-vite";
 import { readFileSync, mkdirSync, copyFileSync, existsSync } from "node:fs";
 
 const embedDir = "../src/embed/";
+const base = process.env.DEPLOY_PAGE ? "public-bots" : undefined;
 
 function embedVersion() {
   return {
@@ -73,4 +74,5 @@ export default defineConfig({
       outFileName: "app.xdc",
     }),
   ],
+  base: base,
 });
