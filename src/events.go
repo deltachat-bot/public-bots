@@ -169,7 +169,7 @@ func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.Cha
 	}
 	metadata := cfg.GetMetadata()
 	if metadata.Data != nil {
-		err := xdcrpc.SendPayload(rpc, accId, msgId, &xdcrpc.Response{Result: metadata})
+		err := xdcrpc.SendUpdate(rpc, accId, msgId, xdcrpc.StatusUpdate[*xdcrpc.Response]{Payload: &xdcrpc.Response{Result: metadata}, Summary: xdcVersion}, "")
 		if err != nil {
 			logger.Error(err)
 		}
