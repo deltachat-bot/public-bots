@@ -77,7 +77,7 @@ func onBotStart(cli *botcli.BotCli, bot *deltachat.Bot, cmd *cobra.Command, args
 }
 
 func updateMetadataLoop() {
-	url := "https://github.com/deltachat-bot/public-bots/raw/main/data.json"
+	url := "https://github.com/deltachat-bot/public-bots/raw/main/frontend/data.json"
 	logger := cli.Logger.With("origin", "metadata-loop")
 	for {
 		toSleep := 3*time.Hour - time.Since(cfg.LastChecked)
