@@ -3,6 +3,16 @@ import { create } from "zustand";
 const api = (() => {
   return {
     sync: () => {
+      const lastSyncReq = localStorage.getItem(lastSyncReqKey) || "";
+      const lastUpdated = localStorage.getItem(lastUpdatedKey) || null;
+      if (
+        lastSyncReq &&
+        new Date().getTime() - new Date(lastSyncReq).getTime() <=
+          1000 * 60 * (lastUpdated ? 10 : 1)
+      ) {
+        return;
+      }
+
       localStorage.setItem(lastSyncReqKey, new Date().toString());
       useStore.setState({ syncing: true });
       window.webxdc.sendUpdate(
@@ -10,7 +20,7 @@ const api = (() => {
           payload: {
             id: "sync",
             method: "Sync",
-            params: [localStorage.getItem(lastUpdatedKey) || null],
+            params: [lastUpdated],
           },
         },
         "",
@@ -112,15 +122,8 @@ export async function init() {
     });
   }
 
+  api.sync();
   setInterval(() => {
-    const lastSyncReq = localStorage.getItem(lastSyncReqKey) || "";
-    const lastUpdated = localStorage.getItem(lastUpdatedKey);
-    if (
-      !lastSyncReq ||
-      new Date().getTime() - new Date(lastSyncReq).getTime() >
-        1000 * 60 * (lastUpdated ? 10 : 1)
-    ) {
-      api.sync();
-    }
+    api.sync();
   }, 5000);
 }
