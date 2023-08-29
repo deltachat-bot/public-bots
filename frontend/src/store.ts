@@ -70,9 +70,9 @@ export const useStore = create<State>()((set) => ({
           error: update.error,
         };
       }
+      localStorage.setItem(lastSyncKey, new Date().toString());
       const result = update.result;
       if (result) {
-        localStorage.setItem(lastSyncKey, new Date().toString());
         localStorage.setItem(lastUpdatedKey, result.lastUpdated);
         const data = result.data;
         data.bots.map((bot: any) => {
