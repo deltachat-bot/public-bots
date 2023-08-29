@@ -36,7 +36,7 @@ jobs:
           pnpm i
           pnpm build
           cp webxdc.js dist/
-          cp ../data.json dist/
+          cp data.json dist/
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
