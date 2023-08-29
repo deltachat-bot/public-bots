@@ -35,6 +35,7 @@ window.webxdc = (() => {
         }
       });
       updateListener = cb;
+      sendData();
       return Promise.resolve();
     },
     getAllUpdates: () => {
@@ -248,28 +249,30 @@ window.alterXdcApp = () => {
 //window.addEventListener("load", window.alterXdcApp);
 
 // mock data
-fetch("./data.json")
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("HTTP error " + response.status);
-        }
-        return response.json();
-    })
-    .then(json => {
-        window.webxdc.sendUpdate({
-            payload: {
-                error: null,
-                id: "sync",
-                result: {
-                    data: json
+function sendData() {
+    fetch("./data.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("HTTP error " + response.status);
+            }
+            return response.json();
+        })
+        .then(json => {
+            window.webxdc.sendUpdate({
+                payload: {
+                    error: null,
+                    id: "sync",
+                    result: {
+                        data: json
+                    }
                 }
-            }
+            });
+        }).catch(function () {
+            window.webxdc.sendUpdate({
+                payload: {
+                    error: {code: -100, message: "Failed to fetch data"},
+                    id: "sync"
+                }
+            });
         });
-    }).catch(function () {
-        window.webxdc.sendUpdate({
-            payload: {
-                error: {code: -100, message: "Failed to fetch data"},
-                id: "sync"
-            }
-        });
-    });
+}
