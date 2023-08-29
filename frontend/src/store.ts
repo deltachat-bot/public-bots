@@ -6,7 +6,13 @@ const api = (() => {
       localStorage.setItem(lastSyncReqKey, new Date().toString());
       useStore.setState({ syncing: true });
       window.webxdc.sendUpdate(
-        { payload: { id: "sync", method: "Sync", params: [null] } },
+        {
+          payload: {
+            id: "sync",
+            method: "Sync",
+            params: [localStorage.getItem(lastUpdatedKey) || null],
+          },
+        },
         "",
       );
     },

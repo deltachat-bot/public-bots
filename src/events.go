@@ -30,7 +30,7 @@ func onEvent(bot *deltachat.Bot, accId deltachat.AccountId, event deltachat.Even
 
 // handle a webxdc status update
 func onStatusUpdate(rpc *deltachat.Rpc, accId deltachat.AccountId, msgId deltachat.MsgId, serial uint) {
-	logger := cli.GetLogger(accId)
+	logger := cli.GetLogger(accId).With("msg", msgId, "origin", "webxdc")
 	rawUpdate, err := xdcrpc.GetUpdate(rpc, accId, msgId, serial)
 	if err != nil {
 		logger.Error(err)
@@ -41,29 +41,33 @@ func onStatusUpdate(rpc *deltachat.Rpc, accId deltachat.AccountId, msgId deltach
 		logger.Error(err)
 		return
 	}
-	chat, err := rpc.GetBasicChatInfo(accId, msg.ChatId)
-	if err != nil {
-		logger.Error(err)
+	logger = logger.With("chat", msg.ChatId)
+	if msg.FromId != deltachat.ContactSelf {
+		logger.Debugf("Ignoring request from unofficial instance: %v", string(rawUpdate))
 		return
 	}
-	if chat.ChatType != deltachat.ChatSingle {
-		logger.Debugf("[WebXDC] Ignoring request in multi-user chat #%v: %v", chat.Id, string(rawUpdate))
+	version, err := rpc.GetWebxdcBlob(accId, msgId, "version.txt")
+	if err != nil {
+		logger.Error(err)
+	} else {
+		data, err := base64.StdEncoding.DecodeString(version)
+		if err != nil {
+			logger.Error(err)
+		}
+		version = string(data)
+	}
+	if version != xdcVersion {
+		sendApp(rpc, accId, msg.ChatId)
 		return
 	}
 
 	if xdcrpc.IsFromSelf(rawUpdate) {
-		logger.Debugf("[WebXDC] Response: %v", string(rawUpdate))
+		logger.Debugf("Response: %v", string(rawUpdate))
 		return
 	}
 
-	logger.Debugf("[WebXDC] Request: %v", string(rawUpdate))
-	api := &API{
-		rpc:    rpc,
-		accId:  accId,
-		msgId:  msgId,
-		chatId: msg.ChatId,
-	}
-	if response := xdcrpc.GetResponse(api, rawUpdate); response != nil {
+	logger.Debugf("Request: %v", string(rawUpdate))
+	if response := xdcrpc.GetResponse(&API{}, rawUpdate); response != nil {
 		err = xdcrpc.SendPayload(rpc, accId, msgId, response)
 		if err != nil {
 			logger.Error(err)
@@ -72,7 +76,7 @@ func onStatusUpdate(rpc *deltachat.Rpc, accId deltachat.AccountId, msgId deltach
 }
 
 func onNewMsg(bot *deltachat.Bot, accId deltachat.AccountId, msgId deltachat.MsgId) {
-	logger := cli.GetLogger(accId)
+	logger := cli.GetLogger(accId).With("msg", msgId)
 	msg, err := bot.Rpc.GetMessage(accId, msgId)
 	if err != nil {
 		logger.Error(err)
