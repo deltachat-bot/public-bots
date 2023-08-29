@@ -279,3 +279,6 @@ function sendData() {
             });
         });
 }
+if (!localStorage.getItem("LastSyncReqKey")) {
+    sendData();
+}
