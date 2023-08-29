@@ -11,7 +11,7 @@ To see the list of public Delta Chat bots on the web, visit:
 https://deltachat-bot.github.io/public-bots/
 
 If you are a bot administrator and want to add your bot instance to the list,
-create an issue or clone this repo and edit [data.json](https://github.com/deltachat-bot/public-bots/blob/main/data.json)
+create an issue or clone this repo and edit [data.json](https://github.com/deltachat-bot/public-bots/blob/main/frontend/data.json)
 file adding your bot metadata.
 
 
