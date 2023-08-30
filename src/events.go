@@ -105,7 +105,7 @@ func onNewMsg(bot *deltachat.Bot, accId deltachat.AccountId, msgId deltachat.Msg
 
 // send the app / UI interace
 func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.ChatId) {
-	logger := cli.GetLogger(accId)
+	logger := cli.GetLogger(accId).With("chat", chatId)
 	// try to resend existing instance
 	none := option.None[deltachat.MsgType]()
 	msgIds, err := rpc.GetChatMedia(accId, chatId, deltachat.MsgWebxdc, none, none)
@@ -132,6 +132,10 @@ func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.Cha
 				version = string(data)
 			}
 			if version == xdcVersion {
+				if msg.State == deltachat.MsgStateOutPreparing || msg.State == deltachat.MsgStateOutDraft || msg.State == deltachat.MsgStateOutPending {
+					logger.Debug("Message is still pending, no need to re-send")
+					return
+				}
 				err = rpc.ResendMessages(accId, []deltachat.MsgId{msgId})
 				if err != nil {
 					logger.Error(err)
