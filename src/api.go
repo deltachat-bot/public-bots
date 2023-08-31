@@ -38,17 +38,18 @@ type Lang struct {
 type API struct{}
 
 // Sync bot list and online status.
-func (api *API) Sync(hash string) (*BotsData, StatusData, *xdcrpc.Error) {
+func (api *API) Sync(hash string) (time.Time, *BotsData, StatusData, *xdcrpc.Error) {
+	syncTime := time.Now()
 	data := cfg.GetBotsData()
 	if data.Hash == "" {
-		return nil, nil, nil
+		return syncTime, nil, nil, nil
 	}
 	if hash != data.Hash {
-		return &data, nil, nil
+		return syncTime, &data, nil, nil
 	}
 	statuses := make(StatusData)
 	for _, bot := range data.Bots {
 		statuses[bot.Addr] = bot.LastSeen
 	}
-	return nil, statuses, nil
+	return syncTime, nil, statuses, nil
 }

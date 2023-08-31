@@ -71,8 +71,12 @@ export const useStore = create<State>()((set) => ({
           error: update.error,
         };
       }
-      localStorage.setItem(lastSyncKey, new Date().toString());
-      const [botsData, statusData] = update.result || [null, null];
+      const [syncTime, botsData, statusData] = update.result || [
+        "",
+        null,
+        null,
+      ];
+      localStorage.setItem(lastSyncKey, syncTime);
       if (statusData) {
         state.bots.map((bot: Bot) => {
           if (statusData[bot.addr]) {

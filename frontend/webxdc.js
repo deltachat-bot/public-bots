@@ -271,14 +271,19 @@ function sendData() {
                 }
                 return 1;
             });
+            let now = new Date().toString();
             window.webxdc.sendUpdate({
                 payload: {
                     error: null,
                     id: "sync",
-                    result: [{
-                        hash: new Date().toString(),
-                        bots: json.bots
-                    }, null]
+                    result: [
+                        now,
+                        {
+                            hash: now,
+                            bots: json.bots
+                        },
+                        null
+                    ]
                 }
             });
         }).catch(function (err) {

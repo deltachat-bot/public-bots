@@ -30,7 +30,8 @@ func TestWebxdc(t *testing.T) {
 		assert.Nil(t, resp.Error)
 		assert.NotNil(t, resp.Result)
 		res := resp.Result.([]any)
-		assert.Nil(t, res[0]) // because there is no bot data yet
-		assert.Nil(t, res[1])
+		assert.NotNil(t, res[0]) // sync time
+		assert.Nil(t, res[1])    // BotsData is nil because there is no bot data yet
+		assert.Nil(t, res[2])    // StatusData, also nil without BotsData
 	})
 }

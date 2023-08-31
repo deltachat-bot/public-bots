@@ -172,10 +172,12 @@ func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.Cha
 	if err != nil {
 		logger.Error(err)
 	}
-	botsData := cfg.GetBotsData()
-	if botsData.Hash != "" {
-		err := xdcrpc.SendUpdate(rpc, accId, msgId, xdcrpc.StatusUpdate[*xdcrpc.Response]{Payload: &xdcrpc.Response{Result: []any{botsData, nil}}, Summary: "v" + xdcVersion}, "")
-		if err != nil {
+
+	if cfg.BotsData.Hash != "" {
+		syncTime, botsData, statusData, _ := (&API{}).Sync("")
+		response := &xdcrpc.Response{Result: []any{syncTime, botsData, statusData}}
+		update := xdcrpc.StatusUpdate[*xdcrpc.Response]{Payload: response, Summary: "v" + xdcVersion}
+		if err := xdcrpc.SendUpdate(rpc, accId, msgId, update, ""); err != nil {
 			logger.Error(err)
 		}
 	}
