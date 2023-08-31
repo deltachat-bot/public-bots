@@ -1,4 +1,5 @@
-// debug friend: document.writeln(JSON.stringify(value));
+localStorage.clear();
+
 //@ts-check
 /** @type {import('./webxdc').Webxdc<any>} */
 window.webxdc = (() => {
