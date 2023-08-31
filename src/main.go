@@ -1,13 +1,10 @@
 package main
 
 import (
-	"bytes"
-	"encoding/json"
 	"io"
 	"net/http"
-	"os"
 	"path/filepath"
-	"sync"
+	"strings"
 	"time"
 
 	"github.com/deltachat-bot/deltabot-cli-go/botcli"
@@ -16,51 +13,6 @@ import (
 )
 
 var cli = botcli.New("public-bots")
-var cfg *Config
-
-type Config struct {
-	LastChecked time.Time
-	LastUpdated time.Time
-	Data        []byte
-	Path        string `json:"-"`
-	mutex       sync.Mutex
-}
-
-func newConfig(path string) (*Config, error) {
-	cfg := &Config{Path: path}
-	if _, err := os.Stat(cfg.Path); err == nil { // file exists
-		data, err := os.ReadFile(cfg.Path)
-		if err != nil {
-			return cfg, err
-		}
-		if err = json.Unmarshal(data, &cfg); err != nil {
-			return cfg, err
-		}
-	}
-	return cfg, nil
-}
-
-func (self *Config) GetMetadata() *Metadata {
-	self.mutex.Lock()
-	defer self.mutex.Unlock()
-	return &Metadata{LastUpdated: self.LastUpdated, Data: self.Data}
-}
-
-func (self *Config) Save(data []byte) (bool, error) {
-	self.mutex.Lock()
-	defer self.mutex.Unlock()
-	self.LastChecked = time.Now()
-	changed := !bytes.Equal(data, cfg.Data)
-	if changed {
-		self.Data = data
-		self.LastUpdated = self.LastChecked
-	}
-	output, err := json.Marshal(self)
-	if err != nil {
-		return false, err
-	}
-	return changed, os.WriteFile(self.Path, output, 0666)
-}
 
 func onBotInit(cli *botcli.BotCli, bot *deltachat.Bot, cmd *cobra.Command, args []string) {
 	bot.OnUnhandledEvent(onEvent)
@@ -69,23 +21,78 @@ func onBotInit(cli *botcli.BotCli, bot *deltachat.Bot, cmd *cobra.Command, args 
 
 func onBotStart(cli *botcli.BotCli, bot *deltachat.Bot, cmd *cobra.Command, args []string) {
 	var err error
-	cfg, err = newConfig(filepath.Join(cli.AppDir, "metadata.json"))
+	cfg, err = newConfig(bot.Rpc, filepath.Join(cli.AppDir, "metadata.json"))
 	if err != nil {
 		cli.Logger.Error(err)
 	}
-	go updateMetadataLoop()
+	go updateBotsLoop()
+	go updateStatusLoop(bot.Rpc)
 }
 
-func updateMetadataLoop() {
-	url := "https://github.com/deltachat-bot/public-bots/raw/main/frontend/data.json"
-	logger := cli.Logger.With("origin", "metadata-loop")
+func updateStatusLoop(rpc *deltachat.Rpc) {
+	logger := cli.Logger.With("origin", "status-loop")
+	delay := 10 * time.Minute
 	for {
-		toSleep := 3*time.Hour - time.Since(cfg.LastChecked)
+		toSleep := delay - time.Since(cfg.StatusLastChecked)
 		if toSleep > 0 {
 			logger.Debugf("Sleeping for %v", toSleep)
 			time.Sleep(toSleep)
 		}
-		changed, err := getMetadata(url)
+		if err := cfg.SaveStatusLastChecked(); err != nil {
+			cli.Logger.Error(err)
+		}
+		botsData := cfg.GetBotsData()
+		if botsData.Hash == "" {
+			delay = 10 * time.Second
+		} else {
+			delay = 10 * time.Minute
+		}
+		selfAddrs := getSelfAddrs(rpc)
+		accId := getFirstAccount(rpc)
+		for _, bot := range botsData.Bots {
+			if accId == 0 {
+				break
+			}
+			if _, ok := selfAddrs[bot.Addr]; ok {
+				continue
+			}
+			logger := logger.With("acc", accId, "bot", bot.Addr)
+			logger.Debug("checking bot status")
+			if strings.HasPrefix(strings.ToLower(bot.Url), "openpgp4fpr:") {
+				_, err := rpc.SecureJoin(accId, bot.Url)
+				if err != nil {
+					logger.Error(err)
+				}
+			} else {
+				contactId, err := rpc.CreateContact(accId, bot.Addr, "")
+				if err != nil {
+					logger.Error(err)
+					continue
+				}
+				chatId, err := rpc.CreateChatByContactId(accId, contactId)
+				if err != nil {
+					logger.Error(err)
+					continue
+				}
+				_, err = rpc.MiscSendTextMessage(accId, chatId, "/help")
+				if err != nil {
+					logger.Error(err)
+				}
+			}
+		}
+	}
+}
+
+func updateBotsLoop() {
+	url := "https://github.com/deltachat-bot/public-bots/raw/main/frontend/data.json"
+	logger := cli.Logger.With("origin", "metadata-loop")
+	for {
+		toSleep := 3*time.Hour - time.Since(cfg.BotsData.lastChecked)
+		if toSleep > 0 {
+			logger.Debugf("Sleeping for %v", toSleep)
+			time.Sleep(toSleep)
+		}
+		changed, err := getBotsData(url)
 		if err != nil {
 			logger.Error(err)
 		} else if changed {
@@ -96,7 +103,7 @@ func updateMetadataLoop() {
 	}
 }
 
-func getMetadata(url string) (bool, error) {
+func getBotsData(url string) (bool, error) {
 	resp, err := http.Get(url)
 	if err != nil {
 		return false, err
@@ -107,7 +114,7 @@ func getMetadata(url string) (bool, error) {
 	if err != nil {
 		return false, err
 	}
-	return cfg.Save(body)
+	return cfg.SaveData(body)
 }
 
 func main() {

@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"os"
 	"path/filepath"
-	"strings"
 	"testing"
 
 	"github.com/deltachat-bot/deltabot-cli-go/botcli"
@@ -30,7 +29,7 @@ func withBotAndUser(callback TestCallback) {
 			cli := &botcli.BotCli{AppDir: acfactory.MkdirTemp()}
 			onBotInit(cli, bot, nil, nil)
 			var err error
-			cfg, err = newConfig(filepath.Join(cli.AppDir, "metadata.json"))
+			cfg, err = newConfig(bot.Rpc, filepath.Join(cli.AppDir, "metadata.json"))
 			if err != nil {
 				panic(err)
 			}
@@ -51,8 +50,8 @@ func withWebxdc(callback WebxdcCallback) {
 		}
 
 		msg := acfactory.NextMsg(userRpc, userAcc)
-		if !strings.HasSuffix(msg.File, ".xdc") {
-			panic("unexpected file name: " + msg.File)
+		if msg.ViewType != deltachat.MsgWebxdc {
+			panic("unexpected file: " + msg.File)
 		}
 
 		callback(bot, botAcc, userRpc, userAcc, msg)

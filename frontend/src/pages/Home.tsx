@@ -56,7 +56,7 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonContent fullscreen>
-        {state.syncing && state.lastUpdated && (
+        {state.syncing && state.hash && (
           <IonProgressBar type="indeterminate"></IonProgressBar>
         )}
         {state.bots.length > 0 && (
@@ -69,10 +69,10 @@ const Home: React.FC = () => {
             ></IonSearchbar>
           </>
         )}
-        {state.lastUpdated ? (
+        {state.hash ? (
           <IonList>
             {results.map((bot) => (
-              <BotItem bot={bot} />
+              <BotItem bot={bot} lastSync={state.lastSync || new Date()} />
             ))}
           </IonList>
         ) : (

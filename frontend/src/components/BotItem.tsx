@@ -11,7 +11,37 @@ import { languageOutline, openOutline } from "ionicons/icons";
 import { Bot } from "../store";
 import "./BotItem.css";
 
-export default function BotItem({ bot }: { bot: Bot }) {
+const longAgo = 1000 * 60 * 60 * 24 * 360 * 10;
+const recently = 1000 * 60 * 15;
+
+function displayLastSeen(lastSync: Date, lastSeen: Date) {
+  if (lastSeen) {
+    let label;
+    let color;
+    let timeAgo = lastSync.getTime() - lastSeen.getTime();
+    if (timeAgo <= recently) {
+      color = "success";
+      label = "online";
+    } else {
+      color = "danger";
+      if (timeAgo >= longAgo) {
+        label = "offline";
+      } else {
+        label = "offline (" + lastSeen.toLocaleString() + ")";
+      }
+    }
+    return <IonBadge color={color}>{label}</IonBadge>;
+  }
+  return false;
+}
+
+export default function BotItem({
+  bot,
+  lastSync,
+}: {
+  bot: Bot;
+  lastSync: Date;
+}) {
   return (
     <IonItem>
       <IonLabel>
@@ -32,7 +62,8 @@ export default function BotItem({ bot }: { bot: Bot }) {
         <br />
         <IonBadge color="light">
           <IonIcon icon={languageOutline} /> {bot.lang.label}
-        </IonBadge>
+        </IonBadge>{" "}
+        {displayLastSeen(lastSync || new Date(), bot.lastSeen)}
         <p className="ion-text-wrap">{bot.description}</p>
         <p>
           <strong>Admin: </strong>

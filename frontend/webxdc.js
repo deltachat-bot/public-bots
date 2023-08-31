@@ -260,25 +260,35 @@ function sendData() {
             return response.json();
         })
         .then(json => {
+            json.bots.map((bot) => {
+                bot.admin = { ...json.admins[bot.admin], name: bot.admin };
+                bot.lang = { code: bot.lang, label: json.langs[bot.lang] };
+            });
+            json.bots.sort((a, b) => {
+                if (a.addr < b.addr) {
+                    return -1;
+                }
+                return 1;
+            });
             window.webxdc.sendUpdate({
                 payload: {
                     error: null,
                     id: "sync",
-                    result: {
-                        lastUpdated: new Date().toString(),
-                        data: json
-                    }
+                    result: [{
+                        hash: new Date().toString(),
+                        bots: json.bots
+                    }, null]
                 }
             });
-        }).catch(function () {
+        }).catch(function (err) {
             window.webxdc.sendUpdate({
                 payload: {
-                    error: {code: -100, message: "Failed to fetch data"},
+                    error: {code: -100, message: "Failed to fetch data: " + err},
                     id: "sync"
                 }
             });
         });
 }
-if (!localStorage.getItem("LastSyncReqKey")) {
+if (!localStorage.getItem("lastSyncReqKey")) {
     sendData();
 }

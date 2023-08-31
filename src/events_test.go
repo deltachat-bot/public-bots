@@ -1,7 +1,6 @@
 package main
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/deltachat/deltachat-rpc-client-go/deltachat"
@@ -18,7 +17,7 @@ func TestOnNewMsg(t *testing.T) {
 		require.Nil(t, err)
 
 		msg := acfactory.NextMsg(userRpc, userAcc)
-		require.True(t, strings.HasSuffix(msg.File, ".xdc"))
+		require.Equal(t, deltachat.MsgWebxdc, msg.ViewType)
 	})
 }
 
@@ -30,5 +29,8 @@ func TestWebxdc(t *testing.T) {
 		assert.Equal(t, req.Id, resp.Id)
 		assert.Nil(t, resp.Error)
 		assert.NotNil(t, resp.Result)
+		res := resp.Result.([]any)
+		assert.Nil(t, res[0]) // because there is no bot data yet
+		assert.Nil(t, res[1])
 	})
 }

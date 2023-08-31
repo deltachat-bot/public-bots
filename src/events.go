@@ -50,9 +50,9 @@ func onStatusUpdate(rpc *deltachat.Rpc, accId deltachat.AccountId, msgId deltach
 	if err != nil {
 		logger.Error(err)
 	} else {
-		data, err := base64.StdEncoding.DecodeString(version)
+		data, err := base64.StdEncoding.WithPadding(base64.NoPadding).DecodeString(version)
 		if err != nil {
-			logger.Error(err)
+			logger.With("version", version).Error(err)
 		}
 		version = string(data)
 	}
@@ -115,6 +115,7 @@ func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.Cha
 	}
 	for i := len(msgIds) - 1; i >= 0; i-- {
 		msgId := msgIds[i]
+		logger := logger.With("msg", msgId)
 		msg, err := rpc.GetMessage(accId, msgId)
 		if err != nil {
 			logger.Error(err)
@@ -125,9 +126,9 @@ func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.Cha
 			if err != nil {
 				logger.Error(err)
 			} else {
-				data, err := base64.StdEncoding.DecodeString(version)
+				data, err := base64.StdEncoding.WithPadding(base64.NoPadding).DecodeString(version)
 				if err != nil {
-					logger.Error(err)
+					logger.With("version", version).Error(err)
 				}
 				version = string(data)
 			}
@@ -171,9 +172,9 @@ func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.Cha
 	if err != nil {
 		logger.Error(err)
 	}
-	metadata := cfg.GetMetadata()
-	if metadata.Data != nil {
-		err := xdcrpc.SendUpdate(rpc, accId, msgId, xdcrpc.StatusUpdate[*xdcrpc.Response]{Payload: &xdcrpc.Response{Result: metadata}, Summary: "v" + xdcVersion}, "")
+	botsData := cfg.GetBotsData()
+	if botsData.Hash != "" {
+		err := xdcrpc.SendUpdate(rpc, accId, msgId, xdcrpc.StatusUpdate[*xdcrpc.Response]{Payload: &xdcrpc.Response{Result: []any{botsData, nil}}, Summary: "v" + xdcVersion}, "")
 		if err != nil {
 			logger.Error(err)
 		}

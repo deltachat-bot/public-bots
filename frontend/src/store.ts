@@ -4,11 +4,11 @@ const api = (() => {
   return {
     sync: () => {
       const lastSyncReq = localStorage.getItem(lastSyncReqKey) || "";
-      const lastUpdated = localStorage.getItem(lastUpdatedKey) || null;
+      const hash = localStorage.getItem(hashKey) || null;
       if (
         lastSyncReq &&
         new Date().getTime() - new Date(lastSyncReq).getTime() <=
-          1000 * 60 * (lastUpdated ? 10 : 1)
+          1000 * 60 * (hash ? 10 : 1)
       ) {
         return;
       }
@@ -20,7 +20,7 @@ const api = (() => {
           payload: {
             id: "sync",
             method: "Sync",
-            params: [lastUpdated],
+            params: [hash],
           },
         },
         "",
@@ -28,11 +28,11 @@ const api = (() => {
     },
   };
 })();
-const lastSyncKey = "LastSyncKey";
-const lastSyncReqKey = "LastSyncReqKey";
-const lastUpdatedKey = "LastUpdatedKey";
-const botsKey = "BotsKey";
-const maxSerialKey = "MaxSerialKey";
+const lastSyncKey = "lastSyncKey";
+const lastSyncReqKey = "lastSyncReqKey";
+const hashKey = "hashKey";
+const botsKey = "botsKey";
+const maxSerialKey = "maxSerialKey";
 
 type Response = {
   id: string;
@@ -48,10 +48,11 @@ export type Bot = {
   description: string;
   lang: Lang;
   admin: Admin;
+  lastSeen: Date;
 };
 interface State {
   lastSync?: Date;
-  lastUpdated?: string;
+  hash?: string;
   bots: Bot[];
   error?: Error;
   syncing: boolean;
@@ -71,25 +72,25 @@ export const useStore = create<State>()((set) => ({
         };
       }
       localStorage.setItem(lastSyncKey, new Date().toString());
-      const result = update.result;
-      if (result) {
-        localStorage.setItem(lastUpdatedKey, result.lastUpdated);
-        const data = result.data;
-        data.bots.map((bot: any) => {
-          bot.admin = { ...data.admins[bot.admin], name: bot.admin };
-          bot.lang = { code: bot.lang, label: data.langs[bot.lang] };
-        });
-        data.bots.sort((a: Bot, b: Bot) => {
-          if (a.addr < b.addr) {
-            return -1;
+      const [botsData, statusData] = update.result || [null, null];
+      if (statusData) {
+        state.bots.map((bot: Bot) => {
+          if (statusData[bot.addr]) {
+            bot.lastSeen = new Date(statusData[bot.addr]);
           }
-          return 1;
         });
-        localStorage.setItem(botsKey, JSON.stringify(data.bots));
+      } else if (botsData) {
+        localStorage.setItem(hashKey, botsData.hash);
+        botsData.bots.map((bot: any) => {
+          if (bot.lastSeen) {
+            bot.lastSeen = new Date(bot.lastSeen);
+          }
+        });
+        localStorage.setItem(botsKey, JSON.stringify(botsData.bots));
         return {
           ...state,
-          lastUpdated: result.lastUpdated,
-          bots: data.bots,
+          hash: botsData.hash,
+          bots: botsData.bots,
         };
       }
       return state;
@@ -97,6 +98,27 @@ export const useStore = create<State>()((set) => ({
 }));
 
 export async function init() {
+  // The first time the bot sends the state so no need to request
+  if (!localStorage.getItem(lastSyncReqKey)) {
+    localStorage.setItem(lastSyncReqKey, new Date().toString());
+  }
+  const hash = localStorage.getItem(hashKey);
+  if (hash) {
+    const lastSync = new Date(localStorage.getItem(lastSyncKey) || "");
+    const bots = JSON.parse(localStorage.getItem(botsKey) || "");
+    bots.map((bot: any) => {
+      if (bot.lastSeen) {
+        bot.lastSeen = new Date(bot.lastSeen);
+      }
+    });
+    useStore.setState({
+      ...useStore.getState(),
+      lastSync: lastSync,
+      hash: hash,
+      bots: bots,
+    });
+  }
+
   await window.webxdc.setUpdateListener(
     (message) => {
       if (message.serial === message.max_serial) {
@@ -110,22 +132,6 @@ export async function init() {
     parseInt(localStorage.getItem(maxSerialKey) || "0"),
   );
 
-  const lastUpdated = localStorage.getItem(lastUpdatedKey);
-  if (lastUpdated) {
-    const lastSync = new Date(localStorage.getItem(lastSyncKey) || "");
-    const bots = JSON.parse(localStorage.getItem(botsKey) || "");
-    useStore.setState({
-      ...useStore.getState(),
-      lastSync: lastSync,
-      lastUpdated: lastUpdated,
-      bots: bots,
-    });
-  }
-
-  // The first time the bot sends the state so no need to request
-  if (!localStorage.getItem(lastSyncReqKey)) {
-    localStorage.setItem(lastSyncReqKey, new Date().toString());
-  }
   api.sync();
   setInterval(() => {
     api.sync();
