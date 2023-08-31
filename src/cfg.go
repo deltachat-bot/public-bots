@@ -60,12 +60,17 @@ func (self *Config) GetBotsData() BotsData {
 	defer self.mutex.Unlock()
 	botsData := BotsData{Hash: cfg.BotsData.Hash}
 	if cfg.BotsData.Hash != "" {
+		selfAddrs := getSelfAddrs(self.rpc)
 		accId := getFirstAccount(self.rpc)
 		for index := range cfg.BotsData.Bots {
 			if accId == 0 {
 				break
 			}
 			addr := cfg.BotsData.Bots[index].Addr
+			if _, ok := selfAddrs[addr]; ok {
+				cfg.BotsData.Bots[index].LastSeen = time.Now()
+				continue
+			}
 			contactId, err := self.rpc.CreateContact(accId, addr, "")
 			if err != nil {
 				cli.Logger.Error(err)
