@@ -15,6 +15,7 @@ import { warningOutline } from "ionicons/icons";
 
 import { useStore, Bot } from "../store";
 import BotItem from "../components/BotItem";
+import { getText as _, format } from "../i18n";
 import "./Home.css";
 
 const fuseOptions = {
@@ -65,7 +66,7 @@ const Home: React.FC = () => {
             <IonSearchbar
               debounce={200}
               onIonInput={(ev) => handleInput(ev)}
-              placeholder={"Search among " + state.bots.length + " bots"}
+              placeholder={format(_("search-placeholder"), state.bots.length)}
             ></IonSearchbar>
           </>
         )}
@@ -81,7 +82,9 @@ const Home: React.FC = () => {
           </div>
         )}
         {state.lastSync && (
-          <p id="footer">Last updated: {state.lastSync.toLocaleString()}</p>
+          <p id="footer">
+            {format(_("last-updated"), state.lastSync.toLocaleString())}
+          </p>
         )}
         {state.error && (
           <IonToast

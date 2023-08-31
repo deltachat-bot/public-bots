@@ -9,6 +9,7 @@ import {
 import { languageOutline, openOutline } from "ionicons/icons";
 
 import { Bot } from "../store";
+import { getText as _ } from "../i18n";
 import "./BotItem.css";
 
 const longAgo = 1000 * 60 * 60 * 24 * 360 * 10;
@@ -66,7 +67,7 @@ export default function BotItem({
         {displayLastSeen(lastSync || new Date(), bot.lastSeen)}
         <p className="ion-text-wrap">{bot.description}</p>
         <p>
-          <strong>Admin: </strong>
+          <strong>{_("admin")}</strong>
           <a target="_blank" rel="noopener noreferrer" href={bot.admin.url}>
             {bot.admin.name}
             <IonIcon icon={openOutline} />
