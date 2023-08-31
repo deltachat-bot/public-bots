@@ -1,6 +1,13 @@
 {
   "bots": [
     {
+      "addr": "xstore@testrun.org",
+      "description": "Official Delta Chat Webxdc Store",
+      "lang": "en",
+      "admin": "merlinux",
+      "url": "mailto:xstore@testrun.org?body=hi"
+    },
+    {
       "addr": "public-bots@hispanilandia.net",
       "description": "Public bots directory 🔍",
       "lang": "en",
@@ -198,6 +205,7 @@
     }
   ],
   "admins": {
+    "merlinux": { "url": "mailto:delta@merlinux.eu" },
     "adbenitez": { "url": "mailto:adbenitez@hispanilandia.net" }
   },
   "langs": {
