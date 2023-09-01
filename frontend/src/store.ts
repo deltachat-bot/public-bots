@@ -74,13 +74,12 @@ export const useStore = create<State>()((set) => ({
     set((state) => {
       state = { ...state, syncing: false };
       if (update.error) {
-        return {
-          ...state,
-          error: update.error,
-        };
+        state.error = update.error;
+        return state;
       }
       let [syncTime, botsData, statusData] = update.result || ["", null, null];
       localStorage.setItem(lastSyncKey, syncTime);
+      state.lastSync = syncTime = new Date(syncTime);
       if (statusData) {
         state.bots.map((bot: Bot) => {
           if (statusData[bot.addr]) {
@@ -94,13 +93,9 @@ export const useStore = create<State>()((set) => ({
             bot.lastSeen = new Date(bot.lastSeen);
           }
         });
-        state = {
-          ...state,
-          hash: botsData.hash,
-          bots: botsData.bots,
-        };
+        state.hash = botsData.hash;
+        state.bots = botsData.bots;
       }
-      syncTime = new Date(syncTime);
       state.bots.sort((b1: Bot, b2: Bot) => {
         let online1 = isOnline(syncTime, b1.lastSeen);
         let online2 = isOnline(syncTime, b2.lastSeen);
