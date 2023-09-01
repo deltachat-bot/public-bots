@@ -1,5 +1,13 @@
 import { create } from "zustand";
 
+export const recently = 1000 * 60 * 15;
+
+function isOnline(lastSync: Date, lastSeen?: Date): boolean {
+  if (!lastSeen) return false;
+  let timeAgo = lastSync.getTime() - lastSeen.getTime();
+  return timeAgo <= recently;
+}
+
 const api = (() => {
   return {
     sync: () => {
@@ -71,11 +79,7 @@ export const useStore = create<State>()((set) => ({
           error: update.error,
         };
       }
-      const [syncTime, botsData, statusData] = update.result || [
-        "",
-        null,
-        null,
-      ];
+      let [syncTime, botsData, statusData] = update.result || ["", null, null];
       localStorage.setItem(lastSyncKey, syncTime);
       if (statusData) {
         state.bots.map((bot: Bot) => {
@@ -90,13 +94,25 @@ export const useStore = create<State>()((set) => ({
             bot.lastSeen = new Date(bot.lastSeen);
           }
         });
-        localStorage.setItem(botsKey, JSON.stringify(botsData.bots));
-        return {
+        state = {
           ...state,
           hash: botsData.hash,
           bots: botsData.bots,
         };
       }
+      syncTime = new Date(syncTime);
+      state.bots.sort((b1: Bot, b2: Bot) => {
+        let online1 = isOnline(syncTime, b1.lastSeen);
+        let online2 = isOnline(syncTime, b2.lastSeen);
+        if (online1 < online2) {
+          return 1;
+        }
+        if (online1 > online2) {
+          return -1;
+        }
+        return 0;
+      });
+      localStorage.setItem(botsKey, JSON.stringify(state.bots));
       return state;
     }),
 }));

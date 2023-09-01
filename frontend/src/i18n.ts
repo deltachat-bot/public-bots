@@ -22,7 +22,7 @@ export function getText(key: string): string {
   return langs[currentLang][key] || langs["en"][key] || key;
 }
 
-export function format(template: string, ...args: any[]) : string {
+export function format(template: string, ...args: any[]): string {
   return template.replace(/{(\d+)}/g, function (match, numb) {
     return typeof args[numb] != "undefined" ? args[numb] : match;
   });

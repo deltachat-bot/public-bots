@@ -8,12 +8,11 @@ import {
 } from "@ionic/react";
 import { languageOutline, openOutline } from "ionicons/icons";
 
-import { Bot } from "../store";
+import { Bot, recently } from "../store";
 import { getText as _ } from "../i18n";
 import "./BotItem.css";
 
 const longAgo = 1000 * 60 * 60 * 24 * 360 * 10;
-const recently = 1000 * 60 * 15;
 
 function displayLastSeen(lastSync: Date, lastSeen: Date) {
   if (lastSeen) {
