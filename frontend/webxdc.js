@@ -265,12 +265,6 @@ function sendData() {
                 bot.admin = { ...json.admins[bot.admin], name: bot.admin };
                 bot.lang = { code: bot.lang, label: json.langs[bot.lang] };
             });
-            json.bots.sort((a, b) => {
-                if (a.addr < b.addr) {
-                    return -1;
-                }
-                return 1;
-            });
             let now = new Date().toString();
             window.webxdc.sendUpdate({
                 payload: {

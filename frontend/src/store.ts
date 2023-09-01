@@ -105,7 +105,10 @@ export const useStore = create<State>()((set) => ({
         if (online1 > online2) {
           return -1;
         }
-        return 0;
+        if (b1.addr < b2.addr) {
+          return -1;
+        }
+        return 1;
       });
       localStorage.setItem(botsKey, JSON.stringify(state.bots));
       return state;

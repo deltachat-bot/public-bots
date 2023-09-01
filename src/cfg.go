@@ -5,7 +5,6 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"os"
-	"sort"
 	"sync"
 	"time"
 
@@ -116,9 +115,6 @@ func (self *Config) SaveData(data []byte) (bool, error) {
 				Admin:       Admin{Name: rawBot.Admin, Url: rawData.Admins[rawBot.Admin].Url},
 			}
 		}
-		sort.Slice(self.BotsData.Bots, func(i, j int) bool {
-			return self.BotsData.Bots[i].Addr < self.BotsData.Bots[j].Addr
-		})
 		self.BotsData.Hash = hash
 	}
 
