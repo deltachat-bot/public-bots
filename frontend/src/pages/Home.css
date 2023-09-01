@@ -12,9 +12,7 @@
   height: 100px;
 }
 
-#footer {
+.footer ion-toolbar {
   text-align: center;
-  font-size: 16px;
-  line-height: 22px;
   color: #8c8c8c;
 }

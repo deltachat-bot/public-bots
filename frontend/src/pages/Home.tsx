@@ -7,6 +7,8 @@ import {
   IonSearchbar,
   IonToast,
   IonProgressBar,
+  IonFooter,
+  IonToolbar,
 } from "@ionic/react";
 import Fuse from "fuse.js";
 import { create } from "zustand";
@@ -81,11 +83,6 @@ const Home: React.FC = () => {
             <IonSpinner name="dots"></IonSpinner>
           </div>
         )}
-        {state.lastSync && (
-          <p id="footer">
-            {format(_("last-updated"), state.lastSync.toLocaleString())}
-          </p>
-        )}
         {state.error && (
           <IonToast
             isOpen={true}
@@ -97,6 +94,13 @@ const Home: React.FC = () => {
           ></IonToast>
         )}
       </IonContent>
+      {state.lastSync && (
+        <IonFooter translucent collapse="fade" class="footer">
+          <IonToolbar>
+            {format(_("last-updated"), state.lastSync.toLocaleString())}
+          </IonToolbar>
+        </IonFooter>
+      )}
     </IonPage>
   );
 };
