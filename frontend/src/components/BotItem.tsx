@@ -8,6 +8,7 @@ import {
 } from "@ionic/react";
 import { languageOutline, openOutline } from "ionicons/icons";
 
+import TextAvatar from "./TextAvatar";
 import { Bot, recently } from "../store";
 import { getText as _ } from "../i18n";
 import "./BotItem.css";
@@ -52,9 +53,7 @@ export default function BotItem({
           href={bot.url}
         >
           <IonChip>
-            <IonAvatar>
-              <img src="icon.png" />
-            </IonAvatar>
+            <TextAvatar text={bot.addr} />
             <IonLabel>{bot.addr} </IonLabel>
             <IonIcon icon={openOutline} />
           </IonChip>

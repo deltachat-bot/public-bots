@@ -17,6 +17,9 @@ dependencies:
   '@types/react-router-dom':
     specifier: ^5.3.3
     version: 5.3.3
+  consistent-color-generation:
+    specifier: ^0.4.0
+    version: 0.4.0
   fuse.js:
     specifier: ^6.6.2
     version: 6.6.2
@@ -2288,6 +2291,13 @@ packages:
       yargs: 17.7.2
     dev: true
 
+  /consistent-color-generation@0.4.0:
+    resolution: {integrity: sha512-6OJlZgA1B+4L4BKLpHtynTOD4nA6ZAPuGgee0t/29QBLQ1JY0hNWQ4aNiVz/qMVtN0XOpwONVUNgEmRa6yc2XQ==}
+    dependencies:
+      hsluv: 0.1.0
+      js-sha1: 0.6.0
+    dev: false
+
   /content-disposition@0.5.4:
     resolution: {integrity: sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==}
     engines: {node: '>= 0.6'}
@@ -2776,6 +2786,10 @@ packages:
       react-is: 16.13.1
     dev: false
 
+  /hsluv@0.1.0:
+    resolution: {integrity: sha512-ERcanKLAszD2XN3Vh5r5Szkrv9q0oSTudmP0rkiKAGM/3NMc9FLmMZBB7TSqTaXJfSDBOreYTfjezCOYbRKqlw==}
+    dev: false
+
   /http-errors@2.0.0:
     resolution: {integrity: sha512-FtwrG/euBzaEjYeRqOgly7G0qviiXoJWnvEH2Z1plBdXgbyjv34pHTSb9zoeHMyDy33+DWy5Wt9Wo+TURtOYSQ==}
     engines: {node: '>= 0.8'}
@@ -3084,6 +3098,10 @@ packages:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
     dev: true
+
+  /js-sha1@0.6.0:
+    resolution: {integrity: sha512-01gwBFreYydzmU9BmZxpVk6svJJHrVxEN3IOiGl6VO93bVKYETJ0sIth6DASI6mIFdt7NmfX9UiByRzsYHGU9w==}
+    dev: false
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
