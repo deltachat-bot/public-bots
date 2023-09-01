@@ -45,7 +45,7 @@ export default function BotItem({
 }) {
   return (
     <IonItem>
-      <IonLabel>
+      <IonLabel class="ion-text-wrap">
         <a
           className="botChip"
           target="_blank"
@@ -63,7 +63,7 @@ export default function BotItem({
           <IonIcon icon={languageOutline} /> {bot.lang.label}
         </IonBadge>{" "}
         {displayLastSeen(lastSync || new Date(), bot.lastSeen)}
-        <p className="ion-text-wrap">{bot.description}</p>
+        <p className="selectable">{bot.description}</p>
         <p>
           <strong>{_("admin")}</strong>
           <a target="_blank" rel="noopener noreferrer" href={bot.admin.url}>

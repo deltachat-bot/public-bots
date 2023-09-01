@@ -1,3 +1,7 @@
 .botChip {
   text-decoration: none;
 }
+
+.selectable {
+  user-select: text;
+}
