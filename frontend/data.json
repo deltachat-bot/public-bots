@@ -1,6 +1,20 @@
 {
   "bots": [
     {
+      "addr": "telegram.bridge@testrun.org",
+      "description": "Telegram puppeting bridge, use your Telegram account from Delta Chat",
+      "lang": "en",
+      "admin": "D@vid",
+      "url": "mailto:telegram.bridge@testrun.org?body=/help"
+    },
+    {
+      "addr": "downloaderlite@testrun.org",
+      "description": "File downloader bot, get files from the web to your inbox split in 4MB chunks",
+      "lang": "en",
+      "admin": "D@vid",
+      "url": "mailto:downloaderlite@testrun.org?body=/help"
+    },
+    {
       "addr": "xstore@testrun.org",
       "description": "Official Delta Chat Webxdc Store",
       "lang": "en",
@@ -205,6 +219,7 @@
     }
   ],
   "admins": {
+    "D@vid": { "url": "mailto:david@testrun.org" },
     "merlinux": { "url": "mailto:delta@merlinux.eu" },
     "adbenitez": { "url": "mailto:adbenitez@hispanilandia.net" }
   },
