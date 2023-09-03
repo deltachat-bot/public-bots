@@ -1,6 +1,7 @@
-import { defineConfig } from "vite";
-import zipPack from "vite-plugin-zip-pack";
+import legacy from '@vitejs/plugin-legacy'
 import preact from "@preact/preset-vite";
+import zipPack from "vite-plugin-zip-pack";
+import { defineConfig } from "vite";
 
 import { readFileSync, mkdirSync, copyFileSync, existsSync } from "node:fs";
 
@@ -66,6 +67,7 @@ function eruda(debug = undefined) {
 export default defineConfig({
   plugins: [
     preact(),
+    legacy({renderModernChunks: false}),
     // @ts-ignore
     eruda(),
     embedVersion(),
