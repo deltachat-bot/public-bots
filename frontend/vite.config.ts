@@ -1,4 +1,4 @@
-import legacy from '@vitejs/plugin-legacy'
+import legacy from "@vitejs/plugin-legacy";
 import preact from "@preact/preset-vite";
 import zipPack from "vite-plugin-zip-pack";
 import { defineConfig } from "vite";
@@ -67,7 +67,7 @@ function eruda(debug = undefined) {
 export default defineConfig({
   plugins: [
     preact(),
-    legacy({renderModernChunks: false}),
+    legacy({ renderModernChunks: false }),
     // @ts-ignore
     eruda(),
     embedVersion(),
