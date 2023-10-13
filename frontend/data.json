@@ -1,6 +1,13 @@
 {
   "bots": [
     {
+      "addr": "multibot@testrun.org",
+      "description": "Miscellaneous bot with multiple functionalities",
+      "lang": "en",
+      "admin": "Nelson",
+      "url": "mailto:multibot@testrun.org?body=/help"
+    },
+    {
       "addr": "telegram.bridge@testrun.org",
       "description": "Telegram puppeting bridge, use your Telegram account from Delta Chat",
       "lang": "en",
@@ -219,6 +226,7 @@
     }
   ],
   "admins": {
+    "Nelson": { "url": "mailto:nelsonr9608@nauta.cu" },
     "D@vid": { "url": "mailto:david@testrun.org" },
     "merlinux": { "url": "mailto:delta@merlinux.eu" },
     "adbenitez": { "url": "mailto:adbenitez@hispanilandia.net" }
