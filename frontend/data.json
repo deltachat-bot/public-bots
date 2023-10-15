@@ -51,10 +51,17 @@
     },
     {
       "addr": "chatbot@testrun.org",
-      "description": "Conversational AI bot, talk to it in private",
+      "description": "Conversational AI bot using OpenAI",
       "lang": "multi",
       "admin": "adbenitez",
       "url": "OPENPGP4FPR:ACB006F0EF18032E1992A64BF1BD44F8385AE3D4#a=chatbot%40testrun.org&n=ChatBot&i=mbY70x0thoC&s=kB_C5bW3jIr"
+    },
+    {
+      "addr": "localbot@testrun.org",
+      "description": "Conversational AI bot using llama.cpp",
+      "lang": "en",
+      "admin": "merlinux",
+      "url": "OPENPGP4FPR:74055606ADC789BA0566DA672D7EA2A32C6B5763#a=localbot%40testrun.org&n=&i=Bc6oC6IIUWP&s=9ZsRjKI_g2q"
     },
     {
       "addr": "deltabot@buzon.uy",
