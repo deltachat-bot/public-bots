@@ -19,7 +19,7 @@ export function getText(key: string): string {
   )
     .slice(0, 2)
     .toLowerCase();
-  return langs[currentLang][key] || langs["en"][key] || key;
+  return langs[currentLang]?.[key] || langs["en"][key] || key;
 }
 
 export function format(template: string, ...args: any[]): string {
