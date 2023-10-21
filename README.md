@@ -7,25 +7,35 @@
 
 Public bots discovery for Delta Chat via bot + WebXDC app.
 
-To see the list of public Delta Chat bots on the web, visit:
-https://deltachat-bot.github.io/public-bots/
+## Usage
 
-**If you are a bot administrator and want to add your bot instance to the list,
+To see the list of public bots in Delta Chat, you can send a message to:
+public-bots@hispanilandia.net or scan this QR-code:
+
+<div style="display:flex; justify-content: center">
+  <a href="OPENPGP4FPR:A0DCC2FD2D39D5F4CABE2E7AA5FAFF66B7B9AF7D#a=public%2Dbots%40hispanilandia.net&n=Public%20Bots&i=1DiZsGwxyzv&s=tIEcS-8zZJN"><img width="300" height="300" src="./qr.png"></img></a>
+</div>
+
+or visit: https://deltachat-bot.github.io/public-bots/
+
+## Add your bots to the list
+
+If you are a bot administrator and want to add your bot instance to the list,
 create an issue or clone this repo and edit [data.json](https://github.com/deltachat-bot/public-bots/blob/main/frontend/data.json)
-file adding your bot metadata.**
+file adding your bot metadata.
 
 
-## Install
+## Setup your own instance
+
+### Install
 
 Binary releases can be found at: https://github.com/deltachat-bot/public-bots/releases
 
-### Installing deltachat-rpc-server
-
-This program depends on a standalone Delta Chat RPC server `deltachat-rpc-server` program that must be
-available in your `PATH`. For installation instructions check:
+This program depends on a standalone Delta Chat RPC server `deltachat-rpc-server` program.
+For installation instructions check:
 https://github.com/deltachat/deltachat-core-rust/tree/master/deltachat-rpc-server
 
-## Running the bot
+### Running the bot
 
 Configure the bot:
 
