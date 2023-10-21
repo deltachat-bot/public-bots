@@ -11,9 +11,7 @@ Public bots discovery for Delta Chat via bot + WebXDC app.
 
 To see the list of public bots in Delta Chat scan this QR-code:
 
-<div style="display:flex; justify-content: center">
-  <img width="300" height="300" src="./qr.png"></img>
-</div>
+<img width="300" height="300" src="./qr.png"></img>
 
 or visit: https://deltachat-bot.github.io/public-bots/
 
