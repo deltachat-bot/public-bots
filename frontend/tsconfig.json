@@ -16,5 +16,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "webxdc.d.ts"]
+  "include": ["src"]
 }
