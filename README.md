@@ -9,11 +9,10 @@ Public bots discovery for Delta Chat via bot + WebXDC app.
 
 ## Usage
 
-To see the list of public bots in Delta Chat, you can send a message to:
-public-bots@hispanilandia.net or scan this QR-code:
+To see the list of public bots in Delta Chat scan this QR-code:
 
 <div style="display:flex; justify-content: center">
-  <a href="OPENPGP4FPR:A0DCC2FD2D39D5F4CABE2E7AA5FAFF66B7B9AF7D#a=public%2Dbots%40hispanilandia.net&n=Public%20Bots&i=1DiZsGwxyzv&s=tIEcS-8zZJN"><img width="300" height="300" src="./qr.png"></img></a>
+  <img width="300" height="300" src="./qr.png"></img>
 </div>
 
 or visit: https://deltachat-bot.github.io/public-bots/
