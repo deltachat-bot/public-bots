@@ -113,25 +113,11 @@
       "url": "OPENPGP4FPR:6FE1642916908F1AC9CC7557CC99CF5DDB92043C#a=groupsbot%40testrun.org&n=InviteBot&i=AptcQCUYP3X&s=j6C75z6IKU8"
     },
     {
-      "addr": "howdoi@hispanilandia.net",
-      "description": "Get instant coding answers from Stack Overflow",
-      "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:118B1592A24183E6D1922F7C8A775F662D0B8DC4#a=howdoi%40hispanilandia.net&n=How%20do%20I%3F&i=JgugrCgP01u&s=7k9-7Z62Um7"
-    },
-    {
       "addr": "mini-apps@hispanilandia.net",
       "description": "DeltaLab's Mini-Games Store 🎮",
       "lang": "en",
       "admin": "adbenitez",
       "url": "OPENPGP4FPR:3CC3726E55E69CF4B52368C411819C7E7639B38C#a=mini%2Dapps%40hispanilandia.net&n=&i=jHGRY-9E7jd&s=cRh0KZJmfKJ"
-    },
-    {
-      "addr": "lyrics@hispanilandia.net",
-      "description": "Search for song lyrics 🎼🎶🎤",
-      "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:AAA362B3B891EDA4152DCF40D4A635364D5D9CA0#a=lyrics%40hispanilandia.net&n=LyricsBot&i=sM5oxC789zg&s=MyVVfdzw_cf"
     },
     {
       "addr": "mangadl@testrun.org",
@@ -146,13 +132,6 @@
       "lang": "multi",
       "admin": "adbenitez",
       "url": "OPENPGP4FPR:2099C7D3744F3B62E0C11EE4CFED5478A92DA043#a=memes%40hispanilandia.net&n=Memes%20Bot&i=egz8nDAMV6q&s=oydmbu8ZV6j"
-    },
-    {
-      "addr": "polls@hispanilandia.net",
-      "description": "Polls bot, allows to create and participate in polls",
-      "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:B47AB02369B0DC86C05E1F1825E7EB00BD917E8D#a=polls%40hispanilandia.net&n=PollsBot&i=4usXSVZ1y_q&s=s201RPZzEDW"
     },
     {
       "addr": "simplebot@systemli.org",
