@@ -1,6 +1,13 @@
 {
   "bots": [
     {
+      "addr": "tgbridgebot@hispanilandia.net",
+      "description": "Telegram puppeting bridge, use your Telegram account from Delta Chat",
+      "lang": "en",
+      "admin": "Nelson",
+      "url": "mailto:tgbridgebot@hispanilandia.net?body=/help"
+    },
+    {
       "addr": "multibot@testrun.org",
       "description": "Miscellaneous bot with multiple functionalities",
       "lang": "en",
