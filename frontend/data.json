@@ -50,20 +50,6 @@
       "url": "OPENPGP4FPR:8D0025A5DDA22D50EB38A731DC8D7EB24BECDFEB#a=adb%5Fbot1%40testrun.org&n=www&i=N2ZpQ9wDKLq&s=lr1Z8T3TlOI"
     },
     {
-      "addr": "cartelera@hispanilandia.net",
-      "description": "Permite consultar la cartelera de la TV cubana",
-      "lang": "es",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:D0E1D04F7CB4DF675FF40C16B8757470D98E7742#a=cartelera%40hispanilandia.net&n=Cartelera%20TV&i=bE_sYQa0JZD&s=eyf5eQIShJT"
-    },
-    {
-      "addr": "chatbot@testrun.org",
-      "description": "Conversational AI bot using OpenAI",
-      "lang": "multi",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:ACB006F0EF18032E1992A64BF1BD44F8385AE3D4#a=chatbot%40testrun.org&n=ChatBot&i=mbY70x0thoC&s=kB_C5bW3jIr"
-    },
-    {
       "addr": "localbot@testrun.org",
       "description": "Conversational AI bot using llama.cpp",
       "lang": "en",
@@ -85,13 +71,6 @@
       "url": "OPENPGP4FPR:FD06CE9EA9562A51FA7FCA84B026574F9FB923A8#a=deltalandbot%40testrun.org&n=Deltaland%20Bot%20%5BBETA%5D&i=QdEBHZBR8yI&s=AuLHwV5BqVi"
     },
     {
-      "addr": "downloaderbot@hispanilandia.net",
-      "description": "File downloader bot, get files from the web to your inbox",
-      "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:83D90328467A9216D3244B5AA23F544DFED077E9#a=downloaderbot%40hispanilandia.net&n=File%20Downloader&i=v-cJnR80WCy&s=q6LqhqGfLR6"
-    },
-    {
       "addr": "faqbot@testrun.org",
       "description": "FAQ bot, allows saving answer to common questions or #tags",
       "lang": "en",
@@ -106,13 +85,6 @@
       "url": "OPENPGP4FPR:EDBCBD0131B2216D60F76FF46834D1E33169F00E#a=feedsbot%40hispanilandia.net&n=FeedsBot&i=7AYtkEyVmW8&s=1HWCvzIMM9M"
     },
     {
-      "addr": "groupsbot@hispanilandia.net",
-      "description": "Public super groups and channels (anoymous mailing lists)",
-      "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:6185B0FC60681A7F06A31735070D21CEEB40B859#a=groupsbot%40hispanilandia.net&n=SuperGroupsBot&i=e_XiPctpNVS&s=1NRdaNor1Rc"
-    },
-    {
       "addr": "groupsbot@testrun.org",
       "description": "Bot that allows to invite friends to your private groups so you don't need to be online for them to join",
       "lang": "en",
@@ -120,32 +92,11 @@
       "url": "OPENPGP4FPR:6FE1642916908F1AC9CC7557CC99CF5DDB92043C#a=groupsbot%40testrun.org&n=InviteBot&i=AptcQCUYP3X&s=j6C75z6IKU8"
     },
     {
-      "addr": "mini-apps@hispanilandia.net",
-      "description": "DeltaLab's Mini-Games Store 🎮",
-      "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:3CC3726E55E69CF4B52368C411819C7E7639B38C#a=mini%2Dapps%40hispanilandia.net&n=&i=jHGRY-9E7jd&s=cRh0KZJmfKJ"
-    },
-    {
       "addr": "mangadl@testrun.org",
       "description": "Manga downloader bot with support for several sites and languages",
       "lang": "multi",
       "admin": "adbenitez",
       "url": "OPENPGP4FPR:8904D68A0B560EEEA20A06031BA3B5859361097B#a=mangadl%40testrun.org&n=MangaDownloader&i=fLXeIm7l2pP&s=Kpn1KG4fWiS"
-    },
-    {
-      "addr": "memes@hispanilandia.net",
-      "description": "Get funny memes",
-      "lang": "multi",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:2099C7D3744F3B62E0C11EE4CFED5478A92DA043#a=memes%40hispanilandia.net&n=Memes%20Bot&i=egz8nDAMV6q&s=oydmbu8ZV6j"
-    },
-    {
-      "addr": "simplebot@systemli.org",
-      "description": "Allows to get link/URL previews and search the web",
-      "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:81B0247BFBB7E3BE20593EB0B0E0983481685179#a=simplebot%40systemli.org&n=www&i=d1JutH49hDH&s=F_Xd0SmbcXM"
     },
     {
       "addr": "simplebot@testrun.org",
@@ -169,32 +120,11 @@
       "url": "OPENPGP4FPR:05B5EF4667BF45AF8E437415DF14FC5F0C721EA8#a=tgbridge%40testrun.org&n=Telegram%20Bridge&i=68W2tEfJHrA&s=2wYVxvks-0M"
     },
     {
-      "addr": "translator@hispanilandia.net",
-      "description": "Translate text to any language",
-      "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:F6948DDA3046531A190F26FBCBD3E8DC2F7924CB#a=translator%40hispanilandia.net&n=Translator%20Bot&i=wMuG5nircgB&s=Q4r26QE7prU"
-    },
-    {
       "addr": "uploaderbot@hispanilandia.net",
       "description": "Upload files to a cloud and get the download link",
       "lang": "en",
       "admin": "adbenitez",
       "url": "OPENPGP4FPR:9C9DA1499EDD478A80994B58C65D6348DFA09264#a=uploaderbot%40hispanilandia.net&n=File%20to%20Link&i=nB8AjS72u07&s=2WWEkH8MfBc"
-    },
-    {
-      "addr": "voice2text@hispanilandia.net",
-      "description": "Convert voice messages to text",
-      "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:7191E7BF4FA2518F608B25678CFB565A6282034B#a=voice2text%40hispanilandia.net&n=Voice%20to%20Text&i=VeVJzQnn8oL&s=HFye19A4B3z"
-    },
-    {
-      "addr": "writefreely@hispanilandia.net",
-      "description": "WriteFreely/DeltaChat bridge",
-      "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:B6F03DA7D8DF8EB6EE7E0D030A8E0B513E40D443#a=writefreely%40hispanilandia.net&n=WriteFreelyBot&i=r45fDGvqhcK&s=ZpEkv_FWyRl"
     },
     {
       "addr": "web2img@testrun.org",
@@ -209,13 +139,6 @@
       "lang": "en",
       "admin": "adbenitez",
       "url": "OPENPGP4FPR:90F3B4441063F3C770FCD8FEE218583044B7032D#a=web2pdf%40hispanilandia.net&n=web2pdf&i=iX-CDo5AitT&s=NorJEYpieER"
-    },
-    {
-      "addr": "xkcd@hispanilandia.net",
-      "description": "A bot to fetch comics from https://xkcd.com",
-      "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:8CFCEA1E7CB8E914457D98E47AAD060AD1EBF992#a=xkcd%40hispanilandia.net&n=xkcd%20bot&i=pYj-Ex5wh-m&s=ktkqonTzmkK"
     }
   ],
   "admins": {
