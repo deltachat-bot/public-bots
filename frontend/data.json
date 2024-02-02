@@ -36,11 +36,11 @@
       "url": "mailto:xstore@testrun.org?body=hi"
     },
     {
-      "addr": "public-bots@hispanilandia.net",
+      "addr": "publicbots@testrun.org",
       "description": "Public bots directory 🔍",
       "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:A0DCC2FD2D39D5F4CABE2E7AA5FAFF66B7B9AF7D#a=public%2Dbots%40hispanilandia.net&n=Public%20Bots&i=1DiZsGwxyzv&s=tIEcS-8zZJN"
+      "admin": "merlinux",
+      "url": "OPENPGP4FPR:4DB8117591B27184A903FF7E9F469E00D40E13E7#a=publicbots%40testrun.org&n=Public%20Bots&i=zSuQpFtBa_Q&s=weLMu1-o1o1"
     },
     {
       "addr": "adb_bot1@testrun.org",
