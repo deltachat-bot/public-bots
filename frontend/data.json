@@ -5,14 +5,14 @@
       "description": "Telegram puppeting bridge, use your Telegram account from Delta Chat",
       "lang": "en",
       "admin": "Nelson",
-      "url": "mailto:tgbridgebot@hispanilandia.net?body=/help"
+      "url": "OPENPGP4FPR:427253ED65DAD632EBC5F8C644608A7DFAA09154#a=tgbridgebot%40hispanilandia.net&n=Telegram%20Bridge&i=eburnF4oQGT&s=gjAl27avBCK"
     },
     {
       "addr": "multibot@testrun.org",
       "description": "Miscellaneous bot with multiple functionalities",
       "lang": "en",
       "admin": "Nelson",
-      "url": "mailto:multibot@testrun.org?body=/help"
+      "url": "OPENPGP4FPR:94F06EBF5E1794C4B6D33AC73F30B21F7165016A#a=multibot%40testrun.org&n=&i=Jb5RN18ERKg&s=NbAKC6Qzu_Y"
     },
     {
       "addr": "telegram.bridge@testrun.org",
@@ -33,7 +33,7 @@
       "description": "Official Delta Chat Webxdc Store",
       "lang": "en",
       "admin": "merlinux",
-      "url": "mailto:xstore@testrun.org?body=hi"
+      "url": "OPENPGP4FPR:37DC2B704A2AE2F6A96235CE0C3A0EBCA4F5801D#a=xstore%40testrun.org&n=&i=-1IGtynaivZ&s=JqHsvvcDmnW"
     },
     {
       "addr": "publicbots@testrun.org",
