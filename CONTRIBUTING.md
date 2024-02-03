@@ -18,7 +18,7 @@ To generate the frontend (WebXDC app) that is shipped/embedded inside the bot:
 go generate ./...
 ```
 
-For development instructions of the frontend check [frontend/README.md](https://github.com/deltachat-bot/public-bots/blob/master/frontend/README.md)
+For development instructions of the frontend check [frontend/README.md](./frontend/README.md)
 
 ### Automated testing
 

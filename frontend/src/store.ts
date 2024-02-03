@@ -11,7 +11,7 @@ function isOnline(lastSync: Date, lastSeen?: Date): boolean {
 const api = (() => {
   return {
     sync: () => {
-      const lastSyncReq = localStorage.getItem(lastSyncReqKey) || "";
+      const lastSyncReq = localStorage.getItem(lastSyncReqKey) || localStorage.getItem(lastSyncKey) || "";
       const hash = localStorage.getItem(hashKey) || null;
       if (
         lastSyncReq &&
@@ -116,10 +116,6 @@ export const useStore = create<State>()((set) => ({
 }));
 
 export async function init() {
-  // The first time the bot sends the state so no need to request
-  if (!localStorage.getItem(lastSyncReqKey)) {
-    localStorage.setItem(lastSyncReqKey, new Date().toString());
-  }
   const hash = localStorage.getItem(hashKey);
   if (hash) {
     const lastSync = new Date(localStorage.getItem(lastSyncKey) || "");

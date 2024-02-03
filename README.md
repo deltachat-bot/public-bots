@@ -48,4 +48,4 @@ Run `public-bots --help` to see all available options.
 
 ## Contributing
 
-Pull requests are welcome! check [CONTRIBUTING.md](https://github.com/deltachat-bot/public-bots/blob/master/CONTRIBUTING.md)
+Pull requests are welcome! check [CONTRIBUTING.md](./CONTRIBUTING.md)

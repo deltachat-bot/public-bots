@@ -168,10 +168,15 @@ func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.Cha
 		return
 	}
 
-	msgId, err := rpc.SendMsg(accId, chatId, deltachat.MsgData{File: xdcPath})
+	err = rpc.MiscSetDraft(accId, chatId, option.None[string](), option.Some(xdcPath), option.None[deltachat.MsgId](), option.None[deltachat.MsgType]())
 	if err != nil {
 		logger.Error(err)
 	}
+	draft, err := rpc.GetDraft(accId, chatId)
+	if err != nil {
+		logger.Error(err)
+	}
+	msgId := draft.Unwrap().Id
 
 	if cfg.BotsData.Hash != "" {
 		syncTime, botsData, statusData, _ := (&API{}).Sync("")
@@ -180,5 +185,10 @@ func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.Cha
 		if err := xdcrpc.SendUpdate(rpc, accId, msgId, update, ""); err != nil {
 			logger.Error(err)
 		}
+	}
+
+	_, err = rpc.MiscSendDraft(accId, chatId)
+	if err != nil {
+		logger.Error(err)
 	}
 }
