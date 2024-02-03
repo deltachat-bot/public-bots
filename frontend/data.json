@@ -19,14 +19,14 @@
       "description": "Telegram puppeting bridge, use your Telegram account from Delta Chat",
       "lang": "en",
       "admin": "D@vid",
-      "url": "mailto:telegram.bridge@testrun.org?body=/help"
+      "url": "OPENPGP4FPR:A1E4D1BA68BC18B4CE135835C9DB9741C34B1145#a=telegram.bridge%40testrun.org&n=Telegram%20Bridge&i=slQnX11ODxb&s=N5QQLndQWU5"
     },
     {
       "addr": "downloaderlite@testrun.org",
       "description": "File downloader bot, get files from the web to your inbox split in 4MB chunks",
       "lang": "en",
       "admin": "D@vid",
-      "url": "mailto:downloaderlite@testrun.org?body=/help"
+      "url": "OPENPGP4FPR:8BD46E9480FCCF0B2CF863171DD2C737B92BF554#a=downloaderlite%40testrun.org&n=Downloader%20Lite&i=aWfxCbsFBS_&s=P81BRs3wqU-"
     },
     {
       "addr": "xstore@testrun.org",
