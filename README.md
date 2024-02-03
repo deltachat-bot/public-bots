@@ -9,7 +9,7 @@ Public bots discovery for Delta Chat via bot + WebXDC app.
 
 ## Usage
 
-To see the list of public bots inside Delta Chat [click here](https://i.delta.chat/#4DB8117591B27184A903FF7E9F469E00D40E13E7&a=publicbots%40testrun.org&n=Public%20Bots&i=zSuQpFtBa_Q&s=weLMu1-o1o1).
+To see the list of public bots inside Delta Chat [click here](https://i.delta.chat/#9AF055DB87EC48A1C009B6CA55E3712A6F7D346F&a=botsindex%40nine.testrun.org&n=Public%20Bots&i=QpBSronexvP&s=nAfQ0q_JomN).
 
 Alternatively to see the list in the browser visit: https://deltachat-bot.github.io/public-bots/
 
