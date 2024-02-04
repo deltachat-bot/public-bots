@@ -2,6 +2,7 @@ package main
 
 import (
 	"io"
+	"math"
 	"net/http"
 	"path/filepath"
 	"strings"
@@ -57,6 +58,28 @@ func updateStatusLoop(rpc *deltachat.Rpc) {
 				continue
 			}
 			logger := logger.With("acc", accId, "bot", bot.Addr)
+			contactId, err := rpc.CreateContact(accId, bot.Addr, "")
+			if err != nil {
+				logger.Error(err)
+				continue
+			}
+			chatId, err := rpc.GetChatIdByContactId(accId, contactId)
+			if err != nil {
+				logger.Error(err)
+				continue
+			}
+			if chatId != 0 {
+				contact, err := rpc.GetContact(accId, contactId)
+				if err != nil {
+					logger.Error(err)
+					continue
+				}
+				lastSeen := int(math.Round(time.Since(contact.LastSeen.Time).Hours()))
+				if lastSeen >= 1 && lastSeen%2 != 0 {
+					logger.Debug("skipping status check for offline bot")
+					continue
+				}
+			}
 			logger.Debug("checking bot status")
 			if strings.HasPrefix(strings.ToLower(bot.Url), "openpgp4fpr:") {
 				_, err := rpc.SecureJoin(accId, bot.Url)
@@ -64,11 +87,6 @@ func updateStatusLoop(rpc *deltachat.Rpc) {
 					logger.Error(err)
 				}
 			} else {
-				contactId, err := rpc.CreateContact(accId, bot.Addr, "")
-				if err != nil {
-					logger.Error(err)
-					continue
-				}
 				chatId, err := rpc.CreateChatByContactId(accId, contactId)
 				if err != nil {
 					logger.Error(err)
