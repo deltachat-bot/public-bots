@@ -10,12 +10,34 @@ import (
 
 	"github.com/deltachat-bot/deltabot-cli-go/botcli"
 	"github.com/deltachat/deltachat-rpc-client-go/deltachat"
+	"github.com/deltachat/deltachat-rpc-client-go/deltachat/option"
 	"github.com/spf13/cobra"
 )
 
 var cli = botcli.New("public-bots")
 
 func onBotInit(cli *botcli.BotCli, bot *deltachat.Bot, cmd *cobra.Command, args []string) {
+	accounts, err := bot.Rpc.GetAllAccountIds()
+	if err != nil {
+		cli.Logger.Error(err)
+	}
+	for _, accId := range accounts {
+		name, err := bot.Rpc.GetConfig(accId, "displayname")
+		if err != nil {
+			cli.Logger.Error(err)
+		}
+		if name.UnwrapOr("") == "" {
+			err = bot.Rpc.SetConfig(accId, "displayname", option.Some("Public Bots"))
+			if err != nil {
+				cli.Logger.Error(err)
+			}
+			err = bot.Rpc.SetConfig(accId, "delete_server_after", option.Some("1"))
+			if err != nil {
+				cli.Logger.Error(err)
+			}
+		}
+	}
+
 	bot.OnUnhandledEvent(onEvent)
 	bot.OnNewMsg(onNewMsg)
 }
