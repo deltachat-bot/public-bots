@@ -31,13 +31,6 @@ then
     chmod +x deltachat-rpc-server
     export PATH=`pwd`:"$PATH"
 fi
-mkdir -p "$HOME/.cargo/bin/"
-export PATH="$HOME/.cargo/bin/:$PATH"
-if ! command -v deltachat-rpc-server &> /dev/null
-then
-    echo "deltachat-rpc-server not found, installing..."
-    pip install deltachat-rpc-server
-fi
 if ! command -v courtney &> /dev/null
 then
     echo "courtney not found, installing..."
