@@ -1,6 +1,13 @@
 {
   "bots": [
     {
+      "addr": "navegabot@nine.testrun.org",
+      "description": "Web gateway, get URL previews and download files",
+      "lang": "en",
+      "admin": "Nelson",
+      "url": "OPENPGP4FPR:8F924FE1DF3ED61F61CEE43742CE5CCA18C4BE93#a=navegabot%40nine.testrun.org&n=NavBot&i=DD4wJ738JZy&s=ZiV1JAaSkjd"
+    },
+    {
       "addr": "tgbridgebot@hispanilandia.net",
       "description": "Telegram puppeting bridge, use your Telegram account from Delta Chat",
       "lang": "en",
