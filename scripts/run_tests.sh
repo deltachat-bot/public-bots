@@ -16,7 +16,7 @@ if ! command -v golangci-lint &> /dev/null
 then
     echo "golangci-lint not found, installing..."
     # binary will be $(go env GOPATH)/bin/golangci-lint
-    curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.54.2
+    curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.55.2
 fi
 if ! golangci-lint run
 then
@@ -24,12 +24,12 @@ then
 fi
 
 # Install test dependencies
-mkdir -p "$HOME/.cargo/bin/"
-export PATH="$HOME/.cargo/bin/:$PATH"
 if ! command -v deltachat-rpc-server &> /dev/null
 then
     echo "deltachat-rpc-server not found, installing..."
-    pip install deltachat-rpc-server
+    curl -L https://github.com/deltachat/deltachat-core-rust/releases/latest/download/deltachat-rpc-server-x86_64-linux --output deltachat-rpc-server
+    chmod +x deltachat-rpc-server
+    export PATH=`pwd`:"$PATH"
 fi
 if ! command -v courtney &> /dev/null
 then
