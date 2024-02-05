@@ -3,8 +3,8 @@ module github.com/deltachat-bot/public-bots
 go 1.21
 
 require (
-	github.com/deltachat-bot/deltabot-cli-go v0.5.0
-	github.com/deltachat/deltachat-rpc-client-go v1.127.1-0.20240204232737-080e111dd7d6
+	github.com/deltachat-bot/deltabot-cli-go v0.6.0
+	github.com/deltachat/deltachat-rpc-client-go v1.134.0
 	github.com/spf13/cobra v1.7.0
 	github.com/stretchr/testify v1.8.2
 )
