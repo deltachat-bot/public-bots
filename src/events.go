@@ -91,6 +91,10 @@ func onNewMsg(bot *deltachat.Bot, accId deltachat.AccountId, msgId deltachat.Msg
 		}
 		if chat.ChatType == deltachat.ChatSingle {
 			logger.Debugf("Got new 1:1 message: %#v", msg)
+			err = bot.Rpc.MarkseenMsgs(accId, []deltachat.MsgId{msg.Id})
+			if err != nil {
+				logger.Error(err)
+			}
 			sendApp(bot.Rpc, accId, msg.ChatId)
 		}
 	}
