@@ -16,7 +16,7 @@ if ! command -v golangci-lint &> /dev/null
 then
     echo "golangci-lint not found, installing..."
     # binary will be $(go env GOPATH)/bin/golangci-lint
-    curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.54.2
+    curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.55.2
 fi
 if ! golangci-lint run
 then

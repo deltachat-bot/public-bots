@@ -17,6 +17,9 @@ import (
 var cli = botcli.New("public-bots")
 
 func onBotInit(cli *botcli.BotCli, bot *deltachat.Bot, cmd *cobra.Command, args []string) {
+	bot.OnUnhandledEvent(onEvent)
+	bot.OnNewMsg(onNewMsg)
+
 	accounts, err := bot.Rpc.GetAllAccountIds()
 	if err != nil {
 		cli.Logger.Error(err)
@@ -37,9 +40,6 @@ func onBotInit(cli *botcli.BotCli, bot *deltachat.Bot, cmd *cobra.Command, args 
 			}
 		}
 	}
-
-	bot.OnUnhandledEvent(onEvent)
-	bot.OnNewMsg(onNewMsg)
 }
 
 func onBotStart(cli *botcli.BotCli, bot *deltachat.Bot, cmd *cobra.Command, args []string) {
