@@ -102,8 +102,15 @@
       "addr": "groupsbot@testrun.org",
       "description": "Bot that allows to invite friends to your private groups so you don't need to be online for them to join",
       "lang": "en",
-      "admin": "adbenitez",
+      "admin": "merlinux",
       "url": "OPENPGP4FPR:6FE1642916908F1AC9CC7557CC99CF5DDB92043C#a=groupsbot%40testrun.org&n=InviteBot&i=AptcQCUYP3X&s=j6C75z6IKU8"
+    },
+    {
+      "addr": "invitebot@nine.testrun.org",
+      "description": "Bot that allows to invite friends to your private groups so you don't need to be online for them to join",
+      "lang": "en",
+      "admin": "merlinux",
+      "url": "OPENPGP4FPR:6CBFF8FFD505C0FDEA20A66674F2916EA8FBEE99#a=invitebot%40nine.testrun.org&n=InviteBot&i=5JRojJKI49i&s=Js2jkA52U-f"
     },
     {
       "addr": "mangadl@testrun.org",
