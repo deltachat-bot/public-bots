@@ -88,7 +88,7 @@
       "addr": "faqbot@testrun.org",
       "description": "FAQ bot, allows saving answer to common questions or #tags",
       "lang": "en",
-      "admin": "adbenitez",
+      "admin": "merlinux",
       "url": "OPENPGP4FPR:279714071CC59EB4A9943122A3B4FF4BB7264A0E#a=faqbot%40testrun.org&n=FAQ%20Bot&i=PhdQtXTJQkp&s=WAPGhvIBtEy"
     },
     {
@@ -123,8 +123,15 @@
       "addr": "stickerbot@hispanilandia.net",
       "description": "Allows to download sticker packs",
       "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:505ABCB5FE466D5A74A0FD1A33B81CFE12CD0A8D#a=stickerbot%40hispanilandia.net&n=StickerBot&i=wM2bpwc2EzK&s=5YAwTNLcJhp"
+      "admin": "merlinux",
+      "url": "OPENPGP4FPR:82DE1AA977F1E8B904FF3739D6DDCA53C92FEA92#a=stickerbot%40hispanilandia.net&n=StickersBot&i=Bp_cOxhk6AO&s=wBeG1T0GOUG"
+    },
+    {
+      "addr": "stickerbot@hispanilandia.net",
+      "description": "Allows to download sticker packs",
+      "lang": "en",
+      "admin": "merlinux",
+      "url": "OPENPGP4FPR:9DE7DADDC37828D75499BBDC45CA5FACF50E9B18#a=stickersb%40mehl.cloud&n=StickersBot&i=tHkRoHiugej&s=n0x9TjRcUxo"
     },
     {
       "addr": "tgbridge@testrun.org",
