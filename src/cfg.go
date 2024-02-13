@@ -15,6 +15,7 @@ var cfg *Config
 
 type Config struct {
 	StatusLastChecked time.Time
+	OffLastChecked    time.Time
 	BotsData          BotsData
 
 	rpc   *deltachat.Rpc
@@ -129,6 +130,17 @@ func (self *Config) SaveStatusLastChecked() error {
 	self.mutex.Lock()
 	defer self.mutex.Unlock()
 	self.StatusLastChecked = time.Now()
+	output, err := json.Marshal(self)
+	if err != nil {
+		return err
+	}
+	return os.WriteFile(self.path, output, 0666)
+}
+
+func (self *Config) SaveOffLastChecked() error {
+	self.mutex.Lock()
+	defer self.mutex.Unlock()
+	self.OffLastChecked = time.Now()
 	output, err := json.Marshal(self)
 	if err != nil {
 		return err

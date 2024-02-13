@@ -2,7 +2,6 @@ package main
 
 import (
 	"io"
-	"math"
 	"net/http"
 	"path/filepath"
 	"strings"
@@ -50,6 +49,60 @@ func onBotStart(cli *botcli.BotCli, bot *deltachat.Bot, cmd *cobra.Command, args
 	}
 	go updateBotsLoop()
 	go updateStatusLoop(bot.Rpc)
+	go updateOfflineBotsStatusLoop(bot.Rpc)
+}
+
+func updateOfflineBotsStatusLoop(rpc *deltachat.Rpc) {
+	logger := cli.Logger.With("origin", "off-bots-status-loop")
+	delay := 60 * time.Minute
+	for {
+		toSleep := delay - time.Since(cfg.OffLastChecked)
+		if toSleep > 0 {
+			logger.Debugf("Sleeping for %v", toSleep)
+			time.Sleep(toSleep)
+		}
+		if err := cfg.SaveOffLastChecked(); err != nil {
+			cli.Logger.Error(err)
+		}
+		botsData := cfg.GetBotsData()
+		selfAddrs := getSelfAddrs(rpc)
+		accId := getFirstAccount(rpc)
+		for _, bot := range botsData.Bots {
+			if accId == 0 {
+				break
+			}
+			if _, ok := selfAddrs[bot.Addr]; ok {
+				continue
+			}
+			logger := logger.With("acc", accId, "bot", bot.Addr)
+			contactId, err := rpc.CreateContact(accId, bot.Addr, "")
+			if err != nil {
+				logger.Error(err)
+				continue
+			}
+			chatId, err := rpc.GetChatIdByContactId(accId, contactId)
+			if err != nil {
+				logger.Error(err)
+				continue
+			}
+			if chatId == 0 {
+				continue
+			}
+			contact, err := rpc.GetContact(accId, contactId)
+			if err != nil {
+				logger.Error(err)
+				continue
+			}
+			if time.Since(contact.LastSeen.Time).Minutes() < 30 {
+				// bot is not offline, it will be checked by the online-bots status loop
+				continue
+			}
+			logger.Debug("checking bot status")
+			if err := pingBot(rpc, accId, contactId, bot.Url); err != nil {
+				logger.Error(err)
+			}
+		}
+	}
 }
 
 func updateStatusLoop(rpc *deltachat.Rpc) {
@@ -96,31 +149,30 @@ func updateStatusLoop(rpc *deltachat.Rpc) {
 					logger.Error(err)
 					continue
 				}
-				lastSeen := int(math.Round(time.Since(contact.LastSeen.Time).Hours()))
-				if lastSeen >= 1 && lastSeen%2 != 0 {
-					logger.Debug("skipping status check for offline bot")
+				if time.Since(contact.LastSeen.Time).Minutes() >= 30 {
+					// offline bot, will be check by the offline-bots status loop
 					continue
 				}
 			}
 			logger.Debug("checking bot status")
-			if strings.HasPrefix(strings.ToLower(bot.Url), "openpgp4fpr:") {
-				_, err := rpc.SecureJoin(accId, bot.Url)
-				if err != nil {
-					logger.Error(err)
-				}
-			} else {
-				chatId, err := rpc.CreateChatByContactId(accId, contactId)
-				if err != nil {
-					logger.Error(err)
-					continue
-				}
-				_, err = rpc.MiscSendTextMessage(accId, chatId, "/help")
-				if err != nil {
-					logger.Error(err)
-				}
+			if err := pingBot(rpc, accId, contactId, bot.Url); err != nil {
+				logger.Error(err)
 			}
 		}
 	}
+}
+
+func pingBot(rpc *deltachat.Rpc, accId deltachat.AccountId, contactId deltachat.ContactId, botUrl string) error {
+	if strings.HasPrefix(strings.ToLower(botUrl), "openpgp4fpr:") {
+		_, err := rpc.SecureJoin(accId, botUrl)
+		return err
+	}
+	chatId, err := rpc.CreateChatByContactId(accId, contactId)
+	if err != nil {
+		return err
+	}
+	_, err = rpc.MiscSendTextMessage(accId, chatId, "/help")
+	return err
 }
 
 func updateBotsLoop() {
