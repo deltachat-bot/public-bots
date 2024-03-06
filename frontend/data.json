@@ -93,10 +93,17 @@
     },
     {
       "addr": "feedsbot@hispanilandia.net",
-      "description": "Allows to subscribe to RSS/Atom feeds",
+      "description": "Allows to subscribe to RSS/Atom feeds in group chats",
       "lang": "en",
-      "admin": "adbenitez",
+      "admin": "merlinux",
       "url": "OPENPGP4FPR:EDBCBD0131B2216D60F76FF46834D1E33169F00E#a=feedsbot%40hispanilandia.net&n=FeedsBot&i=7AYtkEyVmW8&s=1HWCvzIMM9M"
+    },
+    {
+      "addr": "feedsb@mailchat.pl",
+      "description": "Allows to subscribe to RSS/Atom feeds in group chats",
+      "lang": "en",
+      "admin": "merlinux",
+      "url": "OPENPGP4FPR:024C525D627CBF5A292FC428A40BF74BE66DA1BC#a=feedsb%40mailchat.pl&n=FeedsBot&i=6eMHA8T69SF&s=M53-Un3pKPa"
     },
     {
       "addr": "groupsbot@testrun.org",
