@@ -1,6 +1,20 @@
 {
   "bots": [
     {
+      "addr": "voice2text@testrun.org",
+      "description": "Bot that can help you extract text from voice messages, also works in groups",
+      "lang": "multi",
+      "admin": "merlinux",
+      "url": "OPENPGP4FPR:81EDFA2AEBCF4ECDF357A5E6F383F813547CB9D7#a=voice2text%40testrun.org&n=Voice%20To%20Text&i=zSBD_nJBpTn&s=NVYndJrYBOU"
+    },
+    {
+      "addr": "voice2txt@nine.testrun.org",
+      "description": "Bot that can help you extract text from voice messages, also works in groups",
+      "lang": "multi",
+      "admin": "merlinux",
+      "url": "OPENPGP4FPR:924B09EB934CF0F836ADD3D1C8F56A8070D5506E#a=voice2txt%40nine.testrun.org&n=Voice%20To%20Text&i=PYu7OFENQUo&s=7vGNO0Q4zE4"
+    },
+    {
       "addr": "navegabot@nine.testrun.org",
       "description": "Web gateway, get URL previews and download files",
       "lang": "en",
