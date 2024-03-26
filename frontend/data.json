@@ -1,6 +1,13 @@
 {
   "bots": [
     {
+      "addr": "txt2image@nine.testrun.org",
+      "description": "Bot to generate images given a text prompt",
+      "lang": "en",
+      "admin": "merlinux",
+      "url": "OPENPGP4FPR:2FE05BD53A28A912A4AA74BF7BE6FD5E547473CC#a=txt2image%40nine.testrun.org&n=Text%20To%20Image&i=cbTmzlMa0-C&s=EWZ_FsPcd0R"
+    },
+    {
       "addr": "voice2text@testrun.org",
       "description": "Bot that can help you extract text from voice messages, also works in groups",
       "lang": "multi",
