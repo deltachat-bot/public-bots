@@ -1,6 +1,13 @@
 {
   "bots": [
     {
+      "addr": "chatbot@testrun.org",
+      "description": "Conversational AI chat-bot assistant for Delta Chat",
+      "lang": "en",
+      "admin": "merlinux",
+      "url": "OPENPGP4FPR:A11808CEE7890F00B54EB64183C1FA40200635D5#a=chatbot%40testrun.org&n=Mia&i=1uiiAtibina&s=iyHlIA_MABH"
+    },
+    {
       "addr": "txt2image@nine.testrun.org",
       "description": "Bot to generate images given a text prompt",
       "lang": "en",
