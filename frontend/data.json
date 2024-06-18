@@ -1,6 +1,13 @@
 {
   "bots": [
     {
+      "addr": "web2pdf01@bcc.chat",
+      "description": "Web to PDF converter",
+      "lang": "en",
+      "admin": "merlinux",
+      "url": "OPENPGP4FPR:43B48FD6AFE0B780E08DEDE70A0DB16EDBE137EC#a=web2pdf01%40bcc.chat&n=Web%20to%20PDF&i=aVeg_0fMaME&s=48WGSWyaIru"
+    },
+    {
       "addr": "telegrbot@nine.testrun.org",
       "description": "Telegram puppeting bridge, use your Telegram account from Delta Chat",
       "lang": "en",
@@ -169,25 +176,11 @@
       "url": "OPENPGP4FPR:05B5EF4667BF45AF8E437415DF14FC5F0C721EA8#a=tgbridge%40testrun.org&n=Telegram%20Bridge&i=68W2tEfJHrA&s=2wYVxvks-0M"
     },
     {
-      "addr": "uploaderbot@hispanilandia.net",
-      "description": "Upload files to a cloud and get the download link",
-      "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:9C9DA1499EDD478A80994B58C65D6348DFA09264#a=uploaderbot%40hispanilandia.net&n=File%20to%20Link&i=nB8AjS72u07&s=2WWEkH8MfBc"
-    },
-    {
       "addr": "web2img@testrun.org",
       "description": "Web to Image converter, take screenshots of web sites",
       "lang": "en",
       "admin": "adbenitez",
       "url": "OPENPGP4FPR:B854D991B27307F8393A934CEE9BFD63D19250D3#a=web2img%40testrun.org&n=Web%20to%20Image&i=le_x0ejIaW-&s=EESq-4vLPM3"
-    },
-    {
-      "addr": "web2pdf@hispanilandia.net",
-      "description": "Web to PDF converter",
-      "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:90F3B4441063F3C770FCD8FEE218583044B7032D#a=web2pdf%40hispanilandia.net&n=web2pdf&i=iX-CDo5AitT&s=NorJEYpieER"
     }
   ],
   "admins": {
