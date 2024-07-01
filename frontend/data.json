@@ -106,13 +106,6 @@
       "url": "OPENPGP4FPR:74055606ADC789BA0566DA672D7EA2A32C6B5763#a=localbot%40testrun.org&n=&i=Bc6oC6IIUWP&s=9ZsRjKI_g2q"
     },
     {
-      "addr": "deltabot@buzon.uy",
-      "description": "Miscellaneous bot",
-      "lang": "en",
-      "admin": "adbenitez",
-      "url": "OPENPGP4FPR:C823D993CF37BF5D8C834F8F08505516CF8AB8C8#a=deltabot%40buzon.uy&n=Misc.%20Bot&i=YMorOP_2ppb&s=LX4bGaOhVu-"
-    },
-    {
       "addr": "deltalandbot@testrun.org",
       "description": "Deltaland, fantasy world, chat adventure, MMO game",
       "lang": "en",
