@@ -95,8 +95,22 @@
       "addr": "adb_bot1@testrun.org",
       "description": "Web gateway, get URL previews and download files",
       "lang": "en",
-      "admin": "adbenitez",
+      "admin": "merlinux",
       "url": "OPENPGP4FPR:8D0025A5DDA22D50EB38A731DC8D7EB24BECDFEB#a=adb%5Fbot1%40testrun.org&n=www&i=N2ZpQ9wDKLq&s=lr1Z8T3TlOI"
+    },
+    {
+      "addr": "www2delta@chatmail.woodpeckersnest.space",
+      "description": "Web gateway, get URL previews and download files",
+      "lang": "en",
+      "admin": "merlinux",
+      "url": "OPENPGP4FPR:E0421EA0951C59A565F470F5241C8A542ACEF9D1#a=www2delta%40chatmail.woodpeckersnest.space&n=www&i=6OPTVCRUmdD&s=1giWmIckD_r"
+    },
+    {
+      "addr": "deltabot@buzon.uy",
+      "description": "Web gateway, get URL previews and download files",
+      "lang": "en",
+      "admin": "merlinux",
+      "url": "OPENPGP4FPR:305EBA9DA8B9383F478754DC46995C56DBC2EC4B#a=deltabot%40buzon.uy&n=www&i=MauOlQuQW9Z&s=pvlZhO3SHg4"
     },
     {
       "addr": "localbot@testrun.org",
