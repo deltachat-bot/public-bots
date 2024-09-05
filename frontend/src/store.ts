@@ -8,15 +8,16 @@ function isOnline(lastSync: Date, lastSeen?: Date): boolean {
   return timeAgo <= recently;
 }
 
-const api = (() => {
+export const api = (() => {
   return {
-    sync: () => {
+    sync: (force: boolean = false) => {
       const lastSyncReq =
         localStorage.getItem(lastSyncReqKey) ||
         localStorage.getItem(lastSyncKey) ||
         "";
       const hash = localStorage.getItem(hashKey) || null;
       if (
+        !force &&
         lastSyncReq &&
         new Date().getTime() - new Date(lastSyncReq).getTime() <=
           1000 * 60 * (hash ? 10 : 1)
