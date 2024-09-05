@@ -1,6 +1,7 @@
 import {
   IonContent,
   IonPage,
+  IonIcon,
   IonItem,
   IonList,
   IonSpinner,
@@ -13,9 +14,9 @@ import {
 import Fuse from "fuse.js";
 import { create } from "zustand";
 import { useState } from "react";
-import { warningOutline } from "ionicons/icons";
+import { warningOutline, refreshOutline } from "ionicons/icons";
 
-import { useStore, Bot } from "../store";
+import { useStore, Bot, api } from "../store";
 import BotItem from "../components/BotItem";
 import { getText as _, format } from "../i18n";
 import "./Home.css";
@@ -58,20 +59,17 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
+      {state.bots.length > 0 && (
+        <IonToolbar>
+          <br />
+          <IonSearchbar
+            debounce={200}
+            onIonInput={(ev) => handleInput(ev)}
+            placeholder={format(_("search-placeholder"), state.bots.length)}
+          ></IonSearchbar>
+        </IonToolbar>
+      )}
       <IonContent fullscreen>
-        {state.syncing && state.hash && (
-          <IonProgressBar type="indeterminate"></IonProgressBar>
-        )}
-        {state.bots.length > 0 && (
-          <>
-            <br />
-            <IonSearchbar
-              debounce={200}
-              onIonInput={(ev) => handleInput(ev)}
-              placeholder={format(_("search-placeholder"), state.bots.length)}
-            ></IonSearchbar>
-          </>
-        )}
         {state.hash ? (
           <IonList>
             {results.map((bot) => (
@@ -95,9 +93,13 @@ const Home: React.FC = () => {
         )}
       </IonContent>
       {state.lastSync && (
-        <IonFooter translucent collapse="fade" class="footer">
-          <IonToolbar>
+        <IonFooter collapse="fade" class="footer">
+          <IonToolbar onClick={() => api.sync(true)}>
+            <IonIcon slot="start" icon={refreshOutline} />
             {format(_("last-updated"), state.lastSync.toLocaleString())}
+            {state.syncing && state.hash && (
+              <IonProgressBar type="indeterminate"></IonProgressBar>
+            )}
           </IonToolbar>
         </IonFooter>
       )}

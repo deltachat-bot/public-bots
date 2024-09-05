@@ -15,4 +15,5 @@
 .footer ion-toolbar {
   text-align: center;
   color: #8c8c8c;
+  cursor: pointer;
 }
