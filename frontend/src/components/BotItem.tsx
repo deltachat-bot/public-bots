@@ -1,12 +1,23 @@
 import {
   IonItem,
+  IonGrid,
+  IonCol,
+  IonRow,
   IonLabel,
-  IonChip,
+  IonCard,
+  IonNote,
+  IonCardHeader,
+  IonCardTitle,
+  IonButton,
   IonBadge,
   IonIcon,
   IonAvatar,
 } from "@ionic/react";
-import { languageOutline, openOutline } from "ionicons/icons";
+import {
+  languageOutline,
+  chatbubbleEllipsesOutline,
+  shareSocialOutline,
+} from "ionicons/icons";
 
 import TextAvatar from "./TextAvatar";
 import { Bot, recently } from "../store";
@@ -36,42 +47,59 @@ function displayLastSeen(lastSync: Date, lastSeen: Date) {
   return false;
 }
 
-export default function BotItem({
-  bot,
-  lastSync,
-}: {
+type Props = {
   bot: Bot;
   lastSync: Date;
-}) {
+};
+
+export default function BotItem({ bot, lastSync }: Props) {
+  const shareURL = () => window.webxdc.sendToChat({ text: bot.inviteLink });
+
   return (
-    <IonItem>
-      <IonLabel class="ion-text-wrap">
-        <a
-          className="botChip"
-          target="_blank"
-          rel="noopener noreferrer"
-          href={bot.url}
-        >
-          <IonChip>
-            <TextAvatar text={bot.addr} />
-            <IonLabel>{bot.addr} </IonLabel>
-            <IonIcon icon={openOutline} />
-          </IonChip>
-        </a>
-        <br />
-        <IonBadge color="light">
-          <IonIcon icon={languageOutline} /> {bot.lang.label}
-        </IonBadge>{" "}
-        {displayLastSeen(lastSync || new Date(), bot.lastSeen)}
-        <p className="selectable">{bot.description}</p>
-        <p>
-          <strong>{_("admin")}</strong>
-          <a target="_blank" rel="noopener noreferrer" href={bot.admin.url}>
+    <IonCard>
+      <IonCardHeader className="ion-no-padding">
+        <IonCardTitle>
+          <IonItem color="light" className="contact-item" lines="none">
+            <TextAvatar name={bot.name} id={bot.addr} />
+            <IonLabel className="contact-title">
+              {bot.name || bot.addr}
+              <p className="contact-addr">
+                <IonNote className="contact-addr">{bot.addr}</IonNote>
+              </p>
+            </IonLabel>
+          </IonItem>
+        </IonCardTitle>
+      </IonCardHeader>
+
+      <IonItem lines="none">
+        <IonLabel className="ion-text-wrap">
+          <IonBadge color="light">
+            <IonIcon icon={languageOutline} /> {bot.lang.label}
+          </IonBadge>{" "}
+          {displayLastSeen(lastSync || new Date(), bot.lastSeen)}
+          <div className="selectable">{bot.description}</div>
+          <p>
+            <strong>{_("admin")}</strong>
             {bot.admin.name}
-            <IonIcon icon={openOutline} />
-          </a>
-        </p>
-      </IonLabel>
-    </IonItem>
+          </p>
+          <IonGrid>
+            <IonRow>
+              <IonCol size="6">
+                <IonButton href={bot.url} expand="block">
+                  <IonLabel>{_("chat")}</IonLabel>
+                  <IonIcon slot="end" icon={chatbubbleEllipsesOutline} />
+                </IonButton>
+              </IonCol>
+              <IonCol size="6">
+                <IonButton onClick={shareURL} fill="outline" expand="block">
+                  <IonLabel>{_("share")}</IonLabel>
+                  <IonIcon slot="end" icon={shareSocialOutline} />
+                </IonButton>
+              </IonCol>
+            </IonRow>
+          </IonGrid>
+        </IonLabel>
+      </IonItem>
+    </IonCard>
   );
 }

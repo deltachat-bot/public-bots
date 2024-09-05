@@ -11,7 +11,10 @@ function isOnline(lastSync: Date, lastSeen?: Date): boolean {
 const api = (() => {
   return {
     sync: () => {
-      const lastSyncReq = localStorage.getItem(lastSyncReqKey) || localStorage.getItem(lastSyncKey) || "";
+      const lastSyncReq =
+        localStorage.getItem(lastSyncReqKey) ||
+        localStorage.getItem(lastSyncKey) ||
+        "";
       const hash = localStorage.getItem(hashKey) || null;
       if (
         lastSyncReq &&
@@ -52,7 +55,9 @@ type Admin = { name: string; url: string };
 type Lang = { label: string; code: string };
 export type Bot = {
   addr: string;
+  name: string;
   url: string;
+  inviteLink: string;
   description: string;
   lang: Lang;
   admin: Admin;
@@ -92,6 +97,14 @@ export const useStore = create<State>()((set) => ({
           if (bot.lastSeen) {
             bot.lastSeen = new Date(bot.lastSeen);
           }
+          const url = new URL(bot.url);
+          const params = new URLSearchParams(url.hash.substring(1));
+          bot.addr = params.get("a");
+          bot.name = params.get("n");
+          url.protocol = "https:"; // this must be done before using url.host
+          url.hash = "#" + url.host + "&" + url.hash.substring(1);
+          url.host = "i.delta.chat";
+          bot.inviteLink = url.toString();
         });
         state.hash = botsData.hash;
         state.bots = botsData.bots;
@@ -105,7 +118,7 @@ export const useStore = create<State>()((set) => ({
         if (online1 > online2) {
           return -1;
         }
-        if (b1.addr < b2.addr) {
+        if ((b1.name || b1.addr) < (b2.name || b2.addr)) {
           return -1;
         }
         return 1;

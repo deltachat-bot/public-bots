@@ -1,7 +1,12 @@
-.botChip {
-  text-decoration: none;
-}
-
 .selectable {
   user-select: text;
+}
+
+.contact-title {
+  padding-left: 0.5em;
+}
+
+.contact-addr {
+  font-size: 0.9em;
+  font-weight: normal;
 }

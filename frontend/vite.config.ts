@@ -1,10 +1,5 @@
 import preact from "@preact/preset-vite";
-import {
-  buildXDC,
-  eruda,
-  mockWebxdc,
-  legacy,
-} from "webxdc-vite-plugins";
+import { buildXDC, eruda, legacy } from "webxdc-vite-plugins";
 import { defineConfig } from "vite";
 import { mkdirSync, copyFileSync, existsSync } from "node:fs";
 
@@ -29,16 +24,15 @@ function embedVersion() {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [
-        preact(),
-        embedVersion(),
-        buildXDC({
-            outDir: embedDir,
-            outFileName: "app.xdc",
-        }),
-        eruda(),
-        mockWebxdc(),
-        legacy(),
-    ],
+  plugins: [
+    preact(),
+    embedVersion(),
+    buildXDC({
+      outDir: embedDir,
+      outFileName: "app.xdc",
+    }),
+    eruda(),
+    legacy(),
+  ],
   base: base,
 });

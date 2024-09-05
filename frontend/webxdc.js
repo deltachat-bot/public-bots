@@ -57,18 +57,21 @@ window.webxdc = (() => {
       window.localStorage.setItem(updatesKey, JSON.stringify(updates));
       _update.max_serial = serial;
       console.log(
-        '[Webxdc] description="' + description + '", ' + JSON.stringify(_update)
+        '[Webxdc] description="' +
+          description +
+          '", ' +
+          JSON.stringify(_update),
       );
       updateListener(_update);
       if (_update.payload.method === "Sync") {
-          sendData();
+        sendData();
       }
     },
     sendToChat: async (content) => {
       if (!content.file && !content.text) {
         alert("🚨 Error: either file or text need to be set. (or both)");
         return Promise.reject(
-          "Error from sendToChat: either file or text need to be set"
+          "Error from sendToChat: either file or text need to be set",
         );
       }
 
@@ -95,11 +98,11 @@ window.webxdc = (() => {
         }
         if (
           Object.keys(content.file).filter((key) =>
-            ["blob", "base64", "plainText"].includes(key)
+            ["blob", "base64", "plainText"].includes(key),
           ).length > 1
         ) {
           return Promise.reject(
-            "you can only set one of `blob`, `base64` or `plainText`, not multiple ones"
+            "you can only set one of `blob`, `base64` or `plainText`, not multiple ones",
           );
         }
 
@@ -115,11 +118,11 @@ window.webxdc = (() => {
         } else if (typeof content.file.plainText === "string") {
           base64Content = await blob_to_base64(
             // @ts-ignore - needed because typescript imagines that plainText would not exist
-            new Blob([content.file.plainText])
+            new Blob([content.file.plainText]),
           );
         } else {
           return Promise.reject(
-            "data is not set or wrong format, set one of `blob`, `base64` or `plainText`, see webxdc documentation for sendToChat"
+            "data is not set or wrong format, set one of `blob`, `base64` or `plainText`, see webxdc documentation for sendToChat",
           );
         }
       }
@@ -132,13 +135,13 @@ window.webxdc = (() => {
       }`;
       if (content.file) {
         const confirmed = confirm(
-          msg + "\n\nDownload the file in the browser instead?"
+          msg + "\n\nDownload the file in the browser instead?",
         );
         if (confirmed) {
           var element = document.createElement("a");
           element.setAttribute(
             "href",
-            "data:application/octet-stream;base64," + base64Content
+            "data:application/octet-stream;base64," + base64Content,
           );
           element.setAttribute("download", content.file.name);
           document.body.appendChild(element);
@@ -146,7 +149,7 @@ window.webxdc = (() => {
           document.body.removeChild(element);
         }
       } else {
-        alert(msg);
+        window.open(content.text);
       }
     },
     importFiles: (filters) => {
@@ -255,42 +258,43 @@ window.alterXdcApp = () => {
 
 // mock data
 function sendData() {
-    fetch("./data.json")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("HTTP error " + response.status);
-            }
-            return response.json();
-        })
-        .then(json => {
-            json.bots.map((bot) => {
-                bot.admin = { ...json.admins[bot.admin], name: bot.admin };
-                bot.lang = { code: bot.lang, label: json.langs[bot.lang] };
-            });
-            let now = new Date().toString();
-            window.webxdc.sendUpdate({
-                payload: {
-                    error: null,
-                    id: "sync",
-                    result: [
-                        now,
-                        {
-                            hash: now,
-                            bots: json.bots
-                        },
-                        null
-                    ]
-                }
-            });
-        }).catch(function (err) {
-            window.webxdc.sendUpdate({
-                payload: {
-                    error: {code: -100, message: "Failed to fetch data: " + err},
-                    id: "sync"
-                }
-            });
-        });
+  fetch("./data.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("HTTP error " + response.status);
+      }
+      return response.json();
+    })
+    .then((json) => {
+      json.bots.map((bot) => {
+        bot.admin = { ...json.admins[bot.admin], name: bot.admin };
+        bot.lang = { code: bot.lang, label: json.langs[bot.lang] };
+      });
+      let now = new Date().toString();
+      window.webxdc.sendUpdate({
+        payload: {
+          error: null,
+          id: "sync",
+          result: [
+            now,
+            {
+              hash: now,
+              bots: json.bots,
+            },
+            null,
+          ],
+        },
+      });
+    })
+    .catch(function (err) {
+      window.webxdc.sendUpdate({
+        payload: {
+          error: { code: -100, message: "Failed to fetch data: " + err },
+          id: "sync",
+        },
+      });
+    });
 }
 if (!localStorage.getItem("lastSyncReqKey")) {
-    sendData();
+  sendData();
 }

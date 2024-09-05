@@ -30,7 +30,6 @@ type RawData struct {
 }
 
 type RawBot struct {
-	Addr        string
 	Description string
 	Lang        string
 	Admin       string
@@ -66,7 +65,7 @@ func (self *Config) GetBotsData() BotsData {
 			if accId == 0 {
 				break
 			}
-			addr := cfg.BotsData.Bots[index].Addr
+			addr := cfg.BotsData.Bots[index].Addr()
 			if _, ok := selfAddrs[addr]; ok {
 				cfg.BotsData.Bots[index].LastSeen = time.Now()
 				continue
@@ -109,7 +108,6 @@ func (self *Config) SaveData(data []byte) (bool, error) {
 		self.BotsData.Bots = make([]Bot, len(rawData.Bots))
 		for i, rawBot := range rawData.Bots {
 			self.BotsData.Bots[i] = Bot{
-				Addr:        rawBot.Addr,
 				Url:         rawBot.Url,
 				Description: rawBot.Description,
 				Lang:        Lang{Code: rawBot.Lang, Label: rawData.Langs[rawBot.Lang]},

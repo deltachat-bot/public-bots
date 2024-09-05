@@ -4,12 +4,15 @@ langs["en"] = {
   "search-placeholder": "Search among {0} bots",
   "last-updated": "Last updated: {0}",
   admin: "Admin: ",
+  chat: "Chat",
+  share: "Share",
 };
 
 langs["es"] = {
   "search-placeholder": "Buscar entre {0} bots",
   "last-updated": "Actualizado: {0}",
   admin: "Admin: ",
+  share: "Compartir",
 };
 
 export function getText(key: string): string {

@@ -71,11 +71,12 @@ func updateOfflineBotsStatusLoop(rpc *deltachat.Rpc) {
 			if accId == 0 {
 				break
 			}
-			if _, ok := selfAddrs[bot.Addr]; ok {
+			botAddr := bot.Addr()
+			if _, ok := selfAddrs[botAddr]; ok {
 				continue
 			}
-			logger := logger.With("acc", accId, "bot", bot.Addr)
-			contactId, err := rpc.CreateContact(accId, bot.Addr, "")
+			logger := logger.With("acc", accId, "bot", botAddr)
+			contactId, err := rpc.CreateContact(accId, botAddr, "")
 			if err != nil {
 				logger.Error(err)
 				continue
@@ -129,11 +130,12 @@ func updateStatusLoop(rpc *deltachat.Rpc) {
 			if accId == 0 {
 				break
 			}
-			if _, ok := selfAddrs[bot.Addr]; ok {
+			botAddr := bot.Addr()
+			if _, ok := selfAddrs[botAddr]; ok {
 				continue
 			}
-			logger := logger.With("acc", accId, "bot", bot.Addr)
-			contactId, err := rpc.CreateContact(accId, bot.Addr, "")
+			logger := logger.With("acc", accId, "bot", botAddr)
+			contactId, err := rpc.CreateContact(accId, botAddr, "")
 			if err != nil {
 				logger.Error(err)
 				continue

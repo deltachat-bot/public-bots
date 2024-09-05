@@ -1,259 +1,222 @@
 {
   "bots": [
     {
-      "addr": "web2pdf01@bcc.chat",
       "description": "Web to PDF converter",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:43B48FD6AFE0B780E08DEDE70A0DB16EDBE137EC#a=web2pdf01%40bcc.chat&n=Web%20to%20PDF&i=aVeg_0fMaME&s=48WGSWyaIru"
     },
     {
-      "addr": "web2pdf01@chatd.de",
       "description": "Web to PDF converter",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:036AB60803636BFE628487D52910CB443DC82A14#a=web2pdf01%40chatd.de&n=Web%20to%20PDF&i=sNjYQWgFM8l&s=PA4ZYzoj3Gj"
     },
     {
-      "addr": "telegrbot@nine.testrun.org",
       "description": "Telegram puppeting bridge, use your Telegram account from Delta Chat",
       "lang": "en",
       "admin": "Nelson",
       "url": "OPENPGP4FPR:86AB6AADA7896473AC198C180E9F66EE8539422B#a=telegrbot%40nine.testrun.org&n=Telegram%20Bridge&i=ZgHg_yRaeKG&s=xZQJtzESp0j"
     },
     {
-      "addr": "chatbot@testrun.org",
       "description": "Conversational AI chat-bot assistant for Delta Chat",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:A11808CEE7890F00B54EB64183C1FA40200635D5#a=chatbot%40testrun.org&n=Mia&i=1uiiAtibina&s=iyHlIA_MABH"
     },
     {
-      "addr": "chatbot01@chatd.de",
       "description": "Conversational AI chat-bot assistant for Delta Chat",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:B4919827F99B145479E04B13A4332A3AFD071939#a=chatbot01%40chatd.de&n=Mia&i=XGrTMqpY1qG&s=mM7epu1qyj0"
     },
     {
-      "addr": "txt2image@nine.testrun.org",
       "description": "Bot to generate images given a text prompt",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:2FE05BD53A28A912A4AA74BF7BE6FD5E547473CC#a=txt2image%40nine.testrun.org&n=Text%20To%20Image&i=cbTmzlMa0-C&s=EWZ_FsPcd0R"
     },
     {
-      "addr": "txt2image@chatd.de",
       "description": "Bot to generate images given a text prompt",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:0A8A0C99CCC1891CFCB3206FAD335DD45AD38C30#a=txt2image%40chatd.de&n=Text%20To%20Image&i=ULmBDuYV8PR&s=r8a6jT2UFMe"
     },
     {
-      "addr": "voice2text@testrun.org",
       "description": "Bot that can help you extract text from voice messages, also works in groups",
       "lang": "multi",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:81EDFA2AEBCF4ECDF357A5E6F383F813547CB9D7#a=voice2text%40testrun.org&n=Voice%20To%20Text&i=zSBD_nJBpTn&s=NVYndJrYBOU"
     },
     {
-      "addr": "voice2txt@nine.testrun.org",
       "description": "Bot that can help you extract text from voice messages, also works in groups",
       "lang": "multi",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:924B09EB934CF0F836ADD3D1C8F56A8070D5506E#a=voice2txt%40nine.testrun.org&n=Voice%20To%20Text&i=PYu7OFENQUo&s=7vGNO0Q4zE4"
     },
     {
-      "addr": "voice2txt@chatd.de",
       "description": "Bot that can help you extract text from voice messages, also works in groups",
       "lang": "multi",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:BD105A76238F8C12B88512B0F7E1682C4EC6583D#a=voice2txt%40chatd.de&n=Voice%20To%20Text&i=dhdaZ2vgH1n&s=2OVPbv3oZTN"
     },
     {
-      "addr": "navegabot@nine.testrun.org",
       "description": "Web gateway, get URL previews and download files",
       "lang": "en",
       "admin": "Nelson",
       "url": "OPENPGP4FPR:68562D932AE64281F20ED9B3BB905CB919C9FED3#a=navegabot%40nine.testrun.org&n=&i=D1ji9sMBkYI&s=tdnIsfOP7ZW"
     },
     {
-      "addr": "multibot@testrun.org",
       "description": "Miscellaneous bot with multiple functionalities",
       "lang": "en",
       "admin": "Nelson",
       "url": "OPENPGP4FPR:B441CEDBEDC40B42E54F91C9676249D58A24DE6C#a=multibot%40testrun.org&n=MULTIBOT&i=HinKJbMYWi1&s=4FIotR6MYb9"
     },
     {
-      "addr": "telegram.bridge@testrun.org",
       "description": "Telegram puppeting bridge, use your Telegram account from Delta Chat",
       "lang": "en",
       "admin": "D@vid",
       "url": "OPENPGP4FPR:A1E4D1BA68BC18B4CE135835C9DB9741C34B1145#a=telegram.bridge%40testrun.org&n=Telegram%20Bridge&i=slQnX11ODxb&s=N5QQLndQWU5"
     },
     {
-      "addr": "downloaderlite@testrun.org",
       "description": "File downloader bot, get files from the web to your inbox split in 4MB chunks",
       "lang": "en",
       "admin": "D@vid",
       "url": "OPENPGP4FPR:8BD46E9480FCCF0B2CF863171DD2C737B92BF554#a=downloaderlite%40testrun.org&n=Downloader%20Lite&i=aWfxCbsFBS_&s=P81BRs3wqU-"
     },
     {
-      "addr": "xstore@testrun.org",
       "description": "Official Delta Chat Webxdc Store",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:37DC2B704A2AE2F6A96235CE0C3A0EBCA4F5801D#a=xstore%40testrun.org&n=&i=-1IGtynaivZ&s=JqHsvvcDmnW"
     },
     {
-      "addr": "publicbots@testrun.org",
       "description": "Public bots directory 🔍",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:4DB8117591B27184A903FF7E9F469E00D40E13E7#a=publicbots%40testrun.org&n=Public%20Bots&i=zSuQpFtBa_Q&s=weLMu1-o1o1"
     },
     {
-      "addr": "botsindex@nine.testrun.org",
       "description": "Public bots directory 🔍",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:9AF055DB87EC48A1C009B6CA55E3712A6F7D346F#a=botsindex%40nine.testrun.org&n=Public%20Bots&i=QpBSronexvP&s=nAfQ0q_JomN"
     },
     {
-      "addr": "botsindex@chatd.de",
       "description": "Public bots directory 🔍",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:DD7AFA177B40F49E5B24491E9489CA5BCE603149#a=botsindex%40chatd.de&n=Public%20Bots&i=AfL8ykM3mYF&s=oH_6M-WnHIV"
     },
     {
-      "addr": "adb_bot1@testrun.org",
       "description": "Web gateway, get URL previews and download files",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:8D0025A5DDA22D50EB38A731DC8D7EB24BECDFEB#a=adb%5Fbot1%40testrun.org&n=www&i=N2ZpQ9wDKLq&s=lr1Z8T3TlOI"
     },
     {
-      "addr": "www2delta@chatmail.woodpeckersnest.space",
       "description": "Web gateway, get URL previews and download files",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:E0421EA0951C59A565F470F5241C8A542ACEF9D1#a=www2delta%40chatmail.woodpeckersnest.space&n=www&i=6OPTVCRUmdD&s=1giWmIckD_r"
     },
     {
-      "addr": "deltabot@buzon.uy",
       "description": "Web gateway, get URL previews and download files",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:305EBA9DA8B9383F478754DC46995C56DBC2EC4B#a=deltabot%40buzon.uy&n=www&i=MauOlQuQW9Z&s=pvlZhO3SHg4"
     },
     {
-      "addr": "localbot@testrun.org",
       "description": "Conversational AI bot using llama.cpp",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:74055606ADC789BA0566DA672D7EA2A32C6B5763#a=localbot%40testrun.org&n=&i=Bc6oC6IIUWP&s=9ZsRjKI_g2q"
     },
     {
-      "addr": "deltalandbot@testrun.org",
       "description": "Deltaland, fantasy world, chat adventure, MMO game",
       "lang": "en",
       "admin": "adbenitez",
       "url": "OPENPGP4FPR:FD06CE9EA9562A51FA7FCA84B026574F9FB923A8#a=deltalandbot%40testrun.org&n=Deltaland%20Bot%20%5BBETA%5D&i=QdEBHZBR8yI&s=AuLHwV5BqVi"
     },
     {
-      "addr": "faqbot@testrun.org",
       "description": "FAQ bot, allows saving answer to common questions or #tags",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:279714071CC59EB4A9943122A3B4FF4BB7264A0E#a=faqbot%40testrun.org&n=FAQ%20Bot&i=PhdQtXTJQkp&s=WAPGhvIBtEy"
     },
     {
-      "addr": "faqbot001@chatd.de",
       "description": "FAQ bot, allows saving answer to common questions or #tags",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:648B24424A376B2021B2AB636D5A41B13B2BD09C#a=faqbot001%40chatd.de&n=FAQ%20Bot&i=9uiAcCnbWm1&s=LZgk9o5hgVe"
     },
     {
-      "addr": "feedsb@mailchat.pl",
       "description": "Allows to subscribe to RSS/Atom feeds in group chats",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:024C525D627CBF5A292FC428A40BF74BE66DA1BC#a=feedsb%40mailchat.pl&n=FeedsBot&i=6eMHA8T69SF&s=M53-Un3pKPa"
     },
     {
-      "addr": "feedsbot1@chatd.de",
       "description": "Allows to subscribe to RSS/Atom feeds in group chats",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:3581B35CE7A70B8FA72B5E68A82EF5817E7F95B5#a=feedsbot1%40chatd.de&n=FeedsBot&i=EyZBENNmKkK&s=4T_-NAxXSpV"
     },
     {
-      "addr": "groupsbot@testrun.org",
       "description": "Bot that allows to invite friends to your private groups so you don't need to be online for them to join",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:6FE1642916908F1AC9CC7557CC99CF5DDB92043C#a=groupsbot%40testrun.org&n=InviteBot&i=AptcQCUYP3X&s=j6C75z6IKU8"
     },
     {
-      "addr": "invitebot@nine.testrun.org",
       "description": "Bot that allows to invite friends to your private groups so you don't need to be online for them to join",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:6CBFF8FFD505C0FDEA20A66674F2916EA8FBEE99#a=invitebot%40nine.testrun.org&n=InviteBot&i=5JRojJKI49i&s=Js2jkA52U-f"
     },
     {
-      "addr": "invitebot@chatd.de",
       "description": "Bot that allows to invite friends to your private groups so you don't need to be online for them to join",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:63713E5F723CBF961CFC4E5EA8701593692CB815#a=invitebot%40chatd.de&n=InviteBot&i=UYA6K4PM70V&s=o2dKVS1nZaR"
     },
     {
-      "addr": "mangadl@testrun.org",
       "description": "Manga downloader bot with support for several sites and languages",
       "lang": "multi",
       "admin": "adbenitez",
       "url": "OPENPGP4FPR:8904D68A0B560EEEA20A06031BA3B5859361097B#a=mangadl%40testrun.org&n=MangaDownloader&i=fLXeIm7l2pP&s=Kpn1KG4fWiS"
     },
     {
-      "addr": "simplebot@testrun.org",
       "description": "Mastodon/DeltaChat bridge",
       "lang": "en",
       "admin": "adbenitez",
       "url": "OPENPGP4FPR:3CD6F460C18365C226A3115E5D5DCC2B68286A7A#a=simplebot%40testrun.org&n=MASTODON%20BRIDGE&i=vliFxNkyG5I&s=CEHn5i91saa"
     },
     {
-      "addr": "stickersb@mehl.cloud",
       "description": "Allows to download sticker packs",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:9DE7DADDC37828D75499BBDC45CA5FACF50E9B18#a=stickersb%40mehl.cloud&n=StickersBot&i=tHkRoHiugej&s=n0x9TjRcUxo"
     },
     {
-      "addr": "stickersb@chatd.de",
       "description": "Allows to download sticker packs",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:857C440C838C1B3BB6003100A8B940C9B9A3498F#a=stickersb%40chatd.de&n=StickersBot&i=c_GH_x0P-YQ&s=RTdl9zIidc2"
     },
     {
-      "addr": "tgbridge@testrun.org",
       "description": "Telegram/DeltaChat groups bridge (relay-bot)",
       "lang": "en",
       "admin": "adbenitez",
       "url": "OPENPGP4FPR:05B5EF4667BF45AF8E437415DF14FC5F0C721EA8#a=tgbridge%40testrun.org&n=Telegram%20Bridge&i=68W2tEfJHrA&s=2wYVxvks-0M"
     },
     {
-      "addr": "web2imgbt@chatd.de",
       "description": "Web to Image converter, take screenshots of web sites",
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:4A7E5FE883D4E8969F2697E8EF7CA3474F072C65#a=web2imgbt%40chatd.de&n=Web%20To%20Image&i=nnQhWLoBXt_&s=b9ZuEWbjojm"
     },
     {
-      "addr": "web2img@testrun.org",
       "description": "Web to Image converter, take screenshots of web sites",
       "lang": "en",
       "admin": "merlinux",
@@ -264,7 +227,9 @@
     "Nelson": { "url": "mailto:nelsonr9608@nauta.cu" },
     "D@vid": { "url": "mailto:david@testrun.org" },
     "merlinux": { "url": "mailto:delta@merlinux.eu" },
-    "adbenitez": { "url": "OPENPGP4FPR:F2175B65C599D9AB58FDBE35A1D2B46E62A29658#a=friendscaaj3%40testrun.org&n=adb&i=_vLu0fUI53k&s=teNGaPzemPW" }
+    "adbenitez": {
+      "url": "OPENPGP4FPR:F2175B65C599D9AB58FDBE35A1D2B46E62A29658#a=friendscaaj3%40testrun.org&n=adb&i=_vLu0fUI53k&s=teNGaPzemPW"
+    }
   },
   "langs": {
     "en": "English",
