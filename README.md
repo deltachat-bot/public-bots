@@ -2,7 +2,7 @@
 
 ![Latest release](https://img.shields.io/github/v/tag/deltachat-bot/public-bots?label=release)
 [![CI](https://github.com/deltachat-bot/public-bots/actions/workflows/ci.yml/badge.svg)](https://github.com/deltachat-bot/public-bots/actions/workflows/ci.yml)
-![Coverage](https://img.shields.io/badge/Coverage-23.4%25-red)
+![Coverage](https://img.shields.io/badge/Coverage-22.9%25-red)
 [![Go Report Card](https://goreportcard.com/badge/github.com/deltachat-bot/public-bots)](https://goreportcard.com/report/github.com/deltachat-bot/public-bots)
 
 Public bots discovery for Delta Chat via bot + WebXDC app.
