@@ -54,7 +54,7 @@ func onBotStart(cli *botcli.BotCli, bot *deltachat.Bot, cmd *cobra.Command, args
 
 func updateOfflineBotsStatusLoop(rpc *deltachat.Rpc) {
 	logger := cli.Logger.With("origin", "off-bots-status-loop")
-	delay := 60 * time.Minute
+	delay := 120 * time.Minute
 	for {
 		toSleep := delay - time.Since(cfg.OffLastChecked)
 		if toSleep > 0 {
@@ -94,7 +94,7 @@ func updateOfflineBotsStatusLoop(rpc *deltachat.Rpc) {
 				logger.Error(err)
 				continue
 			}
-			if time.Since(contact.LastSeen.Time).Minutes() < 30 {
+			if time.Since(contact.LastSeen.Time).Minutes() < 60 {
 				// bot is not offline, it will be checked by the online-bots status loop
 				continue
 			}
@@ -108,7 +108,7 @@ func updateOfflineBotsStatusLoop(rpc *deltachat.Rpc) {
 
 func updateStatusLoop(rpc *deltachat.Rpc) {
 	logger := cli.Logger.With("origin", "status-loop")
-	delay := 10 * time.Minute
+	delay := 30 * time.Minute
 	for {
 		toSleep := delay - time.Since(cfg.StatusLastChecked)
 		if toSleep > 0 {
@@ -122,7 +122,7 @@ func updateStatusLoop(rpc *deltachat.Rpc) {
 		if botsData.Hash == "" {
 			delay = 10 * time.Second
 		} else {
-			delay = 10 * time.Minute
+			delay = 30 * time.Minute
 		}
 		selfAddrs := getSelfAddrs(rpc)
 		accId := getFirstAccount(rpc)
@@ -151,7 +151,7 @@ func updateStatusLoop(rpc *deltachat.Rpc) {
 					logger.Error(err)
 					continue
 				}
-				if time.Since(contact.LastSeen.Time).Minutes() >= 30 {
+				if time.Since(contact.LastSeen.Time).Minutes() >= 60 {
 					// offline bot, will be check by the offline-bots status loop
 					continue
 				}

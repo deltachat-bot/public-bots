@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-export const recently = 1000 * 60 * 15;
+export const recently = 1000 * 60 * 50;
 
 function isOnline(lastSync: Date, lastSeen?: Date): boolean {
   if (!lastSeen) return false;
@@ -118,7 +118,9 @@ export const useStore = create<State>()((set) => ({
         if (online1 > online2) {
           return -1;
         }
-        if ((b1.name || b1.addr) < (b2.name || b2.addr)) {
+        const name1 = (b1.name || b1.addr).toLowerCase();
+        const name2 = (b2.name || b2.addr).toLowerCase();
+        if (name1 < name2) {
           return -1;
         }
         return 1;
