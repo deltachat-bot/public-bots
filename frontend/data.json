@@ -79,10 +79,10 @@
       "url": "OPENPGP4FPR:B441CEDBEDC40B42E54F91C9676249D58A24DE6C#a=multibot%40testrun.org&n=MULTIBOT&i=HinKJbMYWi1&s=4FIotR6MYb9"
     },
     {
-      "description": "Telegram puppeting bridge, use your Telegram account from Delta Chat",
-      "lang": "en",
-      "admin": "D@vid",
-      "url": "OPENPGP4FPR:A1E4D1BA68BC18B4CE135835C9DB9741C34B1145#a=telegram.bridge%40testrun.org&n=Telegram%20Bridge&i=slQnX11ODxb&s=N5QQLndQWU5"
+      "description": "I'm Gemini, an AI-powered virtual assistant. I can converse, translate, and generate creative text. Ask me anything!",
+      "lang": "multi",
+      "admin": "FrancyJ2M",
+      "url": "OPENPGP4FPR:9AA0AFAEEA04ECA6725CE31D69531B213D1FCEBF#a=deltahelp%40disroot.org&n=Delta%20Ai&i=IlaRXYtUaBg&s=xYaubEBqwk9"
     },
     {
       "description": "File downloader bot, get files from the web to your inbox split in 4MB chunks",
@@ -239,6 +239,7 @@
     "Nelson": { "url": "mailto:nelsonr9608@nauta.cu" },
     "D@vid": { "url": "mailto:david@testrun.org" },
     "merlinux": { "url": "mailto:delta@merlinux.eu" },
+    "FrancyJ2M": { "url": "OPENPGP4FPR:F855EC3AE2AC5448D77C47D381D62284033B80F1#a=devfrancy%40nine.testrun.org&n=FrancyJ2M&i=bCZJkxDRVxP&s=XmSFm50FXNE" },
     "adbenitez": {
       "url": "OPENPGP4FPR:F2175B65C599D9AB58FDBE35A1D2B46E62A29658#a=friendscaaj3%40testrun.org&n=adb&i=_vLu0fUI53k&s=teNGaPzemPW"
     }
