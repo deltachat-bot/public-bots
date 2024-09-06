@@ -13,6 +13,12 @@
       "url": "OPENPGP4FPR:036AB60803636BFE628487D52910CB443DC82A14#a=web2pdf01%40chatd.de&n=Web%20to%20PDF&i=sNjYQWgFM8l&s=PA4ZYzoj3Gj"
     },
     {
+      "description": "Web to PDF converter",
+      "lang": "en",
+      "admin": "merlinux",
+      "url": "OPENPGP4FPR:F9E20FD1B062C8CB3CD90A3ADF54C732669F52BE#a=web2pdf01%40deltachat.jurkiewicz.chat&n=Web%20to%20PDF&i=ZH9xqcz2Yra&s=ksFvupfwbiD"
+    },
+    {
       "description": "Telegram puppeting bridge, use your Telegram account from Delta Chat",
       "lang": "en",
       "admin": "Nelson",
@@ -28,7 +34,7 @@
       "description": "Conversational AI chat-bot assistant for Delta Chat",
       "lang": "en",
       "admin": "merlinux",
-      "url": "OPENPGP4FPR:B4919827F99B145479E04B13A4332A3AFD071939#a=chatbot01%40chatd.de&n=Mia&i=XGrTMqpY1qG&s=mM7epu1qyj0"
+      "url": "OPENPGP4FPR:1EDD34FF7513D09F6DA300A765285E7A1C9DA72A#a=simplebot08%40gmail.com&n=Mia&i=9BnkBMZU3lZ&s=l5CJimJA-tV"
     },
     {
       "description": "Bot to generate images given a text prompt",
@@ -40,7 +46,7 @@
       "description": "Bot to generate images given a text prompt",
       "lang": "en",
       "admin": "merlinux",
-      "url": "OPENPGP4FPR:0A8A0C99CCC1891CFCB3206FAD335DD45AD38C30#a=txt2image%40chatd.de&n=Text%20To%20Image&i=ULmBDuYV8PR&s=r8a6jT2UFMe"
+      "url": "OPENPGP4FPR:793E87929F3B318AE30321C298260C27A4D813E4#a=d3lt4b0t02%40gmail.com&n=Text%20To%20Image&i=Ep0SGi9JzQH&s=EVOpL4okIV7"
     },
     {
       "description": "Bot that can help you extract text from voice messages, also works in groups",
@@ -58,7 +64,7 @@
       "description": "Bot that can help you extract text from voice messages, also works in groups",
       "lang": "multi",
       "admin": "merlinux",
-      "url": "OPENPGP4FPR:BD105A76238F8C12B88512B0F7E1682C4EC6583D#a=voice2txt%40chatd.de&n=Voice%20To%20Text&i=dhdaZ2vgH1n&s=2OVPbv3oZTN"
+      "url": "OPENPGP4FPR:55477D81DA0B25AE2CEF67B5FBEB871642BC9DBD#a=voice2txt%40deltachat.jurkiewicz.chat&n=Voice%20To%20Text&i=FowjxBzf4G7&s=YJIyngjmI-u"
     },
     {
       "description": "Web gateway, get URL previews and download files",
@@ -106,13 +112,7 @@
       "description": "Public bots directory 🔍",
       "lang": "en",
       "admin": "merlinux",
-      "url": "OPENPGP4FPR:C1C629F0BE840F17F3A8D56DB9DA75D43D48CE30#a=botsindex%40chatd.de&n=Public%20Bots&i=xkMmzbBo63_&s=WjWW_wvE9rv"
-    },
-    {
-      "description": "Web gateway, get URL previews and download files",
-      "lang": "en",
-      "admin": "merlinux",
-      "url": "OPENPGP4FPR:8D0025A5DDA22D50EB38A731DC8D7EB24BECDFEB#a=adb%5Fbot1%40testrun.org&n=www&i=N2ZpQ9wDKLq&s=lr1Z8T3TlOI"
+      "url": "OPENPGP4FPR:4B41E5AFAF78A0C71DB56138D5BEFED00A45F97A#a=puente%40buzon.uy&n=Public%20Bots&i=ZC_oaJtuvJP&s=5SE96rRovsK"
     },
     {
       "description": "Web gateway, get URL previews and download files",
@@ -148,7 +148,7 @@
       "description": "FAQ bot, allows saving answer to common questions or #tags",
       "lang": "en",
       "admin": "merlinux",
-      "url": "OPENPGP4FPR:648B24424A376B2021B2AB636D5A41B13B2BD09C#a=faqbot001%40chatd.de&n=FAQ%20Bot&i=9uiAcCnbWm1&s=LZgk9o5hgVe"
+      "url": "OPENPGP4FPR:2E1267AC03F8D5DF66A77900E8834ECF42B40E08#a=faqbot001%40koffer.szh.homes&n=FAQ%20Bot&i=AIusNLOYgED&s=BYS8Kx_vvpE"
     },
     {
       "description": "Allows to subscribe to RSS/Atom feeds in group chats",
@@ -160,7 +160,7 @@
       "description": "Allows to subscribe to RSS/Atom feeds in group chats",
       "lang": "en",
       "admin": "merlinux",
-      "url": "OPENPGP4FPR:3581B35CE7A70B8FA72B5E68A82EF5817E7F95B5#a=feedsbot1%40chatd.de&n=FeedsBot&i=EyZBENNmKkK&s=4T_-NAxXSpV"
+      "url": "OPENPGP4FPR:CD830583FB1A6ACE0EBB3039052E469F821A75CA#a=simplebot%40systemli.org&n=FeedsBot&i=2oz_mA5Wxcl&s=gsfLuUiP1JS"
     },
     {
       "description": "Bot that allows to invite friends to your private groups so you don't need to be online for them to join",
@@ -178,7 +178,7 @@
       "description": "Bot that allows to invite friends to your private groups so you don't need to be online for them to join",
       "lang": "en",
       "admin": "merlinux",
-      "url": "OPENPGP4FPR:63713E5F723CBF961CFC4E5EA8701593692CB815#a=invitebot%40chatd.de&n=InviteBot&i=UYA6K4PM70V&s=o2dKVS1nZaR"
+      "url": "OPENPGP4FPR:D87FAE4E9112A0DA2B8DE4980792F67EC9A63A18#a=d3lt4b0t01%40gmail.com&n=InviteBot&i=kckRp_D6ynT&s=WY6G5RqEetH"
     },
     {
       "description": "Manga downloader bot with support for several sites and languages",
@@ -202,7 +202,7 @@
       "description": "Allows to download sticker packs",
       "lang": "en",
       "admin": "merlinux",
-      "url": "OPENPGP4FPR:857C440C838C1B3BB6003100A8B940C9B9A3498F#a=stickersb%40chatd.de&n=StickersBot&i=c_GH_x0P-YQ&s=RTdl9zIidc2"
+      "url": "OPENPGP4FPR:148A6BAAB189EAF805E8BAD90B5E6734D0499E9E#a=adbenitez%40nogafam.me&n=StickersBot&i=hZF9Ddww1rZ&s=KEDgb8FBIb3"
     },
     {
       "description": "Telegram/DeltaChat groups bridge (relay-bot)",
@@ -215,6 +215,12 @@
       "lang": "en",
       "admin": "merlinux",
       "url": "OPENPGP4FPR:4A7E5FE883D4E8969F2697E8EF7CA3474F072C65#a=web2imgbt%40chatd.de&n=Web%20To%20Image&i=nnQhWLoBXt_&s=b9ZuEWbjojm"
+    },
+    {
+      "description": "Web to Image converter, take screenshots of web sites",
+      "lang": "en",
+      "admin": "merlinux",
+      "url": "OPENPGP4FPR:1A1496593614C2C76BBF873F456E06349351BD25#a=web2imgbt%40deltachat.jurkiewicz.chat&n=Web%20To%20Image&i=9yo3sac8Kh4&s=IJ_GW7Y44C-"
     },
     {
       "description": "Web to Image converter, take screenshots of web sites",
