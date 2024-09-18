@@ -8,6 +8,20 @@ function isOnline(lastSync: Date, lastSeen?: Date): boolean {
   return timeAgo <= recently;
 }
 
+function getInviteLink(string uri): string {
+  if (uri.startsWith('https://i.delta.chat')) {
+    return uri;
+  }
+  return 'https://i.delta.chat/#' + uri.replace(/openpgp4fpr:/i, '').replace('#', '&');
+}
+
+function getQrData(string uri): string {
+    if (uri.startsWith('https://i.delta.chat')) {
+        return 'openpgp4fpr:' + uri.replace(/https:\/\/i.delta.chat\/?#/, '').replace(/&/, '#');
+    }
+    return uri;
+}
+
 export const api = (() => {
   return {
     sync: (force: boolean = false) => {
@@ -98,14 +112,12 @@ export const useStore = create<State>()((set) => ({
           if (bot.lastSeen) {
             bot.lastSeen = new Date(bot.lastSeen);
           }
-          const url = new URL(bot.url);
+          bot.inviteLink = getInviteLink(bot.url);
+          bot.url = getQrData(bot.url);
+          const url = new URL(bot.inviteLink);
           const params = new URLSearchParams(url.hash.substring(1));
           bot.addr = params.get("a");
           bot.name = params.get("n");
-          url.protocol = "https:"; // this must be done before using url.host
-          url.hash = "#" + url.host + "&" + url.hash.substring(1);
-          url.host = "i.delta.chat";
-          bot.inviteLink = url.toString();
         });
         state.hash = botsData.hash;
         state.bots = botsData.bots;
