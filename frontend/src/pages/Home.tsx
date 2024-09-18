@@ -3,7 +3,9 @@ import {
   IonPage,
   IonIcon,
   IonItem,
-  IonList,
+  IonGrid,
+  IonRow,
+  IonCol,
   IonSpinner,
   IonSearchbar,
   IonToast,
@@ -71,11 +73,15 @@ const Home: React.FC = () => {
       )}
       <IonContent fullscreen>
         {state.hash ? (
-          <IonList>
-            {results.map((bot) => (
-              <BotItem bot={bot} lastSync={state.lastSync || new Date()} />
-            ))}
-          </IonList>
+          <IonGrid>
+            <IonRow>
+              {results.map((bot) => (
+                <IonCol size="12" size-sm="6" size-lg="4" size-xl="3">
+                  <BotItem bot={bot} lastSync={state.lastSync || new Date()} />
+                </IonCol>
+              ))}
+            </IonRow>
+          </IonGrid>
         ) : (
           <div id="loading">
             <IonSpinner name="dots"></IonSpinner>

@@ -78,6 +78,7 @@ export default function BotItem({ bot, lastSync }: Props) {
           </IonBadge>{" "}
           {displayLastSeen(lastSync || new Date(), bot.lastSeen)}
           <div className="selectable">{bot.description}</div>
+          <br />
           <p>
             <strong>{_("admin")}</strong>
             {bot.admin.name}
