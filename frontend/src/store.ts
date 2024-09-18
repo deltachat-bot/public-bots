@@ -8,18 +8,20 @@ function isOnline(lastSync: Date, lastSeen?: Date): boolean {
   return timeAgo <= recently;
 }
 
-function getInviteLink(string uri): string {
-  if (uri.startsWith('https://i.delta.chat')) {
+function getInviteLink(uri: string): string {
+  if (uri.startsWith("https://i.delta.chat")) {
     return uri;
   }
-  return 'https://i.delta.chat/#' + uri.replace(/openpgp4fpr:/i, '').replace('#', '&');
+  uri = uri.replace(/openpgp4fpr:/i, "").replace("#", "&");
+  return "https://i.delta.chat/#" + uri;
 }
 
-function getQrData(string uri): string {
-    if (uri.startsWith('https://i.delta.chat')) {
-        return 'openpgp4fpr:' + uri.replace(/https:\/\/i.delta.chat\/?#/, '').replace(/&/, '#');
-    }
-    return uri;
+function getQrData(uri: string): string {
+  if (uri.startsWith("https://i.delta.chat")) {
+    uri = uri.replace(/https:\/\/i.delta.chat\/?#/, "").replace(/&/, "#");
+    return "openpgp4fpr:" + uri;
+  }
+  return uri;
 }
 
 export const api = (() => {
