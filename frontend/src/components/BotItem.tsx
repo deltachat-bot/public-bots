@@ -85,7 +85,7 @@ export default function BotItem({ bot, lastSync }: Props) {
           <IonGrid>
             <IonRow>
               <IonCol size="6">
-                <IonButton href={bot.url} expand="block">
+                <IonButton target="_blank" href={bot.url} expand="block">
                   <IonLabel>{_("chat")}</IonLabel>
                   <IonIcon slot="end" icon={chatbubbleEllipsesOutline} />
                 </IonButton>
