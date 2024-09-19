@@ -4,7 +4,6 @@ import (
 	"io"
 	"net/http"
 	"path/filepath"
-	"strings"
 	"time"
 
 	"github.com/deltachat-bot/deltabot-cli-go/botcli"
@@ -99,7 +98,7 @@ func updateOfflineBotsStatusLoop(rpc *deltachat.Rpc) {
 				continue
 			}
 			logger.Debug("checking bot status")
-			if err := pingBot(rpc, accId, contactId, bot.Url); err != nil {
+			if _, err := rpc.SecureJoin(accId, bot.Url); err != nil {
 				logger.Error(err)
 			}
 		}
@@ -157,24 +156,11 @@ func updateStatusLoop(rpc *deltachat.Rpc) {
 				}
 			}
 			logger.Debug("checking bot status")
-			if err := pingBot(rpc, accId, contactId, bot.Url); err != nil {
+			if _, err := rpc.SecureJoin(accId, bot.Url); err != nil {
 				logger.Error(err)
 			}
 		}
 	}
-}
-
-func pingBot(rpc *deltachat.Rpc, accId deltachat.AccountId, contactId deltachat.ContactId, botUrl string) error {
-	if strings.HasPrefix(strings.ToLower(botUrl), "openpgp4fpr:") {
-		_, err := rpc.SecureJoin(accId, botUrl)
-		return err
-	}
-	chatId, err := rpc.CreateChatByContactId(accId, contactId)
-	if err != nil {
-		return err
-	}
-	_, err = rpc.MiscSendTextMessage(accId, chatId, "/help")
-	return err
 }
 
 func updateBotsLoop() {
