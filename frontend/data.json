@@ -79,6 +79,12 @@
       "url": "https://i.delta.chat/#B441CEDBEDC40B42E54F91C9676249D58A24DE6C&a=multibot%40testrun.org&n=MULTIBOT&i=HinKJbMYWi1&s=4FIotR6MYb9"
     },
     {
+      "description": "Add me to a group and send a message with the command /editor and you will get a collaborative text editor. Even people who join the group later can see and edit it!",
+      "lang": "multi",
+      "admin": "missytake",
+      "url": "https://i.delta.chat/#AB68F428FCEF88D32B46189314FDBB18B2789654&a=groupedit%40nine.testrun.org&n=Group%20Editor%20Bot&i=Ggt6rA8fZ89DCKXU2eOBXAOy&s=wdoG_ZGB15llV69gLG_sFCZw"
+    },
+    {
       "description": "I'm Gemini, an AI-powered virtual assistant. I can converse, translate, and generate creative text. Ask me anything!",
       "lang": "multi",
       "admin": "FrancyJ2M",
@@ -239,6 +245,7 @@
     "Nelson": { "url": "mailto:nelsonr9608@nauta.cu" },
     "D@vid": { "url": "mailto:david@testrun.org" },
     "merlinux": { "url": "mailto:delta@merlinux.eu" },
+    "missytake": { "url": "mailto:missytake@systemli.org" },
     "FrancyJ2M": {
       "url": "OPENPGP4FPR:F855EC3AE2AC5448D77C47D381D62284033B80F1#a=devfrancy%40nine.testrun.org&n=FrancyJ2M&i=bCZJkxDRVxP&s=XmSFm50FXNE"
     },
