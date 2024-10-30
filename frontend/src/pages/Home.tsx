@@ -24,7 +24,7 @@ import { getText as _, format } from "../i18n";
 import "./Home.css";
 
 const fuseOptions = {
-  keys: ["addr", "description", "admin.name", "lang.label"],
+  keys: ["name", "addr", "description", "admin.name", "lang.label"],
   threshold: 0.4,
 };
 
