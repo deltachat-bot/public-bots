@@ -1,6 +1,12 @@
 {
   "bots": [
     {
+      "description": "Easily monitor Delta Chat releases status and availability",
+      "lang": "en",
+      "admin": "merlinux",
+      "url": "https://i.delta.chat/#07911965A7D094A7FA7B8D94F27E433B84403D38&a=dcstatus1%40nine.testrun.org&n=Delta%20Chat%20Status&i=OKTfDAd6qYyRuZ9IEpmleQkl&s=m6GWaLjoZTJgUVElDQsewjJ3"
+    },
+    {
       "description": "Web to PDF converter",
       "lang": "en",
       "admin": "merlinux",
