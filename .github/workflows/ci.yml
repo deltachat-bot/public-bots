@@ -13,10 +13,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v5
         with:
           go-version: '1.21'
           cache: true
@@ -67,7 +67,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - run: git fetch --force --tags
@@ -76,12 +76,12 @@ jobs:
           if [[ "${{ github.event.ref }}" =~ ^refs/tags/v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
               echo ::set-output name=match::true
           fi
-      - uses: actions/setup-go@v3
+      - uses: actions/setup-go@v5
         if: ${{ github.event_name == 'push' && steps.check-tag.outputs.match == 'true' }}
         with:
           go-version: '1.21'
           cache: true
-      - uses: goreleaser/goreleaser-action@v4
+      - uses: goreleaser/goreleaser-action@v6
         if: ${{ github.event_name == 'push' && steps.check-tag.outputs.match == 'true' }}
         with:
           distribution: goreleaser
