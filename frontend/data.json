@@ -1,6 +1,24 @@
 {
   "bots": [
     {
+      "description": "Bot that tells you about the current microseason and helps you be more in touch with the natural world.",
+      "lang": "en",
+      "admin": "jag",
+      "url": "https://i.delta.chat/#391441AFA520422BACB61BA0B3473C2F4AAE1505&a=72seasons%40chika.aangat.lahat.computer&n=%F0%9F%8C%B8%2072%20Micro%20Seasons&i=P1Pp_zuZDjyRvCos0q5wtCOF&s=PcKDuHTBCt3-yzex7UbQgqJb"
+    },
+    {
+      "description": "Bot that helps you identify birds by their songs.",
+      "lang": "en",
+      "admin": "jag",
+      "url": "https://i.delta.chat/#409D99146498C2B11D7C204F54EE83661DE59818&a=whatbirds%40chika.aangat.lahat.computer&n=%F0%9F%90%A6%E2%80%8D%E2%AC%9B%20What%20Birds&i=A1meCWrIi7r4o-6OrAips1Ob&s=XHA0LPxpnDwvQRPjPc7JT_Xy"
+    },
+    {
+      "description": "Bot that converts text into voice.",
+      "lang": "en",
+      "admin": "jag",
+      "url": "https://i.delta.chat/#045095A85BE7345104D3C2819B35331216E89B4C&a=readaloud%40chika.aangat.lahat.computer&n=%F0%9F%93%A3%20Read%20Aloud&i=OrYhUecCrDC8PyZ_w_Y2wgps&s=gguEeKswRKBu5fjUhX8aBPQN"
+    },
+    {
       "description": "Easily monitor Delta Chat releases status and availability",
       "lang": "en",
       "admin": "merlinux",
@@ -258,6 +276,9 @@
     "D@vid": { "url": "mailto:david@testrun.org" },
     "merlinux": { "url": "mailto:delta@merlinux.eu" },
     "missytake": { "url": "mailto:missytake@systemli.org" },
+    "jag": {
+      "url": "OPENPGP4FPR:E2F0944DB3147D346FBED33A21610DD09554B632#a=hug39hqqb%40chika.aangat.lahat.computer&n=Jag%2C%20delta%20aspect&i=meWb-P9xAbb0FLPR0zuXT6Rx&s=i8Tf32cZ262HfzDl6zHy_Ose"
+    },
     "FrancyJ2M": {
       "url": "OPENPGP4FPR:F855EC3AE2AC5448D77C47D381D62284033B80F1#a=devfrancy%40nine.testrun.org&n=FrancyJ2M&i=bCZJkxDRVxP&s=XmSFm50FXNE"
     },
