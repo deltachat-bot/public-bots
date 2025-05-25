@@ -190,6 +190,12 @@
       "description": "Allows to subscribe to RSS/Atom feeds in group chats",
       "lang": "en",
       "admin": "merlinux",
+      "url": "https://i.delta.chat/#85CB327B95B9427C0A829548D853F3BD20672EC7&a=feedsbot1%40arcanechat.me&n=FeedsBot&i=2Zn1eOU6l_qWKnfDYvBb6J08&s=nYxqTThyDbKZM0E8XbYsxCHq"
+    },
+    {
+      "description": "Allows to subscribe to RSS/Atom feeds in group chats",
+      "lang": "en",
+      "admin": "merlinux",
       "url": "https://i.delta.chat/#024C525D627CBF5A292FC428A40BF74BE66DA1BC&a=feedsb%40mailchat.pl&n=FeedsBot&i=6eMHA8T69SF&s=M53-Un3pKPa"
     },
     {
