@@ -1,6 +1,12 @@
 {
   "bots": [
     {
+      "description": "Multipurpose bot with features like web browsing, compressed page downloads, file downloads, meme retrieval, and text translation",
+      "lang": "en",
+      "admin": "yordante",
+      "url": "https://i.delta.chat/#C4634029413CB61FA770131F2A02F4CCE4B57896&a=starlight%40disroot.org&n=MultiBot&i=fkfDDIpxFVq&s=JCg192tuQom"
+    },
+    {
       "description": "Bot that tells you about the current microseason and helps you be more in touch with the natural world.",
       "lang": "en",
       "admin": "jag",
@@ -299,6 +305,9 @@
     },
     "FrancyJ2M": {
       "url": "OPENPGP4FPR:F855EC3AE2AC5448D77C47D381D62284033B80F1#a=devfrancy%40nine.testrun.org&n=FrancyJ2M&i=bCZJkxDRVxP&s=XmSFm50FXNE"
+    },
+    "yordante": {
+      "url": "openpgp4fpr:144AD7AC5B7FFBF9DA12231DE4B5F7723A03FA1F#a=zyordante%40chat.lylapol.com&n=%EA%AA%97%EA%AA%AE%F0%9D%98%B3%E1%A6%94%EA%AA%96%EA%AA%80%F0%9D%93%BD%EA%AB%80&i=DeADN4drnFlIc2SVUR_AztVC&s=q4BEU2CDt04hr3vQjX3sKl7V"
     },
     "adbenitez": {
       "url": "OPENPGP4FPR:F2175B65C599D9AB58FDBE35A1D2B46E62A29658#a=friendscaaj3%40testrun.org&n=adb&i=_vLu0fUI53k&s=teNGaPzemPW"
