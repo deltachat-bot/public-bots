@@ -1,6 +1,12 @@
 {
   "bots": [
     {
+      "description": "Mastodon bridge",
+      "lang": "en",
+      "admin": "yordante",
+      "url": "https://i.delta.chat/#7DAA05EAD5B18620D6BEAA02F22D8B764D86DE32&a=masto.bot%40arcanechat.me&n=&i=7RXh-2iefRvHnfGeJ4EhMhMj&s=PJNmyjJQGmhbkCfq_7viTu_m"
+    },
+    {
       "description": "Multipurpose bot with features like web browsing, compressed page downloads, file downloads, meme retrieval, and text translation",
       "lang": "en",
       "admin": "yordante",
@@ -253,7 +259,7 @@
       "url": "https://i.delta.chat/#8904D68A0B560EEEA20A06031BA3B5859361097B&a=mangadl%40testrun.org&n=MangaDownloader&i=fLXeIm7l2pP&s=Kpn1KG4fWiS"
     },
     {
-      "description": "Mastodon/DeltaChat bridge",
+      "description": "Mastodon bridge",
       "lang": "en",
       "admin": "adbenitez",
       "url": "https://i.delta.chat/#3CD6F460C18365C226A3115E5D5DCC2B68286A7A&a=simplebot%40testrun.org&n=MASTODON%20BRIDGE&i=vliFxNkyG5I&s=CEHn5i91saa"
