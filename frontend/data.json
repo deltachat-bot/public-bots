@@ -37,6 +37,18 @@
       "url": "https://i.delta.chat/#07911965A7D094A7FA7B8D94F27E433B84403D38&a=dcstatus1%40nine.testrun.org&n=Delta%20Chat%20Status&i=OKTfDAd6qYyRuZ9IEpmleQkl&s=m6GWaLjoZTJgUVElDQsewjJ3"
     },
     {
+      "description": "PixelSocial: the pixelated social network (English instance)",
+      "lang": "en",
+      "admin": "merlinux",
+      "url": "https://i.delta.chat/#C753A22A447DE8CA18653B9C7668BC822C0561CA&a=pixsocial%40arcanechat.me&n=PixelSocial&i=sz7HYOnPmjG1WWOclOFlGLFv&s=XJFfgZRHwvTVAvBAQKJxFL2F"
+    },
+    {
+      "description": "PixelSocial: the pixelated social network (Spanish instance)",
+      "lang": "es",
+      "admin": "merlinux",
+      "url": "https://i.delta.chat/#9CB65C898E3AD0C628133BD4C089D214BD536346&a=social-es%40arcanechat.me&n=PixelSocial%20%F0%9F%87%AA%F0%9F%87%B8&i=23RERfRXBQScBpf0dTNRHs75&s=Ch_-qhmLnrMxfK3Ko4w7HCRy"
+    },
+    {
       "description": "Web to PDF converter",
       "lang": "en",
       "admin": "merlinux",
