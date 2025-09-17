@@ -33,37 +33,37 @@
     {
       "description": "Easily monitor Delta Chat releases status and availability",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#07911965A7D094A7FA7B8D94F27E433B84403D38&a=dcstatus1%40nine.testrun.org&n=Delta%20Chat%20Status&i=OKTfDAd6qYyRuZ9IEpmleQkl&s=m6GWaLjoZTJgUVElDQsewjJ3"
     },
     {
       "description": "PixelSocial: the pixelated social network (English instance)",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#C753A22A447DE8CA18653B9C7668BC822C0561CA&a=pixsocial%40arcanechat.me&n=PixelSocial&i=sz7HYOnPmjG1WWOclOFlGLFv&s=XJFfgZRHwvTVAvBAQKJxFL2F"
     },
     {
       "description": "PixelSocial: the pixelated social network (Spanish instance)",
       "lang": "es",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#9CB65C898E3AD0C628133BD4C089D214BD536346&a=social-es%40arcanechat.me&n=PixelSocial%20%F0%9F%87%AA%F0%9F%87%B8&i=23RERfRXBQScBpf0dTNRHs75&s=Ch_-qhmLnrMxfK3Ko4w7HCRy"
     },
     {
       "description": "Web to PDF converter",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#43B48FD6AFE0B780E08DEDE70A0DB16EDBE137EC&a=web2pdf01%40bcc.chat&n=Web%20to%20PDF&i=aVeg_0fMaME&s=48WGSWyaIru"
     },
     {
       "description": "Web to PDF converter",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#036AB60803636BFE628487D52910CB443DC82A14&a=web2pdf01%40chatd.de&n=Web%20to%20PDF&i=sNjYQWgFM8l&s=PA4ZYzoj3Gj"
     },
     {
       "description": "Web to PDF converter",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#F9E20FD1B062C8CB3CD90A3ADF54C732669F52BE&a=web2pdf01%40deltachat.jurkiewicz.chat&n=Web%20to%20PDF&i=ZH9xqcz2Yra&s=ksFvupfwbiD"
     },
     {
@@ -75,43 +75,43 @@
     {
       "description": "Conversational AI chat-bot assistant for Delta Chat",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#A11808CEE7890F00B54EB64183C1FA40200635D5&a=chatbot%40testrun.org&n=Mia&i=1uiiAtibina&s=iyHlIA_MABH"
     },
     {
       "description": "Conversational AI chat-bot assistant for Delta Chat",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#1EDD34FF7513D09F6DA300A765285E7A1C9DA72A&a=simplebot08%40gmail.com&n=Mia&i=9BnkBMZU3lZ&s=l5CJimJA-tV"
     },
     {
       "description": "Bot to generate images given a text prompt",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#2FE05BD53A28A912A4AA74BF7BE6FD5E547473CC&a=txt2image%40nine.testrun.org&n=Text%20To%20Image&i=cbTmzlMa0-C&s=EWZ_FsPcd0R"
     },
     {
       "description": "Bot to generate images given a text prompt",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#793E87929F3B318AE30321C298260C27A4D813E4&a=d3lt4b0t02%40gmail.com&n=Text%20To%20Image&i=Ep0SGi9JzQH&s=EVOpL4okIV7"
     },
     {
       "description": "Bot that can help you extract text from voice messages, also works in groups",
       "lang": "multi",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#81EDFA2AEBCF4ECDF357A5E6F383F813547CB9D7&a=voice2text%40testrun.org&n=Voice%20To%20Text&i=zSBD_nJBpTn&s=NVYndJrYBOU"
     },
     {
       "description": "Bot that can help you extract text from voice messages, also works in groups",
       "lang": "multi",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#924B09EB934CF0F836ADD3D1C8F56A8070D5506E&a=voice2txt%40nine.testrun.org&n=Voice%20To%20Text&i=PYu7OFENQUo&s=7vGNO0Q4zE4"
     },
     {
       "description": "Bot that can help you extract text from voice messages, also works in groups",
       "lang": "multi",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#55477D81DA0B25AE2CEF67B5FBEB871642BC9DBD&a=voice2txt%40deltachat.jurkiewicz.chat&n=Voice%20To%20Text&i=FowjxBzf4G7&s=YJIyngjmI-u"
     },
     {
@@ -153,43 +153,43 @@
     {
       "description": "Official Delta Chat Webxdc Store",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#37DC2B704A2AE2F6A96235CE0C3A0EBCA4F5801D&a=xstore%40testrun.org&n=&i=-1IGtynaivZ&s=JqHsvvcDmnW"
     },
     {
       "description": "Public bots index/directory 🔍",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#67889B0362BEDBFEE05ACD92C1D737FA632A9582&a=botsindex%40arcanechat.me&n=Public%20Bots&i=336MTEz38EH-RJxM9OKWygYK&s=TpVVGK6C4KrJmRG0bwHLalXt"
     },
     {
       "description": "Public bots index/directory 🔍",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#9AF055DB87EC48A1C009B6CA55E3712A6F7D346F&a=botsindex%40nine.testrun.org&n=Public%20Bots&i=QpBSronexvP&s=nAfQ0q_JomN"
     },
     {
       "description": "Web gateway, get URL previews and download files",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#E0421EA0951C59A565F470F5241C8A542ACEF9D1&a=www2delta%40chatmail.woodpeckersnest.space&n=www&i=6OPTVCRUmdD&s=1giWmIckD_r"
     },
     {
       "description": "Web gateway, get URL previews and download files",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#305EBA9DA8B9383F478754DC46995C56DBC2EC4B&a=deltabot%40buzon.uy&n=www&i=MauOlQuQW9Z&s=pvlZhO3SHg4"
     },
     {
       "description": "Web gateway, get URL previews and download files",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#184954ED11A441A9C75FD57F709126006C9E3239&a=d3lt4b0t03%40gmail.com&n=www&i=fnhn97FCzDhxFIw1t20DVvJN&s=uY7x1Y3lG8G8nC0ljLhC35Dv"
     },
     {
       "description": "Conversational AI bot using llama.cpp",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#74055606ADC789BA0566DA672D7EA2A32C6B5763&a=localbot%40testrun.org&n=&i=Bc6oC6IIUWP&s=9ZsRjKI_g2q"
     },
     {
@@ -201,67 +201,67 @@
     {
       "description": "FAQ bot, allows saving answer to common questions or #tags",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#279714071CC59EB4A9943122A3B4FF4BB7264A0E&a=faqbot%40testrun.org&n=FAQ%20Bot&i=PhdQtXTJQkp&s=WAPGhvIBtEy"
     },
     {
       "description": "FAQ bot, allows saving answer to common questions or #tags",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#2E1267AC03F8D5DF66A77900E8834ECF42B40E08&a=faqbot001%40koffer.szh.homes&n=FAQ%20Bot&i=AIusNLOYgED&s=BYS8Kx_vvpE"
     },
     {
       "description": "Allows to subscribe to RSS/Atom feeds in group chats",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#85CB327B95B9427C0A829548D853F3BD20672EC7&a=feedsbot1%40arcanechat.me&n=FeedsBot&i=2Zn1eOU6l_qWKnfDYvBb6J08&s=nYxqTThyDbKZM0E8XbYsxCHq"
     },
     {
       "description": "Allows to subscribe to RSS/Atom feeds in group chats",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#024C525D627CBF5A292FC428A40BF74BE66DA1BC&a=feedsb%40mailchat.pl&n=FeedsBot&i=6eMHA8T69SF&s=M53-Un3pKPa"
     },
     {
       "description": "Allows to subscribe to RSS/Atom feeds in group chats",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#CD830583FB1A6ACE0EBB3039052E469F821A75CA&a=simplebot%40systemli.org&n=FeedsBot&i=2oz_mA5Wxcl&s=gsfLuUiP1JS"
     },
     {
       "description": "Bot that allows to invite friends to your private groups so you don't need to be online for them to join",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#6FE1642916908F1AC9CC7557CC99CF5DDB92043C&a=groupsbot%40testrun.org&n=InviteBot&i=AptcQCUYP3X&s=j6C75z6IKU8"
     },
     {
       "description": "Bot that allows to remove inactive/stale members of group and invite friends to your private groups so you don't need to be online for them to join",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#6A36794AF242B4E8B2EEAFBF9F2C9E97F60ED9B1&a=stalebot1%40arcanechat.me&n=Majordomo&i=zTW90pZMnbcTN1ex4TY2C9hG&s=1vT8nfTpgWI3Kx_taLYOaibF"
     },
     {
       "description": "Bot that allows to remove inactive/stale members of group and invite friends to your private groups so you don't need to be online for them to join",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#C2846EB4C1CB8DF84B1818F5E3A638FC3FBDC981&a=stalebot1%40nine.testrun.org&n=Majordomo&i=TbyDPkJ0S6EJ-Dv2G_qWsVS_&s=lNZDCAnk3Hj37GI2oKngyQx_"
     },
     {
       "description": "Bot that allows to invite friends to your private groups so you don't need to be online for them to join",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#6F6F76E3C1C8C36AFA26AEEED2BA530FDF15D08A&a=invitebot%40arcanechat.me&n=InviteBot&i=NnUjTYsDZopxqNJVHcUMuOqI&s=kG9QpOARGEQksAq8skkr7sPz"
     },
     {
       "description": "Bot that allows to invite friends to your private groups so you don't need to be online for them to join",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#6CBFF8FFD505C0FDEA20A66674F2916EA8FBEE99&a=invitebot%40nine.testrun.org&n=InviteBot&i=5JRojJKI49i&s=Js2jkA52U-f"
     },
     {
       "description": "Bot that allows to invite friends to your private groups so you don't need to be online for them to join",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#D87FAE4E9112A0DA2B8DE4980792F67EC9A63A18&a=d3lt4b0t01%40gmail.com&n=InviteBot&i=kckRp_D6ynT&s=WY6G5RqEetH"
     },
     {
@@ -279,13 +279,13 @@
     {
       "description": "Allows to download sticker packs",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#9DE7DADDC37828D75499BBDC45CA5FACF50E9B18&a=stickersb%40mehl.cloud&n=StickersBot&i=tHkRoHiugej&s=n0x9TjRcUxo"
     },
     {
       "description": "Allows to download sticker packs",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#148A6BAAB189EAF805E8BAD90B5E6734D0499E9E&a=adbenitez%40nogafam.me&n=StickersBot&i=hZF9Ddww1rZ&s=KEDgb8FBIb3"
     },
     {
@@ -297,27 +297,29 @@
     {
       "description": "Web to Image converter, take screenshots of web sites",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#4A7E5FE883D4E8969F2697E8EF7CA3474F072C65&a=web2imgbt%40chatd.de&n=Web%20To%20Image&i=nnQhWLoBXt_&s=b9ZuEWbjojm"
     },
     {
       "description": "Web to Image converter, take screenshots of web sites",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#1A1496593614C2C76BBF873F456E06349351BD25&a=web2imgbt%40deltachat.jurkiewicz.chat&n=Web%20To%20Image&i=9yo3sac8Kh4&s=IJ_GW7Y44C-"
     },
     {
       "description": "Web to Image converter, take screenshots of web sites",
       "lang": "en",
-      "admin": "merlinux",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#B854D991B27307F8393A934CEE9BFD63D19250D3&a=web2img%40testrun.org&n=Web%20to%20Image&i=le_x0ejIaW-&s=EESq-4vLPM3"
     }
   ],
   "admins": {
     "Nelson": { "url": "mailto:nelsonr9608@nauta.cu" },
     "D@vid": { "url": "mailto:david@testrun.org" },
-    "merlinux": { "url": "mailto:delta@merlinux.eu" },
     "missytake": { "url": "mailto:missytake@systemli.org" },
+    "testrun": {
+      "url": "https://i.delta.chat/#2CBB755B2E8728CF00C31C1C25EE97CDD05E7A0F&a=sysadmin%40testrun.org&n=testrun.org%20admins&i=3iKGEoMO1V5&s=IDJTCaSCBAd"
+    },
     "jag": {
       "url": "OPENPGP4FPR:E2F0944DB3147D346FBED33A21610DD09554B632#a=hug39hqqb%40chika.aangat.lahat.computer&n=Jag%2C%20delta%20aspect&i=meWb-P9xAbb0FLPR0zuXT6Rx&s=i8Tf32cZ262HfzDl6zHy_Ose"
     },
