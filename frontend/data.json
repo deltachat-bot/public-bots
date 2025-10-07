@@ -38,7 +38,7 @@
     },
     {
       "description": "PixelSocial: the pixelated social network (German instance)",
-      "lang": "en",
+      "lang": "de",
       "admin": "testrun",
       "url": "https://i.delta.chat/#45AC0444EB183B1987225D0D4D688ECC7AE42ECD&a=social%2Dde%40arcanechat.me&n=Bildpunkt%20Sozial&i=fSHNaxy4rMYwKaMsvZvDqn7J&s=B3ZpH_TS3tIMwTY7wPiNXJOg"
     },
@@ -342,6 +342,7 @@
   "langs": {
     "en": "English",
     "es": "Español",
+    "de": "Deutsch",
     "multi": "Multi-language"
   }
 }
