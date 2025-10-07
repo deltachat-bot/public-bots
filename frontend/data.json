@@ -37,6 +37,12 @@
       "url": "https://i.delta.chat/#07911965A7D094A7FA7B8D94F27E433B84403D38&a=dcstatus1%40nine.testrun.org&n=Delta%20Chat%20Status&i=OKTfDAd6qYyRuZ9IEpmleQkl&s=m6GWaLjoZTJgUVElDQsewjJ3"
     },
     {
+      "description": "PixelSocial: the pixelated social network (German instance)",
+      "lang": "en",
+      "admin": "testrun",
+      "url": "https://i.delta.chat/#45AC0444EB183B1987225D0D4D688ECC7AE42ECD&a=social%2Dde%40arcanechat.me&n=Bildpunkt%20Sozial&i=fSHNaxy4rMYwKaMsvZvDqn7J&s=B3ZpH_TS3tIMwTY7wPiNXJOg"
+    },
+    {
       "description": "PixelSocial: the pixelated social network (English instance)",
       "lang": "en",
       "admin": "testrun",
