@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/deltachat-bot/deltabot-cli-go/botcli"
 	"github.com/chatmail/rpc-client-go/deltachat"
 	"github.com/chatmail/rpc-client-go/deltachat/option"
+	"github.com/deltachat-bot/deltabot-cli-go/botcli"
 	"github.com/spf13/cobra"
 )
 

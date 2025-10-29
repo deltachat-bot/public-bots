@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/deltachat-bot/deltabot-cli-go/botcli"
 	"github.com/chatmail/rpc-client-go/deltachat"
 	"github.com/chatmail/rpc-client-go/deltachat/xdcrpc"
+	"github.com/deltachat-bot/deltabot-cli-go/botcli"
 )
 
 type TestCallback func(bot *deltachat.Bot, botAcc deltachat.AccountId, userRpc *deltachat.Rpc, userAcc deltachat.AccountId)
