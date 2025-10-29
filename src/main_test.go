@@ -7,8 +7,8 @@ import (
 	"testing"
 
 	"github.com/deltachat-bot/deltabot-cli-go/botcli"
-	"github.com/deltachat/deltachat-rpc-client-go/deltachat"
-	"github.com/deltachat/deltachat-rpc-client-go/deltachat/xdcrpc"
+	"github.com/chatmail/rpc-client-go/deltachat"
+	"github.com/chatmail/rpc-client-go/deltachat/xdcrpc"
 )
 
 type TestCallback func(bot *deltachat.Bot, botAcc deltachat.AccountId, userRpc *deltachat.Rpc, userAcc deltachat.AccountId)

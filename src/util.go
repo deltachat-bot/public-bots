@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/deltachat/deltachat-rpc-client-go/deltachat"
+	"github.com/chatmail/rpc-client-go/deltachat"
 )
 
 func getFirstAccount(rpc *deltachat.Rpc) deltachat.AccountId {

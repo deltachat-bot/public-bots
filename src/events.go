@@ -5,9 +5,9 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/deltachat/deltachat-rpc-client-go/deltachat"
-	"github.com/deltachat/deltachat-rpc-client-go/deltachat/option"
-	"github.com/deltachat/deltachat-rpc-client-go/deltachat/xdcrpc"
+	"github.com/chatmail/rpc-client-go/deltachat"
+	"github.com/chatmail/rpc-client-go/deltachat/option"
+	"github.com/chatmail/rpc-client-go/deltachat/xdcrpc"
 )
 
 func onEvent(bot *deltachat.Bot, accId deltachat.AccountId, event deltachat.Event) {
@@ -172,7 +172,7 @@ func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.Cha
 		return
 	}
 
-	err = rpc.MiscSetDraft(accId, chatId, option.None[string](), option.Some(xdcPath), option.None[deltachat.MsgId](), option.None[deltachat.MsgType]())
+	err = rpc.MiscSetDraft(accId, chatId, option.None[string](), option.Some(xdcPath), option.None[string](), option.None[deltachat.MsgId](), option.None[deltachat.MsgType]())
 	if err != nil {
 		logger.Error(err)
 	}

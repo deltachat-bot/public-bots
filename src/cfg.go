@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/deltachat/deltachat-rpc-client-go/deltachat"
+	"github.com/chatmail/rpc-client-go/deltachat"
 )
 
 var cfg *Config
@@ -70,16 +70,12 @@ func (self *Config) GetBotsData() BotsData {
 				cfg.BotsData.Bots[index].LastSeen = time.Now()
 				continue
 			}
-			contactId, err := self.rpc.CreateContact(accId, addr, "")
+			contactId, err := self.rpc.LookupContactIdByAddr(accId, addr)
 			if err != nil {
 				cli.Logger.Error(err)
 				continue
 			}
-			if err != nil {
-				cli.Logger.Error(err)
-				continue
-			}
-			contact, err := self.rpc.GetContact(accId, contactId)
+			contact, err := self.rpc.GetContact(accId, contactId.UnwrapOr(0))
 			if err != nil {
 				cli.Logger.Error(err)
 				continue

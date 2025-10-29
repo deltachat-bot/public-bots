@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/deltachat-bot/deltabot-cli-go/botcli"
-	"github.com/deltachat/deltachat-rpc-client-go/deltachat"
-	"github.com/deltachat/deltachat-rpc-client-go/deltachat/option"
+	"github.com/chatmail/rpc-client-go/deltachat"
+	"github.com/chatmail/rpc-client-go/deltachat/option"
 	"github.com/spf13/cobra"
 )
 
@@ -75,12 +75,12 @@ func updateOfflineBotsStatusLoop(rpc *deltachat.Rpc) {
 				continue
 			}
 			logger := logger.With("acc", accId, "bot", botAddr)
-			contactId, err := rpc.CreateContact(accId, botAddr, "")
+			contactId, err := rpc.LookupContactIdByAddr(accId, botAddr)
 			if err != nil {
 				logger.Error(err)
 				continue
 			}
-			chatId, err := rpc.GetChatIdByContactId(accId, contactId)
+			chatId, err := rpc.GetChatIdByContactId(accId, contactId.UnwrapOr(0))
 			if err != nil {
 				logger.Error(err)
 				continue
@@ -88,7 +88,7 @@ func updateOfflineBotsStatusLoop(rpc *deltachat.Rpc) {
 			if chatId == 0 {
 				continue
 			}
-			contact, err := rpc.GetContact(accId, contactId)
+			contact, err := rpc.GetContact(accId, contactId.UnwrapOr(0))
 			if err != nil {
 				logger.Error(err)
 				continue
@@ -134,18 +134,18 @@ func updateStatusLoop(rpc *deltachat.Rpc) {
 				continue
 			}
 			logger := logger.With("acc", accId, "bot", botAddr)
-			contactId, err := rpc.CreateContact(accId, botAddr, "")
+			contactId, err := rpc.LookupContactIdByAddr(accId, botAddr)
 			if err != nil {
 				logger.Error(err)
 				continue
 			}
-			chatId, err := rpc.GetChatIdByContactId(accId, contactId)
+			chatId, err := rpc.GetChatIdByContactId(accId, contactId.UnwrapOr(0))
 			if err != nil {
 				logger.Error(err)
 				continue
 			}
 			if chatId != 0 {
-				contact, err := rpc.GetContact(accId, contactId)
+				contact, err := rpc.GetContact(accId, contactId.UnwrapOr(0))
 				if err != nil {
 					logger.Error(err)
 					continue
