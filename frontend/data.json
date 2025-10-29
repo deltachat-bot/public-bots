@@ -171,7 +171,7 @@
     {
       "description": "Deltaland, fantasy world, chat adventure, MMO game",
       "lang": "en",
-      "admin": "adbenitez",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#FD06CE9EA9562A51FA7FCA84B026574F9FB923A8&a=deltalandbot%40testrun.org&n=Deltaland%20Bot%20%5BBETA%5D&i=QdEBHZBR8yI&s=AuLHwV5BqVi"
     },
     {
@@ -243,7 +243,7 @@
     {
       "description": "Mastodon bridge",
       "lang": "en",
-      "admin": "adbenitez",
+      "admin": "testrun",
       "url": "https://i.delta.chat/#3CD6F460C18365C226A3115E5D5DCC2B68286A7A&a=simplebot%40testrun.org&n=MASTODON%20BRIDGE&i=vliFxNkyG5I&s=CEHn5i91saa"
     },
     {
@@ -257,12 +257,6 @@
       "lang": "en",
       "admin": "testrun",
       "url": "https://i.delta.chat/#148A6BAAB189EAF805E8BAD90B5E6734D0499E9E&a=adbenitez%40nogafam.me&n=StickersBot&i=hZF9Ddww1rZ&s=KEDgb8FBIb3"
-    },
-    {
-      "description": "Telegram/DeltaChat groups bridge (relay-bot)",
-      "lang": "en",
-      "admin": "adbenitez",
-      "url": "https://i.delta.chat/#05B5EF4667BF45AF8E437415DF14FC5F0C721EA8&a=tgbridge%40testrun.org&n=Telegram%20Bridge&i=68W2tEfJHrA&s=2wYVxvks-0M"
     },
     {
       "description": "Web to Image converter, take screenshots of web sites",
@@ -295,9 +289,6 @@
     },
     "yordante": {
       "url": "openpgp4fpr:144AD7AC5B7FFBF9DA12231DE4B5F7723A03FA1F#a=zyordante%40chat.lylapol.com&n=%EA%AA%97%EA%AA%AE%F0%9D%98%B3%E1%A6%94%EA%AA%96%EA%AA%80%F0%9D%93%BD%EA%AB%80&i=DeADN4drnFlIc2SVUR_AztVC&s=q4BEU2CDt04hr3vQjX3sKl7V"
-    },
-    "adbenitez": {
-      "url": "OPENPGP4FPR:F2175B65C599D9AB58FDBE35A1D2B46E62A29658#a=friendscaaj3%40testrun.org&n=adb&i=_vLu0fUI53k&s=teNGaPzemPW"
     }
   },
   "langs": {
