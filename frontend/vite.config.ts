@@ -1,5 +1,5 @@
 import preact from "@preact/preset-vite";
-import { buildXDC, eruda, legacy } from "webxdc-vite-plugins";
+import { buildXDC, eruda } from "@webxdc/vite-plugins";
 import { defineConfig } from "vite";
 import { mkdirSync, copyFileSync, existsSync } from "node:fs";
 
@@ -32,7 +32,6 @@ export default defineConfig({
       outFileName: "app.xdc",
     }),
     eruda(),
-    legacy(),
   ],
   base: base,
 });
