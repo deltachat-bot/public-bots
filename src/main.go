@@ -188,7 +188,12 @@ func getBotsData(url string) (bool, error) {
 	if err != nil {
 		return false, err
 	}
-	defer resp.Body.Close()
+	defer func() {
+		if err := resp.Body.Close(); err != nil {
+			logger := cli.Logger.With("origin", "getBotsData")
+			logger.Error(err)
+		}
+	}()
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {

@@ -54,13 +54,13 @@ func newConfig(rpc *deltachat.Rpc, path string) (*Config, error) {
 	return cfg, nil
 }
 
-func (self *Config) GetBotsData() BotsData {
-	self.mutex.Lock()
-	defer self.mutex.Unlock()
+func (config *Config) GetBotsData() BotsData {
+	config.mutex.Lock()
+	defer config.mutex.Unlock()
 	botsData := BotsData{Hash: cfg.BotsData.Hash}
 	if cfg.BotsData.Hash != "" {
-		selfAddrs := getSelfAddrs(self.rpc)
-		accId := getFirstAccount(self.rpc)
+		selfAddrs := getSelfAddrs(config.rpc)
+		accId := getFirstAccount(config.rpc)
 		for index := range cfg.BotsData.Bots {
 			if accId == 0 {
 				break
@@ -70,12 +70,12 @@ func (self *Config) GetBotsData() BotsData {
 				cfg.BotsData.Bots[index].LastSeen = time.Now()
 				continue
 			}
-			contactId, err := self.rpc.LookupContactIdByAddr(accId, addr)
+			contactId, err := config.rpc.LookupContactIdByAddr(accId, addr)
 			if err != nil {
 				cli.Logger.Error(err)
 				continue
 			}
-			contact, err := self.rpc.GetContact(accId, contactId.UnwrapOr(0))
+			contact, err := config.rpc.GetContact(accId, contactId.UnwrapOr(0))
 			if err != nil {
 				cli.Logger.Error(err)
 				continue
@@ -89,10 +89,10 @@ func (self *Config) GetBotsData() BotsData {
 	return botsData
 }
 
-func (self *Config) SaveData(data []byte) (bool, error) {
-	self.mutex.Lock()
-	defer self.mutex.Unlock()
-	self.BotsData.lastChecked = time.Now()
+func (config *Config) SaveData(data []byte) (bool, error) {
+	config.mutex.Lock()
+	defer config.mutex.Unlock()
+	config.BotsData.lastChecked = time.Now()
 
 	hash := GetMD5Hash(data)
 	changed := hash != cfg.BotsData.Hash
@@ -101,45 +101,45 @@ func (self *Config) SaveData(data []byte) (bool, error) {
 		if err := json.Unmarshal(data, &rawData); err != nil {
 			return false, err
 		}
-		self.BotsData.Bots = make([]Bot, len(rawData.Bots))
+		config.BotsData.Bots = make([]Bot, len(rawData.Bots))
 		for i, rawBot := range rawData.Bots {
-			self.BotsData.Bots[i] = Bot{
+			config.BotsData.Bots[i] = Bot{
 				Url:         rawBot.Url,
 				Description: rawBot.Description,
 				Lang:        Lang{Code: rawBot.Lang, Label: rawData.Langs[rawBot.Lang]},
 				Admin:       Admin{Name: rawBot.Admin, Url: rawData.Admins[rawBot.Admin].Url},
 			}
 		}
-		self.BotsData.Hash = hash
+		config.BotsData.Hash = hash
 	}
 
-	output, err := json.Marshal(self)
+	output, err := json.Marshal(config)
 	if err != nil {
 		return false, err
 	}
-	return changed, os.WriteFile(self.path, output, 0666)
+	return changed, os.WriteFile(config.path, output, 0666)
 }
 
-func (self *Config) SaveStatusLastChecked() error {
-	self.mutex.Lock()
-	defer self.mutex.Unlock()
-	self.StatusLastChecked = time.Now()
-	output, err := json.Marshal(self)
+func (config *Config) SaveStatusLastChecked() error {
+	config.mutex.Lock()
+	defer config.mutex.Unlock()
+	config.StatusLastChecked = time.Now()
+	output, err := json.Marshal(config)
 	if err != nil {
 		return err
 	}
-	return os.WriteFile(self.path, output, 0666)
+	return os.WriteFile(config.path, output, 0666)
 }
 
-func (self *Config) SaveOffLastChecked() error {
-	self.mutex.Lock()
-	defer self.mutex.Unlock()
-	self.OffLastChecked = time.Now()
-	output, err := json.Marshal(self)
+func (config *Config) SaveOffLastChecked() error {
+	config.mutex.Lock()
+	defer config.mutex.Unlock()
+	config.OffLastChecked = time.Now()
+	output, err := json.Marshal(config)
 	if err != nil {
 		return err
 	}
-	return os.WriteFile(self.path, output, 0666)
+	return os.WriteFile(config.path, output, 0666)
 }
 
 func GetMD5Hash(data []byte) string {

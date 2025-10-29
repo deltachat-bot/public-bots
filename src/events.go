@@ -128,7 +128,11 @@ func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.Cha
 		logger.Error(err)
 		return
 	}
-	defer os.RemoveAll(dir)
+	defer func() {
+		if err := os.RemoveAll(dir); err != nil {
+			logger.Error(err)
+		}
+	}()
 
 	xdcPath := filepath.Join(dir, "app.xdc")
 	if err = os.WriteFile(xdcPath, xdcContent, 0666); err != nil {
