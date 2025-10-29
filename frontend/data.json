@@ -175,12 +175,6 @@
       "url": "https://i.delta.chat/#184954ED11A441A9C75FD57F709126006C9E3239&a=d3lt4b0t03%40gmail.com&n=www&i=fnhn97FCzDhxFIw1t20DVvJN&s=uY7x1Y3lG8G8nC0ljLhC35Dv"
     },
     {
-      "description": "Conversational AI bot using llama.cpp",
-      "lang": "en",
-      "admin": "testrun",
-      "url": "https://i.delta.chat/#74055606ADC789BA0566DA672D7EA2A32C6B5763&a=localbot%40testrun.org&n=&i=Bc6oC6IIUWP&s=9ZsRjKI_g2q"
-    },
-    {
       "description": "Deltaland, fantasy world, chat adventure, MMO game",
       "lang": "en",
       "admin": "adbenitez",
@@ -251,12 +245,6 @@
       "lang": "en",
       "admin": "testrun",
       "url": "https://i.delta.chat/#D87FAE4E9112A0DA2B8DE4980792F67EC9A63A18&a=d3lt4b0t01%40gmail.com&n=InviteBot&i=kckRp_D6ynT&s=WY6G5RqEetH"
-    },
-    {
-      "description": "Manga downloader bot with support for several sites and languages",
-      "lang": "multi",
-      "admin": "adbenitez",
-      "url": "https://i.delta.chat/#8904D68A0B560EEEA20A06031BA3B5859361097B&a=mangadl%40testrun.org&n=MangaDownloader&i=fLXeIm7l2pP&s=Kpn1KG4fWiS"
     },
     {
       "description": "Mastodon bridge",
