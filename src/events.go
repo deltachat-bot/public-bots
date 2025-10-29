@@ -110,54 +110,18 @@ func onNewMsg(bot *deltachat.Bot, accId deltachat.AccountId, msgId deltachat.Msg
 // send the app / UI interace
 func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.ChatId) {
 	logger := cli.GetLogger(accId).With("chat", chatId)
-	// try to resend existing instance
 	none := option.None[deltachat.MsgType]()
 	msgIds, err := rpc.GetChatMedia(accId, chatId, deltachat.MsgWebxdc, none, none)
 	if err != nil {
 		logger.Error(err)
 		return
 	}
-	for i := len(msgIds) - 1; i >= 0; i-- {
-		msgId := msgIds[i]
-		logger := logger.With("msg", msgId)
-		msg, err := rpc.GetMessage(accId, msgId)
-		if err != nil {
-			logger.Error(err)
-			continue
-		}
-		if msg.FromId == deltachat.ContactSelf {
-			version, err := rpc.GetWebxdcBlob(accId, msgId, "version.txt")
-			if err != nil {
-				logger.Error(err)
-			} else {
-				data, err := base64.StdEncoding.WithPadding(base64.NoPadding).DecodeString(version)
-				if err != nil {
-					logger.With("version", version).Error(err)
-				}
-				version = string(data)
-			}
-			if version == xdcVersion {
-				if msg.State == deltachat.MsgStateOutPreparing || msg.State == deltachat.MsgStateOutDraft || msg.State == deltachat.MsgStateOutPending {
-					logger.Debug("Message is still pending, no need to re-send")
-					return
-				}
-				err = rpc.ResendMessages(accId, []deltachat.MsgId{msgId})
-				if err != nil {
-					logger.Error(err)
-					break
-				}
-				return
-			}
-			break
-		} else {
-			err = rpc.DeleteMessages(accId, []deltachat.MsgId{msgId})
-			if err != nil {
-				logger.Error(err)
-			}
-		}
+	err = rpc.Transport.Call(rpc.Context, "delete_messages_for_all", accId, msgIds)
+	if err != nil {
+		logger.Error(err)
 	}
 
-	// no previous instance to send, send new instance
+	// send new instance
 
 	dir, err := os.MkdirTemp("", "")
 	if err != nil {
