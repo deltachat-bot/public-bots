@@ -1,12 +1,6 @@
 {
   "bots": [
     {
-      "description": "Mastodon bridge",
-      "lang": "en",
-      "admin": "yordante",
-      "url": "https://i.delta.chat/#7DAA05EAD5B18620D6BEAA02F22D8B764D86DE32&a=masto.bot%40arcanechat.me&n=&i=7RXh-2iefRvHnfGeJ4EhMhMj&s=PJNmyjJQGmhbkCfq_7viTu_m"
-    },
-    {
       "description": "Multipurpose bot with features like web browsing, compressed page downloads, file downloads, meme retrieval, and text translation",
       "lang": "en",
       "admin": "yordante",
