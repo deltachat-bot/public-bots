@@ -114,9 +114,23 @@ func sendApp(rpc *deltachat.Rpc, accId uint32, chatId uint32) {
 		logger.Error(err)
 		return
 	}
-	err = rpc.Transport.Call(rpc.Context, "delete_messages_for_all", accId, msgIds)
-	if err != nil {
-		logger.Error(err)
+	for _, msgId := range msgIds {
+		msg, err := rpc.GetMessage(accId, msgId)
+		if err != nil {
+			logger.Error(err)
+			continue
+		}
+		if msg.FromId == deltachat.ContactSelf {
+			err = rpc.Transport.Call(rpc.Context, "delete_messages_for_all", accId, []uint32{msgId})
+			if err != nil {
+				logger.Error(err)
+			}
+		} else {
+			err = rpc.DeleteMessages(accId, []uint32{msgId})
+			if err != nil {
+				logger.Error(err)
+			}
+		}
 	}
 
 	// send new instance
