@@ -7,6 +7,12 @@
       "url": "https://i.delta.chat/#C4634029413CB61FA770131F2A02F4CCE4B57896&a=starlight%40disroot.org&n=MultiBot&i=fkfDDIpxFVq&s=JCg192tuQom"
     },
     {
+      "description": "Telegram Connector: Subscribe to your favorite Telegram Channels",
+      "lang": "multi",
+      "admin": "deltafan",
+      "url": "https://i.delta.chat/#F088C9D6200709F9E12C73405C9FE79151FF15B5&v=3&i=S0DgjvgWMEebDFEawdD1jD6c&s=ncHd-ZaTSgij0bwFQDViAmPh&a=o7701rt9c%40nine.testrun.org&n=Telegram+Connector"
+    },
+    {
       "description": "Easily monitor Delta Chat releases status and availability",
       "lang": "en",
       "admin": "testrun",
@@ -252,6 +258,9 @@
     },
     "yordante": {
       "url": "openpgp4fpr:144AD7AC5B7FFBF9DA12231DE4B5F7723A03FA1F#a=zyordante%40chat.lylapol.com&n=%EA%AA%97%EA%AA%AE%F0%9D%98%B3%E1%A6%94%EA%AA%96%EA%AA%80%F0%9D%93%BD%EA%AB%80&i=DeADN4drnFlIc2SVUR_AztVC&s=q4BEU2CDt04hr3vQjX3sKl7V"
+    },
+    "deltafan": {
+      "url": "https://i.delta.chat/#3CECBB50FD2C668F05180772155549B8D0BF222A&v=3&i=CLzOt3ZqOjKCZem4tASPlR8t&s=q0x6bZ_cSCb0CFmsk3C5lZyU&a=wwyr1kw9s%40nine.testrun.org&n=Delta+Fan"
     }
   },
   "langs": {
