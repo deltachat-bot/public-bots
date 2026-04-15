@@ -5,16 +5,15 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/chatmail/rpc-client-go/deltachat"
-	"github.com/chatmail/rpc-client-go/deltachat/option"
-	"github.com/chatmail/rpc-client-go/deltachat/xdcrpc"
+	"github.com/chatmail/rpc-client-go/v2/deltachat"
+	"github.com/deltachat-bot/deltabot-cli-go/v2/xdcrpc"
 )
 
-func onEvent(bot *deltachat.Bot, accId deltachat.AccountId, event deltachat.Event) {
+func onEvent(bot *deltachat.Bot, accId uint32, event deltachat.EventType) {
 	switch ev := event.(type) {
-	case deltachat.EventWebxdcStatusUpdate:
+	case *deltachat.EventTypeWebxdcStatusUpdate:
 		onStatusUpdate(bot.Rpc, accId, ev.MsgId, ev.StatusUpdateSerial)
-	case deltachat.EventSecurejoinInviterProgress:
+	case *deltachat.EventTypeSecurejoinInviterProgress:
 		if ev.Progress == 1000 {
 			logger := cli.GetLogger(accId)
 			logger.Debugf("QR scanned by contact with id=%v", ev.ContactId)
@@ -29,7 +28,7 @@ func onEvent(bot *deltachat.Bot, accId deltachat.AccountId, event deltachat.Even
 }
 
 // handle a webxdc status update
-func onStatusUpdate(rpc *deltachat.Rpc, accId deltachat.AccountId, msgId deltachat.MsgId, serial uint) {
+func onStatusUpdate(rpc *deltachat.Rpc, accId uint32, msgId uint32, serial uint32) {
 	logger := cli.GetLogger(accId).With("msg", msgId, "origin", "webxdc")
 	rawUpdate, err := xdcrpc.GetUpdate(rpc, accId, msgId, serial)
 	if err != nil {
@@ -75,7 +74,7 @@ func onStatusUpdate(rpc *deltachat.Rpc, accId deltachat.AccountId, msgId deltach
 	}
 }
 
-func onNewMsg(bot *deltachat.Bot, accId deltachat.AccountId, msgId deltachat.MsgId) {
+func onNewMsg(bot *deltachat.Bot, accId uint32, msgId uint32) {
 	logger := cli.GetLogger(accId).With("msg", msgId)
 	msg, err := bot.Rpc.GetMessage(accId, msgId)
 	if err != nil {
@@ -89,9 +88,9 @@ func onNewMsg(bot *deltachat.Bot, accId deltachat.AccountId, msgId deltachat.Msg
 			logger.Error(err)
 			return
 		}
-		if chat.ChatType == deltachat.ChatSingle {
+		if chat.ChatType == deltachat.ChatTypeSingle {
 			logger.Debugf("Got new 1:1 message: %#v", msg)
-			err = bot.Rpc.MarkseenMsgs(accId, []deltachat.MsgId{msg.Id})
+			err = bot.Rpc.MarkseenMsgs(accId, []uint32{msg.Id})
 			if err != nil {
 				logger.Error(err)
 			}
@@ -100,7 +99,7 @@ func onNewMsg(bot *deltachat.Bot, accId deltachat.AccountId, msgId deltachat.Msg
 	}
 
 	if msg.FromId > deltachat.ContactLastSpecial {
-		err = bot.Rpc.DeleteMessages(accId, []deltachat.MsgId{msg.Id})
+		err = bot.Rpc.DeleteMessages(accId, []uint32{msg.Id})
 		if err != nil {
 			logger.Error(err)
 		}
@@ -108,10 +107,9 @@ func onNewMsg(bot *deltachat.Bot, accId deltachat.AccountId, msgId deltachat.Msg
 }
 
 // send the app / UI interace
-func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.ChatId) {
+func sendApp(rpc *deltachat.Rpc, accId uint32, chatId uint32) {
 	logger := cli.GetLogger(accId).With("chat", chatId)
-	none := option.None[deltachat.MsgType]()
-	msgIds, err := rpc.GetChatMedia(accId, chatId, deltachat.MsgWebxdc, none, none)
+	msgIds, err := rpc.GetChatMedia(accId, &chatId, deltachat.ViewtypeWebxdc, nil, nil)
 	if err != nil {
 		logger.Error(err)
 		return
@@ -140,7 +138,7 @@ func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.Cha
 		return
 	}
 
-	err = rpc.MiscSetDraft(accId, chatId, option.None[string](), option.Some(xdcPath), option.None[string](), option.None[deltachat.MsgId](), option.None[deltachat.MsgType]())
+	err = rpc.MiscSetDraft(accId, chatId, nil, &xdcPath, nil, nil, nil)
 	if err != nil {
 		logger.Error(err)
 	}
@@ -148,13 +146,12 @@ func sendApp(rpc *deltachat.Rpc, accId deltachat.AccountId, chatId deltachat.Cha
 	if err != nil {
 		logger.Error(err)
 	}
-	msgId := draft.Unwrap().Id
 
 	if cfg.BotsData.Hash != "" {
 		syncTime, botsData, statusData, _ := (&API{}).Sync("")
 		response := &xdcrpc.Response{Result: []any{syncTime, botsData, statusData}}
 		update := xdcrpc.StatusUpdate[*xdcrpc.Response]{Payload: response, Summary: "v" + xdcVersion}
-		if err := xdcrpc.SendUpdate(rpc, accId, msgId, update, ""); err != nil {
+		if err := xdcrpc.SendUpdate(rpc, accId, draft.Id, update, ""); err != nil {
 			logger.Error(err)
 		}
 	}

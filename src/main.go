@@ -6,13 +6,14 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/chatmail/rpc-client-go/deltachat"
-	"github.com/chatmail/rpc-client-go/deltachat/option"
-	"github.com/deltachat-bot/deltabot-cli-go/botcli"
+	"github.com/chatmail/rpc-client-go/v2/deltachat"
+	"github.com/deltachat-bot/deltabot-cli-go/v2/botcli"
 	"github.com/spf13/cobra"
 )
 
 var cli = botcli.New("public-bots")
+
+func strptr(s string) *string { return &s }
 
 func onBotInit(cli *botcli.BotCli, bot *deltachat.Bot, cmd *cobra.Command, args []string) {
 	bot.OnUnhandledEvent(onEvent)
@@ -27,12 +28,12 @@ func onBotInit(cli *botcli.BotCli, bot *deltachat.Bot, cmd *cobra.Command, args 
 		if err != nil {
 			cli.Logger.Error(err)
 		}
-		if name.UnwrapOr("") == "" {
-			err = bot.Rpc.SetConfig(accId, "displayname", option.Some("Public Bots"))
+		if name == nil || *name == "" {
+			err = bot.Rpc.SetConfig(accId, "displayname", strptr("Public Bots"))
 			if err != nil {
 				cli.Logger.Error(err)
 			}
-			err = bot.Rpc.SetConfig(accId, "delete_server_after", option.Some("1"))
+			err = bot.Rpc.SetConfig(accId, "delete_server_after", strptr("1"))
 			if err != nil {
 				cli.Logger.Error(err)
 			}
@@ -80,20 +81,23 @@ func updateOfflineBotsStatusLoop(rpc *deltachat.Rpc) {
 				logger.Error(err)
 				continue
 			}
-			chatId, err := rpc.GetChatIdByContactId(accId, contactId.UnwrapOr(0))
+			if contactId == nil {
+				continue
+			}
+			chatId, err := rpc.GetChatIdByContactId(accId, *contactId)
 			if err != nil {
 				logger.Error(err)
 				continue
 			}
-			if chatId == 0 {
+			if chatId == nil || *chatId == 0 {
 				continue
 			}
-			contact, err := rpc.GetContact(accId, contactId.UnwrapOr(0))
+			contact, err := rpc.GetContact(accId, *contactId)
 			if err != nil {
 				logger.Error(err)
 				continue
 			}
-			if time.Since(contact.LastSeen.Time).Minutes() < 60 {
+			if time.Since(time.Unix(contact.LastSeen, 0)).Minutes() < 60 {
 				// bot is not offline, it will be checked by the online-bots status loop
 				continue
 			}
@@ -139,18 +143,21 @@ func updateStatusLoop(rpc *deltachat.Rpc) {
 				logger.Error(err)
 				continue
 			}
-			chatId, err := rpc.GetChatIdByContactId(accId, contactId.UnwrapOr(0))
+			if contactId == nil {
+				continue
+			}
+			chatId, err := rpc.GetChatIdByContactId(accId, *contactId)
 			if err != nil {
 				logger.Error(err)
 				continue
 			}
-			if chatId != 0 {
-				contact, err := rpc.GetContact(accId, contactId.UnwrapOr(0))
+			if chatId != nil && *chatId != 0 {
+				contact, err := rpc.GetContact(accId, *contactId)
 				if err != nil {
 					logger.Error(err)
 					continue
 				}
-				if time.Since(contact.LastSeen.Time).Minutes() >= 60 {
+				if time.Since(time.Unix(contact.LastSeen, 0)).Minutes() >= 60 {
 					// offline bot, will be check by the offline-bots status loop
 					continue
 				}
