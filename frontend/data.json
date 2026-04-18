@@ -1,6 +1,12 @@
 {
   "bots": [
     {
+      "description": "Gemi on DeltaChat: Your smart assistant directly in your inbox. Quick queries, email drafting, text translation, and complex problem-solving. Powered by Google Gemini technology through the decentralized Delta Chat network. Type your question and start creating",
+      "lang": "multi",
+      "admin": "FrancyJ2M",
+      "url": "https://i.delta.chat/#B8A94D715BE70C4AF371E65B6ED9E3E2E5DE06E3&v=3&i=yKZjkTn-ulCnDzTgb61Dpst2&s=B5h7nI4JxiatZwl2XUNfEHVF&a=deltahelp%40disroot.org&n=Gemi+A%C3%AE"
+    },
+    {
       "description": "Multipurpose bot with features like web browsing, compressed page downloads, file downloads, meme retrieval, and text translation",
       "lang": "en",
       "admin": "yordante",
