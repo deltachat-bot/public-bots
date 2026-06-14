@@ -5,14 +5,15 @@ import (
 	"os"
 	"path/filepath"
 	"testing"
+	"time"
 
-	"github.com/chatmail/rpc-client-go/deltachat"
-	"github.com/chatmail/rpc-client-go/deltachat/xdcrpc"
-	"github.com/deltachat-bot/deltabot-cli-go/botcli"
+	"github.com/chatmail/rpc-client-go/v2/deltachat"
+	"github.com/deltachat-bot/deltabot-cli-go/v2/botcli"
+	"github.com/deltachat-bot/deltabot-cli-go/v2/xdcrpc"
 )
 
-type TestCallback func(bot *deltachat.Bot, botAcc deltachat.AccountId, userRpc *deltachat.Rpc, userAcc deltachat.AccountId)
-type WebxdcCallback func(bot *deltachat.Bot, botAcc deltachat.AccountId, userRpc *deltachat.Rpc, userAcc deltachat.AccountId, msg *deltachat.MsgSnapshot)
+type TestCallback func(bot *deltachat.Bot, botAcc uint32, userRpc *deltachat.Rpc, userAcc uint32)
+type WebxdcCallback func(bot *deltachat.Bot, botAcc uint32, userRpc *deltachat.Rpc, userAcc uint32, msg *deltachat.Message)
 
 var acfactory *deltachat.AcFactory
 
@@ -23,9 +24,26 @@ func TestMain(m *testing.M) {
 	m.Run()
 }
 
+func waitForDownload(rpc *deltachat.Rpc, accId uint32, msg deltachat.Message) deltachat.Message {
+	var err error
+	for msg.DownloadState != deltachat.DownloadStateDone {
+		select {
+		case <-time.After(20 * time.Second):
+			panic("timeout waiting for message download")
+		default:
+			time.Sleep(50 * time.Millisecond)
+		}
+		msg, err = rpc.GetMessage(accId, msg.Id)
+		if err != nil {
+			panic(err)
+		}
+	}
+	return msg
+}
+
 func withBotAndUser(callback TestCallback) {
-	acfactory.WithOnlineBot(func(bot *deltachat.Bot, botAcc deltachat.AccountId) {
-		acfactory.WithOnlineAccount(func(userRpc *deltachat.Rpc, userAcc deltachat.AccountId) {
+	acfactory.WithOnlineBot(func(bot *deltachat.Bot, botAcc uint32) {
+		acfactory.WithOnlineAccount(func(userRpc *deltachat.Rpc, userAcc uint32) {
 			cli := &botcli.BotCli{AppDir: acfactory.MkdirTemp()}
 			onBotInit(cli, bot, nil, nil)
 			var err error
@@ -41,7 +59,7 @@ func withBotAndUser(callback TestCallback) {
 
 // msg is the webxdc message received in the user side
 func withWebxdc(callback WebxdcCallback) {
-	withBotAndUser(func(bot *deltachat.Bot, botAcc deltachat.AccountId, userRpc *deltachat.Rpc, userAcc deltachat.AccountId) {
+	withBotAndUser(func(bot *deltachat.Bot, botAcc uint32, userRpc *deltachat.Rpc, userAcc uint32) {
 		chatWithBot := acfactory.CreateChat(userRpc, userAcc, bot.Rpc, botAcc)
 
 		_, err := userRpc.MiscSendTextMessage(userAcc, chatWithBot, "hi")
@@ -49,17 +67,17 @@ func withWebxdc(callback WebxdcCallback) {
 			panic(err)
 		}
 
-		msg := acfactory.NextMsg(userRpc, userAcc)
-		if msg.ViewType != deltachat.MsgWebxdc {
-			panic("unexpected file: " + msg.File)
+		msg := waitForDownload(userRpc, userAcc, acfactory.NextMsg(userRpc, userAcc))
+		if msg.ViewType != deltachat.ViewtypeWebxdc {
+			panic("unexpected view-type: " + msg.DownloadState)
 		}
 
-		callback(bot, botAcc, userRpc, userAcc, msg)
+		callback(bot, botAcc, userRpc, userAcc, &msg)
 	})
 }
 
 // Get the Payload contained in the status update with the given serial
-func getTestPayload[T any](rpc *deltachat.Rpc, accId deltachat.AccountId, msgId deltachat.MsgId, serial uint) T {
+func getTestPayload[T any](rpc *deltachat.Rpc, accId uint32, msgId uint32, serial uint32) T {
 	rawUpdate, err := xdcrpc.GetUpdate(rpc, accId, msgId, serial)
 	if err != nil {
 		panic(err)
@@ -73,20 +91,20 @@ func getTestPayload[T any](rpc *deltachat.Rpc, accId deltachat.AccountId, msgId 
 }
 
 // Get bot response
-func getTestResponse[T any](rpc *deltachat.Rpc, accId deltachat.AccountId) T {
-	ev := acfactory.WaitForEvent(rpc, accId, deltachat.EventWebxdcStatusUpdate{}).(deltachat.EventWebxdcStatusUpdate)
+func getTestResponse[T any](rpc *deltachat.Rpc, accId uint32) T {
+	ev := acfactory.WaitForEvent(rpc, accId, &deltachat.EventTypeWebxdcStatusUpdate{}).(*deltachat.EventTypeWebxdcStatusUpdate)
 	return getTestPayload[T](rpc, accId, ev.MsgId, ev.StatusUpdateSerial)
 }
 
 // Send a status update with the given request.
 // Automatically ignore the next EventWebxdcStatusUpdate from self
-func sendTestRequest(rpc *deltachat.Rpc, accId deltachat.AccountId, msgId deltachat.MsgId, req xdcrpc.Request) {
+func sendTestRequest(rpc *deltachat.Rpc, accId uint32, msgId uint32, req xdcrpc.Request) {
 	if err := xdcrpc.SendPayload(rpc, accId, msgId, req); err != nil {
 		panic(err)
 	}
 
 	// ignore self-update
-	ev := acfactory.WaitForEvent(rpc, accId, deltachat.EventWebxdcStatusUpdate{}).(deltachat.EventWebxdcStatusUpdate)
+	ev := acfactory.WaitForEvent(rpc, accId, &deltachat.EventTypeWebxdcStatusUpdate{}).(*deltachat.EventTypeWebxdcStatusUpdate)
 	resp := getTestPayload[xdcrpc.Request](rpc, accId, ev.MsgId, ev.StatusUpdateSerial)
 	if resp.Id != req.Id {
 		panic("Unexpected request Id: " + resp.Id)

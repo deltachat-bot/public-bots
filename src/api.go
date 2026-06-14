@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/chatmail/rpc-client-go/deltachat/xdcrpc"
+	"github.com/deltachat-bot/deltabot-cli-go/v2/xdcrpc"
 )
 
 type StatusData map[string]time.Time
