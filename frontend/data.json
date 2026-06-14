@@ -19,6 +19,18 @@
       "url": "https://i.delta.chat/#F088C9D6200709F9E12C73405C9FE79151FF15B5&v=3&i=S0DgjvgWMEebDFEawdD1jD6c&s=ncHd-ZaTSgij0bwFQDViAmPh&a=o7701rt9c%40nine.testrun.org&n=Telegram+Connector"
     },
     {
+      "description": "Telegram Connector: Subscribe to your favorite Telegram Channels (Arcancechat instance)",
+      "lang": "multi",
+      "admin": "deltafan",
+      "url": "https://i.delta.chat/#09D3480F5F124CF97526D59D2FA315FDC022870B&v=3&i=9S6_-9U0k-Rb1z8CLqHoCTOh&s=g8IvZPq4YEZM6zD87w-GeZ2M&a=exjarxxwy%40arcanechat.me&n=Telegram+Connector+%28Arca_"
+    },
+    {
+      "description": "Telegram Connector: Subscribe to your favorite Telegram Channels (Disobey instance)",
+      "lang": "multi",
+      "admin": "deltafan",
+      "url": "https://i.delta.chat/#BE451E1EDE336CEF85F7A4F2FA9BA47BBB6D58FF&v=3&i=D5eMVFM_J2wXDvT03fX5O10a&s=4Q7SpMMLxB8De-oWU3DYuLHd&a=h4jgqshw4zv7n1can55w%40delta.disobey.net&n=Telegram+Connector+%28Diso_"
+    },
+    {
       "description": "Easily monitor Delta Chat releases status and availability",
       "lang": "en",
       "admin": "testrun",
